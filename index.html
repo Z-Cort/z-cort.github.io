@@ -46,6 +46,7 @@
             color: var(--text-dark);
             margin-bottom: 1rem;
             font-family: 'Kanit', sans-serif;
+            line-height: 3rem;
         }
 
         h2 {
@@ -118,9 +119,12 @@
         /* ===== HERO SECTION ===== */
         .hero {
             padding: 4rem 0;
-            background: linear-gradient(135deg, var(--background-light) 0%, var(--gray-100) 100%);
+            background: url('images/pattern-herobg.svg');
+            background-repeat: repeat;
+            background-size: 80px 80px;
         }
 
+        /* ===== HERO SECTION ===== */
         .hero-card {
             background-color: var(--white);
             border-radius: var(--border-radius);
@@ -130,6 +134,19 @@
             align-items: center;
             gap: 3rem;
             overflow: hidden; /* Ensure nothing spills out */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideIn 1s ease-out forwards;
+        }
+        @keyframes fadeSlideIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         .hero-image {
@@ -149,19 +166,16 @@
             display: block;
         }
 
-        .hero-content {
-            flex: 1;
-        }
-
         .hero-title {
             font-size: 3rem;
-            margin-bottom: -1rem;
+            margin-bottom: 0rem;
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            font-weight:600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
 
         .hero-description {
@@ -255,6 +269,18 @@
             margin-top: 2rem;
         }
 
+        /* ===== GALLERY ITEM FADE-IN ANIMATION ===== */
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         .gallery-item {
             background-color: var(--white);
             border-radius: var(--border-radius);
@@ -265,6 +291,13 @@
             display: flex;
             flex-direction: column;
             height: 400px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+
+        .gallery-item.visible {
+            animation: fadeInUp 0.6s forwards;
         }
 
         .gallery-item:hover {
@@ -489,9 +522,8 @@
             }
 
             .hero {
-                min-height: 100vh;
-                display: flex;
-                align-items: center;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
             }
 
             .hero-card {
@@ -641,7 +673,7 @@
                     <h1 class="hero-title">Zachary Cortinovis</h1>
                     <p class="hero-subtitle">Designer | Product Manager</p>
                     <p class="hero-description">
-                        Hi there! Creating graphics and content has been a lifelong passion of mine. I enjoy finding solutions with my designs, and seeing them lead to the success of my clients. 
+                        Creating graphics and content has been a lifelong passion of mine. I enjoy finding solutions with my designs, and seeing them lead to the success of my clients. 
                     </p>
                     <a href="#highlight-projects" class="view-portfolio-btn">View Portfolio</a>
                     <div class="contact-buttons">
@@ -927,6 +959,24 @@
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
+        });
+
+        // Fade-in gallery items as they enter viewport
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add('visible');
+              }, index * 100); // Staggered timing
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          observer.observe(item);
         });
     </script>
 </body>
