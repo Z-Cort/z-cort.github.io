@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zachary Cortinovis - Designer | Product Manager</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon-vulpine.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kanit:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* ===== CSS VARIABLES ===== */
@@ -32,8 +33,12 @@
             box-sizing: border-box;
         }
 
+        a {
+            text-decoration: none;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
             background-color: var(--background-light);
             color: var(--text-dark);
             line-height: 1.6;
@@ -106,7 +111,6 @@
         }
 
         .nav a {
-            text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
             transition: color 0.3s ease;
@@ -421,7 +425,6 @@
         }
 
         .footer-nav a {
-            text-decoration: none;
             color: var(--white);
             font-weight: 500;
             transition: color 0.3s ease;
@@ -706,7 +709,7 @@
                 These are my main largest projects. Included is a detailed journey of their creation.
             </p>
             <div class="gallery">
-                <div class="gallery-item" data-project="venditit-website">
+                <a class="gallery-item" href="projects/vendidit-website">
                     <div class="gallery-item-image">
                         <img src="images/gallerythumbnail-vendidit-website.png" alt="Venditit Website">
                     </div>
@@ -714,7 +717,7 @@
                         <h3 class="gallery-item-title">Venditit Website</h3>
                         <p class="gallery-item-description">This is a description of the tool above.</p>
                     </div>
-                </div>
+                </a>
                 <div class="gallery-item" data-project="globalsku-logos">
                     <div class="gallery-item-image">
                         <img src="images/gallerythumbnail-globalsku-upstream-logos.svg" alt="GlobalSKU and Upstream Logos">
