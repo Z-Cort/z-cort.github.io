@@ -662,7 +662,6 @@
                   </a>
                 </div>
                 <nav class="nav">
-                    <a href="#home">Home</a>
                     <a href="#contact">Contact</a>
                 </nav>
             </div>
@@ -938,14 +937,17 @@
             });
         });
 
-        // Add click event to highlight projects for navigation to dedicated pages
+        // Add click event to highlight projects for navigation to dedicated pages, but skip anchor tags
         document.querySelectorAll('.highlight-projects .gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const projectId = this.getAttribute('data-project');
-                // For now, just show an alert - you can replace this with actual navigation
-                alert(`This would navigate to ${projectId}.html - dedicated page for this project`);
-                // window.location.href = `${projectId}.html`;
-            });
+            // Only attach click handler if item does NOT have an href
+            if (!item.hasAttribute('href')) {
+                item.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    if (projectId) {
+                        alert(`This would navigate to ${projectId}.html - dedicated page for this project`);
+                    }
+                });
+            }
         });
 
         // Close modal functionality
