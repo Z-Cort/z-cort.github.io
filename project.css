@@ -3,7 +3,8 @@
 :root {
     --primary-color: #ED2000;
     --secondary-color: #1A0300;
-    --text-dark: #2D3748;
+    --text-dark: #1A0300;
+    --text-medium: #2D3748;
     --text-light: #718096;
     --background-light: #F7FAFC;
     --white: #FFFFFF;
@@ -22,7 +23,7 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--background-light);
-    color: var(--text-dark);
+    color: var(--text-medium);
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -40,7 +41,7 @@ ul li {
 
 h1, h2, h3 {
     font-family: 'Kanit', sans-serif;
-    color: var(--text-dark);
+    color: var(--text-medium);
 }
 
 h1 {
@@ -98,7 +99,7 @@ p {
 
 .nav a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-medium);
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -252,7 +253,7 @@ p {
             border: 2px solid var(--gray-300);
             border-radius: var(--border-radius);
             background-color: var(--white);
-            color: var(--text-dark);
+            color: var(--text-medium);
             text-decoration: none;
             text-align: center;
             font-weight: 500;
