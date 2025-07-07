@@ -785,7 +785,7 @@
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="gallery-item-title">Vulpine Design</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
+                        <p class="gallery-item-description">Designing my business, with a personal touch.</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-modal="tool-1-modal">
@@ -793,17 +793,17 @@
                         <img src="images/gallerythumbnail-vendidit-businesscards.png" alt="Tool 1">
                     </div>
                     <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
+                        <h3 class="gallery-item-title">Vendidit Business Cards Ad</h3>
+                        <p class="gallery-item-description">Business card styled handout ads to increase conversion.</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-modal="tool-1-3-modal">
                     <div class="gallery-item-image">
-                        <img src="images/tool-1-3.jpg" alt="Tool 1">
+                        <img src="" alt="Tool 1">
                     </div>
                     <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
+                        <h3 class="gallery-item-title">tool</h3>
+                        <p class="gallery-item-description">Brand design for a salon that never had a chance to take off.</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-modal="tool-1-4-modal">
@@ -894,14 +894,18 @@
                 image: 'images/gallerymodal-vulpine.svg'
             },
             'tool-1-modal': {
-                title: 'Tool 1',
-                description: 'This is a detailed description of Tool 1. Here you can include information about the tool development process, the problem it solves, the target audience, and the impact it has had. You can also discuss the technical aspects, user feedback, and future improvements planned.',
-                image: 'images/tool-1-2.jpg'
+                title: 'Vendidit Handout Ads',
+                description: `
+                <p>These ads were designed fully in Figma with original graphics. The main three colors were derived from the 0%, 50%, and 100% stops of the Vendidit Checkmark Gradient.</p>
+                <p>The bottom two cards were designed to bring customers into our online auction platform. Emphasis was made on our unique auction features that separate us from other online auction houses. Our user testing revealed that “90% off retail” had the strongest conversion, so it was added as the first feature. I personally found the proxy bidding feature the most helpful.</p> 
+                <p>The top two cards were later designed when we began selling pallets. We determined a segment of customers looking for pallets to begin their own individual resale business, so we needed an easy handout that got them to the website. The pallet graphic was the most important indicator, but I decided add a little artistic touch on the back side with the warehouse, road, and QR highway ad.</p>
+                `,
+                image: 'images/gallerythumbnail-vendidit-businesscards.png'
             },
             'tool-1-3-modal': {
-                title: 'Tool 1 - Version 3',
-                description: 'This is a detailed description of Tool 1 Version 3. Here you can include information about the updates and improvements made in this version, user feedback incorporation, and performance enhancements.',
-                image: 'images/tool-1-3.jpg'
+                title: 'title',
+                description: '',
+                image: 'images/gallerythumbnail-saltandlightsalon.png'
             },
             'tool-1-4-modal': {
                 title: 'Tool 1 - Version 4',
@@ -928,7 +932,7 @@
                 
                 if (data) {
                     modalTitle.textContent = data.title;
-                    modalDescription.textContent = data.description;
+                    modalDescription.innerHTML = data.description;
                     modalImage.src = data.image;
                     modalImage.alt = data.title;
                     modal.style.display = 'block';
