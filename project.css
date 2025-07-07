@@ -32,6 +32,7 @@ body {
 ul {
     padding-left: 1.2rem;
     list-style-position: outside;
+    font-family: 'Inter', sans-serif;
 }
 
 ul li {
@@ -46,12 +47,18 @@ h1, h2, h3 {
 
 h1 {
     font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
     margin-bottom: 1rem;
+    line-height: 2rem;
 }
 
 h2 {
     font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-medium);
     margin-bottom: 1rem;
+    line-height: 0rem;
 }
 
 h3 {
@@ -60,6 +67,16 @@ h3 {
 }
 
 p {
+    color: var(--text-medium);
+    margin-bottom: 1rem;
+}
+
+em {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+strong {
     color: var(--text-light);
     margin-bottom: 1rem;
 }
@@ -178,6 +195,7 @@ p {
     align-items: flex-start;
     align-self: stretch;
     margin-bottom: 4rem;
+    flex-wrap: wrap;
 }
 
 .zpattern-left .z-text {
@@ -208,7 +226,6 @@ p {
     display: flex;
     align-items: stretch;
     width: 100%;
-    /* max-width and flex for .z-image are now handled above for desktop */
 }
 
 .z-image > div {
