@@ -128,15 +128,15 @@
             background: url('images/pattern-herobg.svg');
             background-repeat: repeat;
             background-size: 80px 80px;
-            animation: bgMoveUp 4s linear infinite;
+            animation: bgMoveUpDiagonal 4s linear infinite;
         }
 
-        @keyframes bgMoveUp {
+        @keyframes bgMoveUpDiagonal {
             0% {
                 background-position: 0 0;
             }
             100% {
-                background-position: 0 -160px;
+                background-position: -160px -160px;
             }
         }
 
