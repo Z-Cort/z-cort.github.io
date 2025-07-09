@@ -471,6 +471,53 @@ strong {
     }
 }
 
+/* ===== CTA SECTION ===== */
+        .cta {
+            background-color: var(--background-light);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .cta-btn {
+            padding: 1rem 2rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            background-color: var(--white);
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .cta-btn.primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .cta-btn.primary:hover {
+            background-color: #C53030;
+        }
+
 /* ===== SECTION STANDARDIZATION ===== */
 section {
     padding: 4rem 0;
