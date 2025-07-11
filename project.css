@@ -307,14 +307,15 @@ strong {
 .z-image > div {
     flex: 1;
     min-height: 300px;
-    background: var(--gray-400);
     border-radius: var(--border-radius);
 }
 
 .z-image img {
     width: 100%;
+    max-width: 600px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    
 }
 
 /* ===== FINAL RESULT SECTION ===== */
