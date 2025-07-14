@@ -169,6 +169,10 @@
             opacity: 0;
             transform: translateY(30px);
             animation: fadeSlideIn 1s ease-out forwards;
+            width: fit-content;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
         }
         @keyframes fadeSlideIn {
           from {
@@ -188,7 +192,7 @@
 
         .hero-image img {
             width: 500px;
-            height: 500px;
+            height: 100%;
             object-fit: cover;
             border-radius: var(--border-radius) 0 0 var(--border-radius);
             background-color: var(--gray-300);
@@ -559,6 +563,12 @@
             .container {
                 padding: 0 var(--padding-mobile);
             }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             .nav {
                 gap: 1rem;
             }
@@ -686,6 +696,11 @@
                 padding: 2.5rem;
             }
         }
+
+        /* ===== CUSTOM CHECKBOX COLOR ===== */
+        input[type="checkbox"]:checked {
+            accent-color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -699,7 +714,7 @@
                   </a>
                 </div>
                 <nav class="nav">
-                    <a href="contact.html">Contact</a>
+                    <a href="#contact">Contact</a>
                 </nav>
             </div>
         </div>
@@ -715,17 +730,37 @@
                     </div>
                 </div>
                 <div class="hero-content">
-                    <h1 class="hero-title">Zachary Cortinovis</h1>
-                    <p class="hero-subtitle">Designer | Product Manager</p>
-                    <p class="hero-description">
-                        Creating graphics and content has been a lifelong passion of mine. I enjoy finding solutions with my designs, and seeing them lead to the success of my clients. 
-                    </p>
+                    <h1 class="hero-title">Send me a message!</h1>
+                    <p class="hero-subtitle">Let's see what I can do for your business.</p>
                     <div class="hero-actions">
-                        <a href="#highlight-projects" class="view-portfolio-btn">View Portfolio</a>
-                        <div class="contact-buttons">
-                            
-                            <a href="contact.html" class="contact-btn"><img src="images/icon-mail.svg"></a>
-                            <a href="https://www.linkedin.com/in/zacharycortinovis/" class="contact-btn"><img src="images/icon-linkedin.svg"></a>
+                        <form id="contact-form" class="contact-form">
+                            <div style="display: flex; gap: 1rem;">
+                                <input type="text" name="firstName" placeholder="First Name" required style="flex: 1; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
+                                <input type="text" name="lastName" placeholder="Last Name" required style="flex: 1; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
+                            </div>
+                            <input type="email" name="email" placeholder="Email" required style="width: 100%; margin-top: 1rem; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
+                            <input type="text" name="businessType" placeholder="Business Type" required style="width: 100%; margin-top: 1rem; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
+                            <fieldset style="margin-top: 1rem; border: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 1rem;">
+                                <legend><strong>Services I'm Interested In:</strong></legend>
+                                <ul style="list-style: none; padding-left: 0; margin: 0; text-align: left;">
+                                    <li><label><input type="checkbox" name="services" value="Website creation"> Website creation</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Brand design"> Brand design</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Logo design"> Logo design</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Marketing graphics"> Marketing graphics</label></li>
+                                </ul>
+                                <ul style="list-style: none; padding-left: 0; margin: 0; text-align: left;">
+                                    <li><label><input type="checkbox" name="services" value="Marketing campaign"> Marketing campaign</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Print graphics"> Print graphics</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Business cards"> Business cards</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Landing page"> Landing page</label></li>
+                                </ul>
+                            </fieldset>
+                            <textarea name="message" placeholder="Additional Message (optional)" style="width: 100%; margin-top: 1rem; min-height: 100px; border: 1px solid var(--gray-300); border-radius: var(--border-radius); padding: 0.75rem; font-family: 'Inter', sans-serif;"></textarea>
+                            <button type="submit" class="view-portfolio-btn">Submit</button>
+                        </form>
+                        <div id="thank-you-message" style="display: none; margin-top: 1rem;">
+                            <h3>Thank you!</h3>
+                            <p>Your form has been submitted. I’ll be in touch shortly.</p>
                         </div>
                     </div>
                 </div>
@@ -737,158 +772,10 @@
     <section class="section experience">
         <div class="container">
             <div class="experience-content">
-                <h1 class="section-title">Professional Summary</h1>
-                <p>I grew up using computers and playing with software, learning new tricks by completing online tutorials. Drawing had also been a hobby of mine, using a pen tablet to make it digital.</p>
-                <p>After graduating from Texas State University with a Bachelors in Business Management, I began my career with loan sales, quickly realizing it wasn't for me. Feeling held back by the poorly designed tools I was provided, I wanted to be the person creating these tools that led teams to success.</p>
-                <p>I spent years since studying UX and modern design principles with the purpose of solving problems and successfully made a career change to a Product Manager at Vendidit.</p>
-                <p>Now I'm in charge of the official website, brand design, grooming product features and UI, creating marketing material, and bridge the gap between our marketing and product development departments.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Highlight Projects -->
-    <section class="section highlight-projects" id="highlight-projects">
-        <div class="container">
-            <h1 class="section-title">Highlight Projects</h1>
-            <p style="text-align: center; margin-bottom: 2rem;">
-                These are my main largest projects. Included is a detailed journey of their creation.
-            </p>
-            <div class="gallery">
-                <a class="gallery-item" href="projects/vendidit-website.html">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-vendidit-website.png" alt="Venditit Website">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Venditit Website</h3>
-                        <p class="gallery-item-description">Designing and building Vendidit's company website for discovery and conversion.</p>
-                    </div>
-                </a>
-                <a class="gallery-item" href="projects/upstream-globalsku-logo.html">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-globalsku-upstream-logos.svg" alt="GlobalSKU and Upstream Logos">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">GlobalSKU and Upstream Logos</h3>
-                        <p class="gallery-item-description">With only one week to design two product logos, quick decisions had to be made.</p>
-                    </div>
-                </a>
-                <a class="gallery-item" href="projects/vulpine.html">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-vulpine-logo.svg" alt="Vulpine Design">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Vulpine Design</h3>
-                        <p class="gallery-item-description">Creating a personal brand and logo with a theme based on something I love: Foxes.</p>
-                    </div>
-                </a>
-                <!--
-                <div class="gallery-item" data-project="dejoria-website">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-dejoriastephens.png" alt="DeJoriaStephens Website">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">DeJoriaStephens Website</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-project="portfolio-website">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-portfolio.png" alt="Portfolio Website">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Portfolio Website</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-project="tool-1">
-                    <div class="gallery-item-image">
-                        <img src="images/tool-1.jpg" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                --></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Gallery -->
-    <section class="section projects-gallery">
-        <div class="container">
-            <h1 class="section-title">Projects Gallery</h1>
-            <p style="text-align: center; margin-bottom: 2rem;">
-                Other content I've worked on over the years with some details over the process.
-            </p>
-            <div class="gallery">
-                <div class="gallery-item" data-modal="vulpine-design-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-vulpine-logo.svg" alt="Vulpine Design">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Vulpine Design</h3>
-                        <p class="gallery-item-description">Designing my business, with a personal touch.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-vendidit-businesscards.png" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Vendidit Business Cards Ad</h3>
-                        <p class="gallery-item-description">Business card styled handout ads to increase conversion.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-3-modal">
-                    <div class="gallery-item-image">
-                        <img src="" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">tool</h3>
-                        <p class="gallery-item-description">Brand design for a salon that never had a chance to take off.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-4-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/tool-1-4.jpg" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-5-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/tool-1-5.jpg" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-6-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/tool-1-6.jpg" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section cta" id="contact">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Let's see what we can build together.</h2>
-                <p>I'm always looking for new projects, able to learn quickly, and can adapt to any challenge thrown my way. Feel free to reach out and chat with me about any projects you're trying to complete.</p>
-                <div class="contact-buttons">
-                        <a href="contact.html" class="contact-btn"><img src="images/icon-mail.svg"></a>
-                        <a href="https://linkedin.com/in/zachary-cortinovis" class="contact-btn"><img src="images/icon-linkedin.svg"></a>
-                    </div>
+                <h1 class="section-title">Contact Info</h1>
+                <p>I began my career in sales, and realized it wasn't for me. Feeling held back by the tools I was provided, I wanted to be the person creating solutions that led teammates to success.</p>
+                <p>I successfully made a career change and began working at Venditit!</p>
+                <a href="#highlight-projects" class="view-portfolio-btn">View Portfolio</a>
             </div>
         </div>
     </section>
@@ -1034,6 +921,45 @@
         document.querySelectorAll('.gallery-item').forEach(item => {
           observer.observe(item);
         });
+    </script>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const services = [];
+        for (const pair of formData.entries()) {
+            if (pair[0] === 'services') {
+                services.push(pair[1]);
+            }
+        }
+
+        const emailBody = `
+            Name: ${formData.get('firstName')} ${formData.get('lastName')}
+            Email: ${formData.get('email')}
+            Business Type: ${formData.get('businessType')}
+            Services: ${services.join(', ')}
+            Message: ${formData.get('message') || '(none)'}
+        `;
+
+        fetch('https://formsubmit.co/ajax/zacharycortinovis@gmail.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: 'New Client Form Submission',
+                ...Object.fromEntries(formData.entries())
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+        })
+        .catch(error => alert('Submission failed. Please try again later.'));
+    });
     </script>
 </body>
 </html>

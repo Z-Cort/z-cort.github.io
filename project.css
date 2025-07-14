@@ -138,10 +138,12 @@ strong {
     color: var(--text-medium);
     font-weight: 500;
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .nav a:hover {
     color: var(--primary-color);
+    text-decoration: none;
 }
 
 /* ===== HERO PROJECT SECTION ===== */
@@ -272,7 +274,6 @@ strong {
     gap: 2rem;
     align-items: stretch;
     align-self: stretch;
-    margin-bottom: 4rem;
     flex-wrap: wrap;
 }
 
@@ -442,6 +443,24 @@ strong {
 .gallery-item-description {
     font-size: 0.9rem;
     color: var(--text-light);
+}
+
+/* Ensure gallery items as links have no default link styling */
+a.gallery-item {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+a.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
 /* ===== RESPONSIVE ===== */
