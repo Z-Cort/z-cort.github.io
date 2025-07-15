@@ -164,7 +164,7 @@
             padding: 3rem 3rem 3rem 0;
             display: flex;
             align-items: center;
-            gap: 3rem;
+            gap: 2rem;
             overflow: hidden; /* Ensure nothing spills out */
             opacity: 0;
             transform: translateY(30px);
@@ -187,19 +187,22 @@
 
         .hero-image {
             flex: 0 0 300px;
-            margin: -3rem 0 -3rem -3rem;
+            margin: -rem 0 -3rem -3rem;
         }
 
         .hero-image img {
-            width: 500px;
+            width:400px;
             height: 100%;
-            object-fit: cover;
+            object-fit:fill;
             border-radius: var(--border-radius) 0 0 var(--border-radius);
             background-color: var(--gray-300);
             margin: 0;
             padding: 0;
             border: none;
             display: block;
+        }
+        .hero-content {
+            min-width:40px;
         }
 
         .hero-title {
@@ -239,6 +242,11 @@
             box-sizing: border-box;
             text-align: center;
             margin-bottom: 0;
+        }
+
+        /* Add extra margin below the submit button in the contact form */
+        #contact-form .view-portfolio-btn {
+            margin-bottom: 1rem;
         }
 
         .view-portfolio-btn:hover {
@@ -564,11 +572,6 @@
                 padding: 0 var(--padding-mobile);
             }
 
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
             .nav {
                 gap: 1rem;
             }
@@ -755,7 +758,7 @@
                                     <li><label><input type="checkbox" name="services" value="Landing page"> Landing page</label></li>
                                 </ul>
                             </fieldset>
-                            <textarea name="message" placeholder="Additional Message (optional)" style="width: 100%; margin-top: 1rem; min-height: 100px; border: 1px solid var(--gray-300); border-radius: var(--border-radius); padding: 0.75rem; font-family: 'Inter', sans-serif;"></textarea>
+                            <textarea name="message" placeholder="Additional Message (optional)" style="width: 100%; margin-top: 1rem; margin-bottom: 1rem; min-height: 100px; border: 1px solid var(--gray-300); border-radius: var(--border-radius); padding: 0.75rem; font-family: 'Inter', sans-serif;"></textarea>
                             <button type="submit" class="view-portfolio-btn">Submit</button>
                         </form>
                         <div id="thank-you-message" style="display: none; margin-top: 1rem;">

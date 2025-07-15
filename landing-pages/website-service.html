@@ -161,7 +161,7 @@
             background-color: var(--white);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
-            padding: 3rem 3rem 3rem 0;
+            padding: 3rem 3rem 3rem 3rem;
             display: flex;
             align-items: center;
             gap: 3rem;
@@ -183,15 +183,14 @@
 
         .hero-image {
             flex: 0 0 300px;
-            margin: -3rem 0 -3rem -3rem;
+            margin-bottom: 0px;
         }
 
         .hero-image img {
-            width: 500px;
-            height: 500px;
+            height: 400px;
             object-fit: cover;
             border-radius: var(--border-radius) 0 0 var(--border-radius);
-            background-color: var(--gray-300);
+            background-color: transparent;
             margin: 0;
             padding: 0;
             border: none;
@@ -216,8 +215,16 @@
 
         .hero-actions {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: start;
             gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         .view-portfolio-btn {
@@ -250,20 +257,20 @@
         }
 
         .contact-btn {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--gray-300);
-            border-radius: var(--border-radius);
             background-color: var(--white);
-            color: var(--text-medium);
-            text-decoration: none;
-            text-align: center;
-            font-weight: 500;
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            margin-bottom: 0;
         }
 
         .contact-btn:hover {
@@ -582,8 +589,9 @@
             }
 
             .hero-image {
-                width: 100%;
+                width: 80%;
                 margin: 0 auto;
+                max-height:400px;
             }
 
             .hero-image img {
@@ -695,11 +703,11 @@
             <div class="header-content">
                 <div class="logo">
                   <a href="index.html">
-                    <img src="images/logo-vulpine.svg" class="logo" alt="Vulpine Logo">
+                    <img src="../images/logo-vulpine.svg" class="logo" alt="Vulpine Logo">
                   </a>
                 </div>
                 <nav class="nav">
-                    <a href="contact.html">Contact</a>
+                    <a href="../contact.html">Contact</a>
                 </nav>
             </div>
         </div>
@@ -711,22 +719,17 @@
             <div class="hero-card">
                 <div class="hero-image-wrapper">
                     <div class="hero-image">
-                        <img src="images/header-zacpic.png" alt="Zachary Cortinovis">
+                        <img src="images/hero-zac.png" alt="Zachary Cortinovis">
                     </div>
                 </div>
                 <div class="hero-content">
-                    <h1 class="hero-title">Zachary Cortinovis</h1>
-                    <p class="hero-subtitle">Designer | Product Manager</p>
+                    <h1 class="hero-title">I build effective and affordable websites for small businesses.</h1>
                     <p class="hero-description">
-                        Creating graphics and content has been a lifelong passion of mine. I enjoy finding solutions with my designs, and seeing them lead to the success of my clients. 
+                        My website designs educate your audience and build trust with potential customers. 
                     </p>
                     <div class="hero-actions">
+                        <a href="contact.html" class="contact-btn email">Let's Chat</a>
                         <a href="#highlight-projects" class="view-portfolio-btn">View Portfolio</a>
-                        <div class="contact-buttons">
-                            
-                            <a href="contact.html" class="contact-btn"><img src="images/icon-mail.svg"></a>
-                            <a href="https://www.linkedin.com/in/zacharycortinovis/" class="contact-btn"><img src="images/icon-linkedin.svg"></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -737,157 +740,156 @@
     <section class="section experience">
         <div class="container">
             <div class="experience-content">
-                <h1 class="section-title">Professional Summary</h1>
-                <p>I grew up using computers and playing with software, learning new tricks by completing online tutorials. Drawing had also been a hobby of mine, using a pen tablet to make it digital.</p>
-                <p>After graduating from Texas State University with a Bachelors in Business Management, I began my career with loan sales, quickly realizing it wasn't for me. Feeling held back by the poorly designed tools I was provided, I wanted to be the person creating these tools that led teams to success.</p>
-                <p>I spent years since studying UX and modern design principles with the purpose of solving problems and successfully made a career change to a Product Manager at Vendidit.</p>
-                <p>Now I'm in charge of the official website, brand design, grooming product features and UI, creating marketing material, and bridge the gap between our marketing and product development departments.</p>
+                <h1 class="section-title">Free Consultations</h1>
+                <p>Free Consultations
             </div>
         </div>
     </section>
 
-    <!-- Highlight Projects -->
-    <section class="section highlight-projects" id="highlight-projects">
-        <div class="container">
-            <h1 class="section-title">Highlight Projects</h1>
-            <p style="text-align: center; margin-bottom: 2rem;">
-                These are my main largest projects. Included is a detailed journey of their creation.
-            </p>
-            <div class="gallery">
-                <a class="gallery-item" href="projects/vendidit-website.html">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-vendidit-website.png" alt="Venditit Website">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Venditit Website</h3>
-                        <p class="gallery-item-description">Designing and building Vendidit's company website for discovery and conversion.</p>
-                    </div>
-                </a>
-                <a class="gallery-item" href="projects/upstream-globalsku-logo.html">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-globalsku-upstream-logos.svg" alt="GlobalSKU and Upstream Logos">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">GlobalSKU and Upstream Logos</h3>
-                        <p class="gallery-item-description">With only one week to design two product logos, quick decisions had to be made.</p>
-                    </div>
-                </a>
-                <a class="gallery-item" href="projects/vulpine.html">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-vulpine-logo.svg" alt="Vulpine Design">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Vulpine Design</h3>
-                        <p class="gallery-item-description">Creating a personal brand and logo with a theme based on something I love: Foxes.</p>
-                    </div>
-                </a>
-                <!--
-                <div class="gallery-item" data-project="dejoria-website">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-dejoriastephens.png" alt="DeJoriaStephens Website">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">DeJoriaStephens Website</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-project="portfolio-website">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-portfolio.png" alt="Portfolio Website">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Portfolio Website</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-project="tool-1">
-                    <div class="gallery-item-image">
-                        <img src="images/tool-1.jpg" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                --></div>
+    <!-- What I Can Offer Section -->
+    <section class="section offer">
+      <div class="container">
+        <h2 class="section-title">Here's what I can offer:</h2>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+          <div class="offer-box" style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <div class="offer-image" style="text-align:center;">
+              <img src="images/timer.svg" alt="speed" style="height: 120px;">
             </div>
+            <div>
+              <h3 style="color: var(--primary-color); text-align: center;">Speed</h3>
+              <p>Every second counts – the quicker we get your website up, the quicker we can make an impact.</p>
+            </div>
+          </div>
+          <div class="offer-box" style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <div class="offer-image" style="text-align:center;">
+              <img src="images/thumbs-up.svg" alt="Offer Icon" style="height: 120px;">
+            </div>
+            <div>
+              <h3 style="color: var(--primary-color); text-align: center;">Quality</h3>
+              <p>A quality website builds instant trust. It’s my job to make sure yours looks professional.</p>
+            </div>
+          </div>
+          <div class="offer-box" style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <div class="offer-image" style="text-align:center;">
+              <img src="images/tools.svg" alt="Offer Icon" style="height: 120px;">
+            </div>
+            <div>
+              <h3 style="color: var(--primary-color); text-align: center;">Flexibility</h3>
+              <p>I research and craft designs tailored to your industry to increase brand perception.</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Projects Gallery -->
-    <section class="section projects-gallery">
-        <div class="container">
-            <h1 class="section-title">Projects Gallery</h1>
-            <p style="text-align: center; margin-bottom: 2rem;">
-                Other content I've worked on over the years with some details over the process.
-            </p>
-            <div class="gallery">
-                <div class="gallery-item" data-modal="vendidit-social-media-login">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-socialmedialogin.png" alt="Vulpine Design">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Vendidit Social Media Login</h3>
-                        <p class="gallery-item-description">Adding social media options to the Vendidit buyer portal signup/login screen.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-vendidit-businesscards.png" alt="vendidit business cards">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Vendidit Business Cards Ad</h3>
-                        <p class="gallery-item-description">Business card styled handout ads to increase conversion.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-3-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-custpomproperties.png" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Vendidit Custom Properties</h3>
-                        <p class="gallery-item-description">Creating the custom properties feature on the Vendidit seller portal.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-4-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/tool-1-4.jpg" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-5-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/tool-1-5.jpg" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-6-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/tool-1-6.jpg" alt="Tool 1">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Site Packages Section -->
+    <section class="section site-packages">
+      <div class="container">
+        <h2 class="section-title">Let’s talk site packages.</h2>
+        <p style="text-align:center; margin-bottom: 2rem;">Find the right package for your requirements. Consultations are free.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+          <div style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <h3 style="color: var(--primary-color);">Landing Page</h3>
+            <h2 style="font-family: 'Bebas Neue', sans-serif;">$200-$500</h2>
+            <ul>
+              <li>One Page Landing Page</li>
+              <li>Custom Layout and Design</li>
+              <li>Full Copy Work</li>
+              <li>Call to Actions</li>
+              <li>3 Revisions</li>
+            </ul>
+          </div>
+          <div style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <h3 style="color: var(--primary-color);">Small Website</h3>
+            <h2 style="font-family: 'Bebas Neue', sans-serif;">$1,000</h2>
+            <ul>
+              <li>Everything from Landing Pages</li>
+              <li>Multiple Webpages</li>
+              <li>Eye Catching Animations</li>
+              <li>Content Management Setup</li>
+              <li>Search Engine Optimization</li>
+            </ul>
+          </div>
+          <div style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <h3 style="color: var(--primary-color);">Full Website</h3>
+            <h2 style="font-family: 'Bebas Neue', sans-serif;">CUSTOM</h2>
+            <ul>
+              <li>Stores, Platforms</li>
+              <li>Multiple Pages</li>
+              <li>Features</li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Additional Services Section -->
+    <section class="section add-services">
+      <div class="container">
+        <h2 class="section-title">Additional Design Services</h2>
+        <p style="text-align:center; margin-bottom: 2rem;">In case your needs extend beyond webpages.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <h3 style="color: var(--primary-color);">Brand Package</h3>
+            <h2 style="font-family: 'Bebas Neue', sans-serif;">$300</h2>
+            <ul>
+              <li>Brand Voice, Colors, and Fonts</li>
+              <li>Strategic Market Research Report</li>
+            </ul>
+          </div>
+          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <h3 style="color: var(--primary-color);">Brand Printouts</h3>
+            <h2 style="font-family: 'Bebas Neue', sans-serif;">$100</h2>
+            <ul>
+              <li>Business Cards, Posters, Handouts</li>
+              <li>Signs, Merchandise</li>
+            </ul>
+          </div>
+          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <h3 style="color: var(--primary-color);">Logo Design</h3>
+            <h2 style="font-family: 'Bebas Neue', sans-serif;">CUSTOM</h2>
+            <ul>
+              <li>Powerful Brand Logo</li>
+              <li>Multipurpose Versions</li>
+            </ul>
+          </div>
+          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <h3 style="color: var(--primary-color);">Ad Campaign</h3>
+            <h2 style="font-family: 'Bebas Neue', sans-serif;">$200</h2>
+            <ul>
+              <li>Online or Print Ad Designs</li>
+              <li>Setting you up for advertising</li>
+            </ul>
+          </div>
+          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <h3 style="color: var(--primary-color);">Ongoing Ads</h3>
+            <h2 style="font-family: 'Bebas Neue', sans-serif;">$200 /month</h2>
+            <ul>
+              <li>Features</li>
+              <li>Features</li>
+            </ul>
+          </div>
+          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <h3 style="color: var(--primary-color);">Photography</h3>
+            <h2 style="font-family: 'Bebas Neue', sans-serif;">$50</h2>
+            <ul>
+              <li>Business Headshots</li>
+              <li>Website Photos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="section cta" id="contact">
         <div class="container">
             <div class="cta-content">
-                <h2>Let's see what we can build together.</h2>
-                <p>I'm always looking for new projects, able to learn quickly, and can adapt to any challenge thrown my way. Feel free to reach out and chat with me about any projects you're trying to complete.</p>
+                <h3>You've made it this far...</h3>
+                <h2>That means this landing page works!</h2>
+                <p>Now let's make one for <b>your</b> customers.</p>
                 <div class="contact-buttons">
-                        <a href="contact.html" class="contact-btn"><img src="images/icon-mail.svg"></a>
-                        <a href="https://linkedin.com/in/zachary-cortinovis" class="contact-btn"><img src="images/icon-linkedin.svg"></a>
+                        <a href="contact.html" class="contact-btn email" style="">Let's Chat</a>
                     </div>
             </div>
         </div>
@@ -897,11 +899,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo"><img src="images/logo-vulpine-white.svg" class="logo"></div>
+                <div class="footer-logo"><img src="../images/logo-vulpine-white.svg" class="logo"></div>
                 <nav class="footer-nav">
-                    <a href="#home">Home</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#landing-pages">Landing Pages</a>
+                    <a href="../index.html">Home</a>
+                    <a href="../contact.html">Contact</a>
                 </nav>
             </div>
         </div>
@@ -920,126 +921,5 @@
     </div>
 
     <script>
-        // Modal functionality
-        const modal = document.getElementById('project-modal');
-        const modalImage = document.getElementById('modal-image');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDescription = document.getElementById('modal-description');
-        const closeBtn = document.querySelector('.modal-close');
-
-        // Sample modal data
-        const modalData = {
-            'vendidit-social-media-login': {
-                title: 'Vendidit Social Media Login',
-                description: `
-                <p>The original login/signup page fields created conversion friction. There were too many fields and no easy way to create an account. Adding social media options for account creation would ease the signup processes.</p>
-                <p>I took the opportunity to give the signup/login box a modern look with our logo. I also decided to split up the process into two steps so the user isn't bombarded with fields.</p>
-                `,
-                image: 'images/gallerymodal-socialmedialogin.png'
-            },
-            'tool-1-modal': {
-                title: 'Vendidit Handout Ads',
-                description: `
-                <p>These ads were designed fully in Figma with original graphics. The main three colors were derived from the 0%, 50%, and 100% stops of the Vendidit Checkmark Gradient.</p>
-                <p>The bottom two cards were designed to bring customers into our online auction platform. Emphasis was made on our unique auction features that separate us from other online auction houses. Our user testing revealed that “90% off retail” had the strongest conversion, so it was added as the first feature. I personally found the proxy bidding feature the most helpful.</p> 
-                <p>The top two cards were later designed when we began selling pallets. We determined a segment of customers looking for pallets to begin their own individual resale business, so we needed an easy handout that got them to the website. The pallet graphic was the most important indicator, but I decided add a little artistic touch on the back side with the warehouse, road, and QR highway ad.</p>
-                `,
-                image: 'images/gallerythumbnail-vendidit-businesscards.png'
-            },
-            'tool-1-3-modal': {
-                title: 'Vendidit Custom Properties',
-                description: `
-                <p>I designed the Custom Properties feature for Vendidit's Marketplace. This feature allows sellers to define their own custom properties, such as "Karate", "Voltage", "Metal Type" and so on.</p>
-                <p>First I designed the scope of the feature, then created a phase 1 which is currently released. I used Figma to design the UI and create the prototype. Edge cases were explored such as the hiearchy of global vs auction settings, what happens when you remove a custom property with a live auction, and other cases.</p>
-                <img src="images/gallerymodal-customproperties2.png" class="gallery-item-image">`,
-                image: 'images/gallerymodal-customproperties.png'
-            },
-            'tool-1-4-modal': {
-                title: 'Tool 1 - Version 4',
-                description: 'This is a detailed description of Tool 1 Version 4. Here you can include information about the latest features, user interface improvements, and technical optimizations.',
-                image: 'images/tool-1-4.jpg'
-            },
-            'tool-1-5-modal': {
-                title: 'Tool 1 - Version 5',
-                description: 'This is a detailed description of Tool 1 Version 5. Here you can include information about the most recent updates, new functionality, and user experience enhancements.',
-                image: 'images/tool-1-5.jpg'
-            },
-            'tool-1-6-modal': {
-                title: 'Tool 1 - Version 6',
-                description: 'This is a detailed description of Tool 1 Version 6. Here you can include information about the final version, lessons learned, and overall project impact.',
-                image: 'images/tool-1-6.jpg'
-            }
-        };
-
-        // Add click event to gallery items in Projects Gallery
-        document.querySelectorAll('.projects-gallery .gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const modalId = this.getAttribute('data-modal');
-                const data = modalData[modalId];
-                
-                if (data) {
-                    modalTitle.textContent = data.title;
-                    modalDescription.innerHTML = data.description;
-                    modalImage.src = data.image;
-                    modalImage.alt = data.title;
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-
-        // Add click event to highlight projects for navigation to dedicated pages, but skip anchor tags
-        document.querySelectorAll('.highlight-projects .gallery-item').forEach(item => {
-            // Only attach click handler if item does NOT have an href
-            if (!item.hasAttribute('href')) {
-                item.addEventListener('click', function() {
-                    const projectId = this.getAttribute('data-project');
-                    if (projectId) {
-                        alert(`This would navigate to ${projectId}.html - dedicated page for this project`);
-                    }
-                });
-            }
-        });
-
-        // Close modal functionality
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Fade-in gallery items as they enter viewport
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-              setTimeout(() => {
-                entry.target.classList.add('visible');
-              }, index * 100); // Staggered timing
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
-
-        document.querySelectorAll('.gallery-item').forEach(item => {
-          observer.observe(item);
-        });
-    </script>
 </body>
 </html>
