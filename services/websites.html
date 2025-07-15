@@ -88,6 +88,27 @@
             font-size:14px;
         }
 
+        /* Custom list-style for .package-card and .service-card lists */
+        .package-card li,
+        .service-card li {
+            list-style: none;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .package-card li::before,
+        .service-card li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            background-image: url('images/icon-list-check.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
         /* ===== LAYOUT CONTAINER ===== */
         .container {
             max-width: var(--max-width);
@@ -137,7 +158,7 @@
         .hero {
             position: relative;
             padding: 4rem 0;
-            background: url('images/pattern-herobg.svg');
+            background: url('../images/pattern-herobg.svg');
             background-repeat: repeat;
             background-size: 80px 80px;
             animation: bgMoveUpDiagonal 4s linear infinite;
@@ -167,13 +188,13 @@
         }
 
         /* ===== HERO SECTION ===== */
-        .hero-card {
+        .hero-card-services {
             position: relative;
             z-index: 2;
             background-color: var(--white);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
-            padding: 3rem 3rem 3rem 3rem;
+            padding: 3rem 3rem 0 3rem;
             display: flex;
             align-items: center;
             gap: 3rem;
@@ -181,6 +202,9 @@
             opacity: 0;
             transform: translateY(30px);
             animation: fadeSlideIn 1s ease-out forwards;
+            margin-left:auto;
+            margin-right:auto;
+            max-width:900px;
         }
         @keyframes fadeSlideIn {
           from {
@@ -222,7 +246,7 @@
         }
 
         .hero-description {
-            margin-bottom: 2rem;
+            margin-bottom:1rem;
         }
 
         .hero-actions {
@@ -587,10 +611,11 @@
                 padding-bottom: 1.5rem;
             }
 
-            .hero-card {
+            .hero-card-services {
                 flex-direction: column;
                 text-align: center;
                 padding: 1rem;
+                
             }
 
             .hero-image-wrapper {
@@ -766,7 +791,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                  <a href="index.html">
+                  <a href="../index.html">
                     <img src="../images/logo-vulpine.svg" class="logo" alt="Vulpine Logo">
                   </a>
                 </div>
@@ -780,7 +805,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-card">
+            <div class="hero-card-services">
                 <div class="hero-image-wrapper">
                     <div class="hero-image">
                         <img src="images/hero-zac.png" alt="Zachary Cortinovis">
@@ -789,7 +814,7 @@
                 <div class="hero-content">
                     <h1 class="hero-title">I build effective and affordable websites for small businesses.</h1>
                     <p class="hero-description">
-                        My website designs educate your audience and build trust with potential customers. 
+                        My designs educate your audience and build trust with potential customers. 
                     </p>
                     <div class="hero-actions">
                         <a href="contact.html" class="contact-btn email">Let's Chat</a>
@@ -804,7 +829,7 @@
     <section class="section experience">
         <div class="container">
             <div class="experience-content">
-                <h2 class="section-title">Free Consultations</h1>
+                <h3 class="section-title">Additional Services Available - Free Consultations</h3>
             
             </div>
         </div>
@@ -850,7 +875,7 @@
     <section class="section site-packages">
       <div class="container">
         <h2 class="section-title">Let’s talk site packages.</h2>
-        <p style="text-align:center; margin-bottom: 2rem;">Find the right package for your requirements. Consultations are free.</p>
+        <p style="text-align:center; margin-bottom: 2rem;">Find the right package .</p>
         <div class="package-container">
           <div class="package-card">
             <h3 style="color: var(--primary-color);">Landing Page</h3>

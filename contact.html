@@ -76,6 +76,10 @@
             margin-bottom: 1rem;
         }
 
+        label {
+            font-size:1rem;
+        }
+
         /* ===== LAYOUT CONTAINER ===== */
         .container {
             max-width: var(--max-width);
@@ -243,6 +247,7 @@
             text-align: center;
             margin-bottom: 0;
         }
+
 
         /* Add extra margin below the submit button in the contact form */
         #contact-form .view-portfolio-btn {
@@ -608,10 +613,10 @@
 
             .hero-title {
                 font-size: 2.5rem;
-                margin-top: -2rem;
+                margin-top: -1rem;
                 margin-bottom: 0rem;
             }
-
+            
             .contact-buttons {
                 flex-direction: row;
                 justify-content: center;
@@ -667,6 +672,19 @@
             h2 {
                 font-size: 1.5rem;
             }
+
+            /* --- Responsive Contact Form and Hero Card --- */
+            #contact-form {
+                width: 100%;
+            }
+
+            .hero-card {
+                width: 100%;
+                padding: 1rem;
+            }
+            label {
+                font-size: 0.75rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -704,6 +722,22 @@
         input[type="checkbox"]:checked {
             accent-color: var(--primary-color);
         }
+
+        /* ===== NAME INPUTS FLEX GROUP ===== */
+        .name-inputs {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .name-inputs input {
+            flex: 1 1 100%;
+        }
+
+        @media (min-width: 481px) {
+            .name-inputs input {
+                flex: 1 1 45%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -737,7 +771,7 @@
                     <p class="hero-subtitle">Let's see what I can do for your business.</p>
                     <div class="hero-actions">
                         <form id="contact-form" class="contact-form">
-                            <div style="display: flex; gap: 1rem;">
+                            <div class="name-inputs">
                                 <input type="text" name="firstName" placeholder="First Name" required style="flex: 1; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
                                 <input type="text" name="lastName" placeholder="Last Name" required style="flex: 1; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
                             </div>
@@ -789,9 +823,9 @@
             <div class="footer-content">
                 <div class="footer-logo"><img src="images/logo-vulpine-white.svg" class="logo"></div>
                 <nav class="footer-nav">
-                    <a href="#home">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="#contact">Contact</a>
-                    <a href="#landing-pages">Landing Pages</a>
+                    <a href="services/websites.html">Services</a>
                 </nav>
             </div>
         </div>
