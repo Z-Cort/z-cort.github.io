@@ -7,11 +7,17 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon-vulpine.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kanit:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        .divider-line {
+            margin-top:0px;
+            margin-bottom:1rem;
+            border: none;
+            border-top: 1px solid var(--gray-300);
+        }
         /* ===== CSS VARIABLES ===== */
         :root {
             --primary-color: #ED2000;
             --secondary-color: #1A0300;
-            --text-dark: #1A0300;
+            --text-dark: #342C2B;
             --text-medium: #5C4F4D;
             --text-light: #718096;
             --background-light: #F7FAFC;
@@ -74,6 +80,12 @@
         p {
             color: var(--text-medium);
             margin-bottom: 1rem;
+            
+        }
+        li {
+            color: var(--text-medium);
+            margin-bottom: 0.5rem;
+            font-size:14px;
         }
 
         /* ===== LAYOUT CONTAINER ===== */
@@ -680,6 +692,58 @@
             }
         }
 
+        /* ===== PACKAGE & SERVICE CARD STYLES ===== */
+        .price-text {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--text-medium);
+            margin-bottom:0;
+            font-size:2.2rem;
+            line-height:1.5rem;
+        }
+        .price-subtitle {
+            font-size: 14px;
+            margin-bottom: 0px;
+            line-height:2.5rem;
+        }
+        .package-card,
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .offer-box {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .package-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .offer-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         /* ===== TABLET RESPONSIVE ===== */
         @media (min-width: 769px) and (max-width: 1199px) {
             .container {
@@ -740,8 +804,8 @@
     <section class="section experience">
         <div class="container">
             <div class="experience-content">
-                <h1 class="section-title">Free Consultations</h1>
-                <p>Free Consultations
+                <h2 class="section-title">Free Consultations</h1>
+            
             </div>
         </div>
     </section>
@@ -749,32 +813,32 @@
     <!-- What I Can Offer Section -->
     <section class="section offer">
       <div class="container">
-        <h2 class="section-title">Here's what I can offer:</h2>
-        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-          <div class="offer-box" style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+        <h2 class="section-title" style="margin-bottom:2rem;">Here's what I can offer:</h2>
+        <div class="offer-container">
+          <div class="offer-box">
             <div class="offer-image" style="text-align:center;">
               <img src="images/timer.svg" alt="speed" style="height: 120px;">
             </div>
             <div>
-              <h3 style="color: var(--primary-color); text-align: center;">Speed</h3>
+              <h2 style="color: var(--text-dark); text-align: center;">Speed</h2>
               <p>Every second counts – the quicker we get your website up, the quicker we can make an impact.</p>
             </div>
           </div>
-          <div class="offer-box" style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+          <div class="offer-box">
             <div class="offer-image" style="text-align:center;">
               <img src="images/thumbs-up.svg" alt="Offer Icon" style="height: 120px;">
             </div>
             <div>
-              <h3 style="color: var(--primary-color); text-align: center;">Quality</h3>
+              <h2 style="color: var(--text-dark); text-align: center;">Quality</h2>
               <p>A quality website builds instant trust. It’s my job to make sure yours looks professional.</p>
             </div>
           </div>
-          <div class="offer-box" style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+          <div class="offer-box">
             <div class="offer-image" style="text-align:center;">
               <img src="images/tools.svg" alt="Offer Icon" style="height: 120px;">
             </div>
             <div>
-              <h3 style="color: var(--primary-color); text-align: center;">Flexibility</h3>
+              <h2 style="color: var(--text-dark); text-align: center;">Flexibility</h2>
               <p>I research and craft designs tailored to your industry to increase brand perception.</p>
             </div>
           </div>
@@ -787,10 +851,12 @@
       <div class="container">
         <h2 class="section-title">Let’s talk site packages.</h2>
         <p style="text-align:center; margin-bottom: 2rem;">Find the right package for your requirements. Consultations are free.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-          <div style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+        <div class="package-container">
+          <div class="package-card">
             <h3 style="color: var(--primary-color);">Landing Page</h3>
-            <h2 style="font-family: 'Bebas Neue', sans-serif;">$200-$500</h2>
+            <h2 class="price-text">$200-$500</h2>
+            <p class="price-subtitle">Price Subtitle</p>
+            <hr class="divider-line">
             <ul>
               <li>One Page Landing Page</li>
               <li>Custom Layout and Design</li>
@@ -799,9 +865,11 @@
               <li>3 Revisions</li>
             </ul>
           </div>
-          <div style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+          <div class="package-card">
             <h3 style="color: var(--primary-color);">Small Website</h3>
-            <h2 style="font-family: 'Bebas Neue', sans-serif;">$1,000</h2>
+            <h2 class="price-text">$1,000</h2>
+            <p class="price-subtitle">Price Subtitle</p>
+            <hr class="divider-line">
             <ul>
               <li>Everything from Landing Pages</li>
               <li>Multiple Webpages</li>
@@ -810,9 +878,11 @@
               <li>Search Engine Optimization</li>
             </ul>
           </div>
-          <div style="flex: 1; min-width: 250px; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+          <div class="package-card">
             <h3 style="color: var(--primary-color);">Full Website</h3>
-            <h2 style="font-family: 'Bebas Neue', sans-serif;">CUSTOM</h2>
+            <h2 class="price-text">CUSTOM</h2>
+            <p class="price-subtitle">Price Subtitle</p>
+            <hr class="divider-line">
             <ul>
               <li>Stores, Platforms</li>
               <li>Multiple Pages</li>
@@ -828,50 +898,62 @@
       <div class="container">
         <h2 class="section-title">Additional Design Services</h2>
         <p style="text-align:center; margin-bottom: 2rem;">In case your needs extend beyond webpages.</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+        <div class="service-container">
+          <div class="service-card">
             <h3 style="color: var(--primary-color);">Brand Package</h3>
-            <h2 style="font-family: 'Bebas Neue', sans-serif;">$300</h2>
+            <h2 class="price-text">$300</h2>
+            <p class="price-subtitle">Price Subtitle</p>
+            <hr class="divider-line">
             <ul>
               <li>Brand Voice, Colors, and Fonts</li>
               <li>Strategic Market Research Report</li>
             </ul>
           </div>
-          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+          <div class="service-card">
             <h3 style="color: var(--primary-color);">Brand Printouts</h3>
-            <h2 style="font-family: 'Bebas Neue', sans-serif;">$100</h2>
+            <h2 class="price-text">$100</h2>
+            <p class="price-subtitle">Price Subtitle</p>
+            <hr class="divider-line">
             <ul>
               <li>Business Cards, Posters, Handouts</li>
               <li>Signs, Merchandise</li>
             </ul>
           </div>
-          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+          <div class="service-card">
             <h3 style="color: var(--primary-color);">Logo Design</h3>
-            <h2 style="font-family: 'Bebas Neue', sans-serif;">CUSTOM</h2>
+            <h2 class="price-text">CUSTOM</h2>
+            <p class="price-subtitle">Price Subtitle</p>
+            <hr class="divider-line">
             <ul>
               <li>Powerful Brand Logo</li>
               <li>Multipurpose Versions</li>
             </ul>
           </div>
-          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+          <div class="service-card">
             <h3 style="color: var(--primary-color);">Ad Campaign</h3>
-            <h2 style="font-family: 'Bebas Neue', sans-serif;">$200</h2>
+            <h2 class="price-text">$200</h2>
+            <p class="price-subtitle">Price Subtitle</p>
+            <hr class="divider-line">
             <ul>
               <li>Online or Print Ad Designs</li>
               <li>Setting you up for advertising</li>
             </ul>
           </div>
-          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+          <div class="service-card">
             <h3 style="color: var(--primary-color);">Ongoing Ads</h3>
-            <h2 style="font-family: 'Bebas Neue', sans-serif;">$200 /month</h2>
+            <h2 class="price-text">$200 /month</h2>
+            <p class="price-subtitle">Price Subtitle</p>
+            <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--gray-300);">
             <ul>
               <li>Features</li>
               <li>Features</li>
             </ul>
           </div>
-          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+          <div class="service-card">
             <h3 style="color: var(--primary-color);">Photography</h3>
-            <h2 style="font-family: 'Bebas Neue', sans-serif;">$50</h2>
+            <h2 class="price-text">$50</h2>
+            <p class="price-subtitle">Price Subtitle</p>
+            <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--gray-300);">
             <ul>
               <li>Business Headshots</li>
               <li>Website Photos</li>
@@ -885,11 +967,11 @@
     <section class="section cta" id="contact">
         <div class="container">
             <div class="cta-content">
-                <h3>You've made it this far...</h3>
-                <h2>That means this landing page works!</h2>
+                <h3 style="margin-bottom:0px;">You've made it this far...</h3>
+                <h2 style="margin-bottom:0.25rem;">That means this landing page works!</h2>
                 <p>Now let's make one for <b>your</b> customers.</p>
                 <div class="contact-buttons">
-                        <a href="contact.html" class="contact-btn email" style="">Let's Chat</a>
+                        <a href="../contact.html" class="contact-btn email">Let's Chat</a>
                     </div>
             </div>
         </div>
@@ -919,7 +1001,5 @@
             <p id="modal-description" class="modal-description"></p>
         </div>
     </div>
-
-    <script>
 </body>
 </html>
