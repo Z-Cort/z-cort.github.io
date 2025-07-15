@@ -107,6 +107,11 @@ strong {
     padding: 0 var(--padding-mobile);
 }
 
+/* ===== SMOOTH SCROLLING ===== */
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
 /* ===== HEADER ===== */
 .header {
     background-color: var(--white);
