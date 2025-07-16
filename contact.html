@@ -134,6 +134,7 @@
             background-repeat: repeat;
             background-size: 80px 80px;
             animation: bgMoveUpDiagonal 4s linear infinite;
+            
         }
 
         @keyframes bgMoveUpDiagonal {
@@ -178,6 +179,7 @@
             max-width: 100%;
             margin-left: auto;
             margin-right: auto;
+            
         }
         @keyframes fadeSlideIn {
           from {
@@ -199,8 +201,7 @@
             width:400px;
             height: 100%;
             object-fit:fill;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            background-color: var(--gray-300);
+            background-color: var(--gray-00);
             margin: 0;
             padding: 0;
             border: none;
@@ -269,7 +270,7 @@
 
         .contact-btn {
             flex: 1;
-            padding: 0.75rem 1rem;
+            padding: 0.6rem 1rem;
             border: 2px solid var(--gray-300);
             border-radius: var(--border-radius);
             background-color: var(--white);
@@ -749,7 +750,7 @@
             <div class="header-content">
                 <div class="logo">
                   <a href="index.html">
-                    <img src="images/logo-vulpine.svg" class="logo" alt="Vulpine Logo">
+                    <img src="images/logo-zacharycortinovis.svg" class="logo" alt="Zac's Logo">
                   </a>
                 </div>
                 <nav class="nav">
@@ -807,14 +808,12 @@
         </div>
     </section>
 
-    <!-- Professional Experience -->
+    <!-- Contact Info Section -->
     <section class="section experience">
         <div class="container">
             <div class="experience-content">
-                <h1 class="section-title">Contact Info</h1>
-                <p>I began my career in sales, and realized it wasn't for me. Feeling held back by the tools I was provided, I wanted to be the person creating solutions that led teammates to success.</p>
-                <p>I successfully made a career change and began working at Venditit!</p>
-                <a href="#highlight-projects" class="view-portfolio-btn">View Portfolio</a>
+                <h2 class="section-title">Contact Info</h1>
+                <p>If you'd like to get in contact with me, or would just want to say hi, shoot me an email at <br><b style="color:var(--primary-color)">zacharycortinovis@gmail.com</b></p>
             </div>
         </div>
     </section>
@@ -845,122 +844,7 @@
         </div>
     </div>
 
-    <script>
-        // Modal functionality
-        const modal = document.getElementById('project-modal');
-        const modalImage = document.getElementById('modal-image');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDescription = document.getElementById('modal-description');
-        const closeBtn = document.querySelector('.modal-close');
-
-        // Sample modal data
-        const modalData = {
-            'vulpine-design-modal': {
-                title: 'Vulpine Design',
-                description: 'This is a detailed description of the Vulpine Design project. Here you can include information about the design process, challenges faced, solutions implemented, and the final outcome. You can also discuss the tools and technologies used, the timeline, and any specific requirements or constraints that influenced the design decisions.',
-                image: 'images/gallerymodal-vulpine.svg'
-            },
-            'tool-1-modal': {
-                title: 'Vendidit Handout Ads',
-                description: `
-                <p>These ads were designed fully in Figma with original graphics. The main three colors were derived from the 0%, 50%, and 100% stops of the Vendidit Checkmark Gradient.</p>
-                <p>The bottom two cards were designed to bring customers into our online auction platform. Emphasis was made on our unique auction features that separate us from other online auction houses. Our user testing revealed that “90% off retail” had the strongest conversion, so it was added as the first feature. I personally found the proxy bidding feature the most helpful.</p> 
-                <p>The top two cards were later designed when we began selling pallets. We determined a segment of customers looking for pallets to begin their own individual resale business, so we needed an easy handout that got them to the website. The pallet graphic was the most important indicator, but I decided add a little artistic touch on the back side with the warehouse, road, and QR highway ad.</p>
-                `,
-                image: 'images/gallerythumbnail-vendidit-businesscards.png'
-            },
-            'tool-1-3-modal': {
-                title: 'title',
-                description: '',
-                image: 'images/gallerythumbnail-saltandlightsalon.png'
-            },
-            'tool-1-4-modal': {
-                title: 'Tool 1 - Version 4',
-                description: 'This is a detailed description of Tool 1 Version 4. Here you can include information about the latest features, user interface improvements, and technical optimizations.',
-                image: 'images/tool-1-4.jpg'
-            },
-            'tool-1-5-modal': {
-                title: 'Tool 1 - Version 5',
-                description: 'This is a detailed description of Tool 1 Version 5. Here you can include information about the most recent updates, new functionality, and user experience enhancements.',
-                image: 'images/tool-1-5.jpg'
-            },
-            'tool-1-6-modal': {
-                title: 'Tool 1 - Version 6',
-                description: 'This is a detailed description of Tool 1 Version 6. Here you can include information about the final version, lessons learned, and overall project impact.',
-                image: 'images/tool-1-6.jpg'
-            }
-        };
-
-        // Add click event to gallery items in Projects Gallery
-        document.querySelectorAll('.projects-gallery .gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const modalId = this.getAttribute('data-modal');
-                const data = modalData[modalId];
-                
-                if (data) {
-                    modalTitle.textContent = data.title;
-                    modalDescription.innerHTML = data.description;
-                    modalImage.src = data.image;
-                    modalImage.alt = data.title;
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-
-        // Add click event to highlight projects for navigation to dedicated pages, but skip anchor tags
-        document.querySelectorAll('.highlight-projects .gallery-item').forEach(item => {
-            // Only attach click handler if item does NOT have an href
-            if (!item.hasAttribute('href')) {
-                item.addEventListener('click', function() {
-                    const projectId = this.getAttribute('data-project');
-                    if (projectId) {
-                        alert(`This would navigate to ${projectId}.html - dedicated page for this project`);
-                    }
-                });
-            }
-        });
-
-        // Close modal functionality
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Fade-in gallery items as they enter viewport
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-              setTimeout(() => {
-                entry.target.classList.add('visible');
-              }, index * 100); // Staggered timing
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
-
-        document.querySelectorAll('.gallery-item').forEach(item => {
-          observer.observe(item);
-        });
-    </script>
+  
     <script>
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
