@@ -654,7 +654,7 @@
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
         }
 
@@ -823,6 +823,15 @@
                 Other content I've worked on over the years with some details over the process.
             </p>
             <div class="gallery">
+                <div class="gallery-item" data-modal="dejoria-stephens">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-dejoriastephens.png" alt="Tool 1">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Dejoria Stephens Website</h3>
+                        <p class="gallery-item-description">Built for a client who lost the original files for their site.</p>
+                    </div>
+                </div>
                 <div class="gallery-item" data-modal="vendidit-social-media-login">
                     <div class="gallery-item-image">
                         <img src="images/gallerythumbnail-socialmedialogin.png" alt="Vulpine Design">
@@ -830,15 +839,6 @@
                     <div class="gallery-item-content">
                         <h3 class="gallery-item-title">Vendidit Social Media Login</h3>
                         <p class="gallery-item-description">Adding social media options to the Vendidit buyer portal signup/login screen.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-modal="tool-1-modal">
-                    <div class="gallery-item-image">
-                        <img src="images/gallerythumbnail-vendidit-businesscards.png" alt="vendidit business cards">
-                    </div>
-                    <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Vendidit Business Card Ads</h3>
-                        <p class="gallery-item-description">Business card styled handout ads to increase conversion.</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-modal="tool-1-3-modal">
@@ -859,13 +859,13 @@
                         <p class="gallery-item-description">A collection of all the original graphics I've created for Vendidit.</p>
                     </div>
                 </div>
-                <div class="gallery-item" data-modal="tool-1-5-modal">
+                <div class="gallery-item" data-modal="tool-1-modal">
                     <div class="gallery-item-image">
-                        <img src="images/tool-1-5.jpg" alt="Tool 1">
+                        <img src="images/gallerythumbnail-vendidit-businesscards.png" alt="vendidit business cards">
                     </div>
                     <div class="gallery-item-content">
-                        <h3 class="gallery-item-title">Tool 1</h3>
-                        <p class="gallery-item-description">This is a description of the tool above.</p>
+                        <h3 class="gallery-item-title">Vendidit Business Card Ads</h3>
+                        <p class="gallery-item-description">Business card styled handout ads to increase conversion.</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-modal="tool-1-6-modal">
@@ -964,15 +964,21 @@
                 `,
                 image: 'images/gallerymodal-vendidit-assets.png'
             },
-            'tool-1-5-modal': {
-                title: 'Tool 1 - Version 5',
-                description: 'This is a detailed description of Tool 1 Version 5. Here you can include information about the most recent updates, new functionality, and user experience enhancements.',
-                image: 'images/tool-1-5.jpg'
+            'dejoria-stephens': {
+                title: 'Dejoria Stephens Website',
+                description: `
+                <p>My client needed their website remade since they lost access to the original files.</p>
+                <p>I designed the website in Figma and built it using HTML/CSS, retaining a similar appearance to the original version. I also fixed issues with the previous version, including missing links, style choices, and poor photos.</p>
+                <p>The website is currently live at <a href="https://www.dejoriastephens.com/"">dejoriastephens.com</a> and am currently in charge of maintaining and providing updates for new content.</p>
+                <img src="images/gallerymodal-dejoriastephens2.png" style="max-width:400px">
+                <img src="images/gallerymodal-dejoriastephens3.png" style="max-width:400px">
+                `,
+                image: 'images/gallerymodal-dejoriastephens1.png'
             },
             'tool-1-6-modal': {
                 title: 'Tool 1 - Version 6',
                 description: 'This is a detailed description of Tool 1 Version 6. Here you can include information about the final version, lessons learned, and overall project impact.',
-                image: 'images/tool-1-6.jpg'
+                image: 'images/'
             }
         };
 

@@ -238,6 +238,10 @@
             margin-bottom: 0.5rem;
         }
 
+        .hero-content {
+            background-color:var(--white);
+        }
+
         .hero-subtitle {
             font-size: 1rem;
             font-weight:600;
@@ -441,7 +445,7 @@
 
         /* ===== CTA SECTION ===== */
         .cta {
-            background-color: var(--background-light);
+            background-color: var(--white);
             text-align: center;
         }
 
@@ -634,15 +638,16 @@
 
             .hero-image img {
                 width: 100%;
-                height: auto;
+                height: 60%;
                 display: block;
                 border-radius: var(--border-radius) var(--border-radius) 0 0;
             }
 
             .hero-title {
                 font-size: 2.5rem;
-                margin-top: -2rem;
-                margin-bottom: 0rem;
+                margin-bottom: 1rem;
+                line-height: 2.5rem;
+                padding-top:1rem;
             }
 
             .contact-buttons {
@@ -698,7 +703,7 @@
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
         }
 
@@ -770,6 +775,49 @@
             justify-content: center;
         }
 
+        /* ===== NUMBERED SECTION (How to get started) ===== */
+        .numbered-section {
+            max-width: 800px;
+            margin: 96px auto;
+            padding: 0 var(--padding-mobile);
+            background-color: (--white);
+        }
+
+        .numbered-step {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .step-content h3 {
+            margin: 0;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .step-content p {
+            margin-top: 0.5rem;
+            color: var(--text-medium);
+        }
+
+        .numbered-step a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            
+
+            .numbered-step img {
+                margin-bottom: 1rem;
+            }
+        }
+
         /* ===== TABLET RESPONSIVE ===== */
         @media (min-width: 769px) and (max-width: 1199px) {
             .container {
@@ -821,17 +869,8 @@
                         <a href="contact.html" class="contact-btn email">Let's Chat</a>
                         <a href="#highlight-projects" class="view-portfolio-btn">View Portfolio</a>
                     </div>
+                    <p style="margin-top:1rem; color:var(--text-light); font-size:0.75rem;"><em>Free Consultations - Additional Services Available</em></p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Experience -->
-    <section class="section experience">
-        <div class="container">
-            <div class="experience-content">
-                <h3 class="section-title">Additional Services Available - Free Consultations</h3>
-            
             </div>
         </div>
     </section>
@@ -839,7 +878,7 @@
     <!-- What I Can Offer Section -->
     <section class="section offer">
       <div class="container">
-        <h2 class="section-title" style="margin-bottom:2rem;">Here's what I can offer:</h2>
+        <h2 class="section-title" style="margin-bottom:2rem;">Here's what I can offer you:</h2>
         <div class="offer-container">
           <div class="offer-box">
             <div class="offer-image" style="text-align:center;">
@@ -984,6 +1023,43 @@
               <li>Business Headshots</li>
               <li>Website Photos</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to get started Section -->
+    <section class="section numbered-section">
+      <div class="container">
+        <h2 class="section-title" style="margin-bottom: 2rem;"">Getting started is easy. Here's How:</h2>
+
+        <div class="numbered-step">
+          <img src="images/icon-number-1.png" alt="Step 1" style="width:64px;height:64px;">
+          <div class="step-content">
+            <h3>Get in Contact</h3>
+            <p>
+              Head over to the <a href="../contact.html">contact page</a>  and fill out the form. I’ll then reach out shortly and we’ll set up a time to discuss your project in detail.
+            </p>
+          </div>
+        </div>
+
+        <div class="numbered-step">
+          <img src="images/icon-number-2.png" alt="Step 2" style="width:64px;height:64px;">
+          <div class="step-content">
+            <h3>Free Consultation</h3>
+            <p>
+              You’ll show me what you’re trying to build, I’ll come up with a game-plan, and we’ll figure out the pricing. I require half upfront before beginning work.
+            </p>
+          </div>
+        </div>
+
+        <div class="numbered-step">
+          <img src="images/icon-number-3.png" alt="Step 3" style="width:64px;height:64px;">
+          <div class="step-content">
+            <h3>Start Building</h3>
+            <p>
+              I will start building and keep you updated every step of the way. I’ll show you progress as milestones are achieved and perform revisions as necessary.
+            </p>
           </div>
         </div>
       </div>
