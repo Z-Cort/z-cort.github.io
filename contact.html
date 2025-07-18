@@ -194,8 +194,7 @@
         }
 
         .hero-image {
-            flex: 0 0 300px;
-            margin: -rem 0 -3rem -3rem;
+            width: 100%;
         }
 
         .hero-image img {
@@ -208,6 +207,12 @@
             border: none;
             display: block;
         }
+
+        .hero-image-wrapper {
+            margin: 0;
+        }
+
+        
         .hero-content {
             min-width:40px;
         }
@@ -742,6 +747,11 @@
                 flex: 1 1 45%;
             }
         }
+        @media (max-width: 768px) {
+            .hero-image img {
+                content: url('images/header-zacpic.png');
+            }
+        }
     </style>
     <!-- Favicon -->
 <link rel="icon" href="images/favicon-zacharycortinovis.png" type="image/png" sizes="512x512">
@@ -783,7 +793,7 @@
             <div class="hero-card">
                 <div class="hero-image-wrapper">
                     <div class="hero-image">
-                        <img src="images/header-zacpic.png" alt="Zachary Cortinovis">
+                        <img src="images/header-zacpic-thin.png" alt="Zachary Cortinovis">
                     </div>
                 </div>
                 <div class="hero-content">
