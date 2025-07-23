@@ -297,11 +297,27 @@
         .experience {
             background-color: var(--white);
         }
+        
+        .experience-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
         .experience-content {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
+        }
+
+        .experience-summary {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-summary p {
+            font-size: 1.5rem;
+            color:var(--text-light)
         }
 
         /* ===== GALLERY STYLES ===== */
@@ -735,7 +751,7 @@
                     <h1 class="hero-title">Zachary Cortinovis</h1>
                     <p class="hero-subtitle">UX Designer | Product Manager</p>
                     <p class="hero-description">
-                        Graphics design has been a lifelong passion of mine. I enjoy finding solutions with my designs, and seeing them lead to the success of my clients. 
+                        Graphics design has been a lifelong passion of mine. I enjoy finding solutions with my designs and watching them lead to the success of my clients. 
                     </p>
                     <div class="hero-actions">
                         <a href="#highlight-projects" class="view-portfolio-btn">View Portfolio</a>
@@ -753,12 +769,20 @@
     <!-- Professional Experience -->
     <section class="section experience">
         <div class="container">
-            <div class="experience-content">
-                <h1 class="section-title">Professional Summary</h1>
-                <p>I grew up using computers and playing with software, learning new tricks by completing online tutorials. Drawing had also been a hobby of mine, using a pen tablet to make it digital.</p>
-                <p>After graduating from Texas State University with a Bachelors in Business Management, I began my career with loan sales, quickly realizing it wasn't for me. Feeling held back by the poorly designed tools I was provided, I wanted to be the person creating these tools that led teams to success.</p>
-                <p>I spent years since studying UX and modern design principles with the purpose of solving problems and successfully made a career change to a Product Manager at Vendidit.</p>
-                <p>Now I'm in charge of the official website, brand design, grooming product features and UI, creating marketing material, and bridge the gap between our marketing and product development departments.</p>
+            <h1 class="section-title">Professional Summary</h1>
+            <div class="experience-columns">
+                <div class="experience-summary">
+                    <p>With three years in the industry and a lifelong passion for design, I have a sharp eye for what resonates.</p>
+                    <p>I combine strategy with design to deliver meaningful content that gets results.</p>
+                    <p>My designs convey the things people want: style and efficiency. By iterating upon the latest design trends and technology, my designs stay fresh. </p>
+                </div>
+                <div class="experience-content">
+                    <p>While living overseas as a kid, I grew up drawing and playing with computers, learning new software by completing online tutorials. Character design was my favorite artform.</p>
+                    <p>I graduated from Texas State University with a Bachelors in Business Management. Unsure of what path to take, I began my career at a loan company. After dealing with poorly designed software and marketing materials, I decided I wanted to be the person doing the designing.</p>
+                    <p><b>I believed I had what it takes to bring success to my teammates.</b></p>
+                    <p>I spent years studying UX and modern design principles with the purpose of solving problems. I accomplished my goals and successfully made a career change to a Product Manager at Vendidit.</p>
+                    <p>Now I'm in charge of our official website, brand design, UI design, grooming product features, creating marketing material, and bridging the gaps between our marketing and product development departments.</p>
+                </div>
             </div>
         </div>
     </section>
