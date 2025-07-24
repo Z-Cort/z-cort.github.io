@@ -76,6 +76,7 @@
             color: var(--text-medium);
             margin-bottom: 1rem;
             font-size:1rem;
+            
         }
 
         /* ===== LAYOUT CONTAINER ===== */
@@ -299,7 +300,7 @@
         }
         
         .experience-columns {
-            display: grid;
+            display: flex;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
@@ -317,7 +318,8 @@
 
         .experience-summary p {
             font-size: 1.5rem;
-            color:var(--text-light)
+            color:var(--primary-color);
+            font-family: 'Kanit', sans-serif;
         }
 
         /* ===== GALLERY STYLES ===== */
@@ -596,6 +598,10 @@
                 width: calc(100% + 2rem);
             }
 
+            .experience-columns {
+            display: grid;
+        }
+
             .hero-image {
                 width: 100%;
                 margin: 0 auto;
@@ -703,6 +709,21 @@
                 padding: 2.5rem;
             }
         }
+
+        /* ===== PROFESSIONAL SUMMARY GRID DIVIDER FOR DESKTOP ===== */
+        @media (min-width: 768px) {
+          .experience-columns {
+            display: flex;
+            gap: 2rem;
+          }
+          .experience-summary {
+            border-right: 1px solid var(--gray-400);
+            padding-right: 2.6rem;
+          }
+          .experience-content {
+            padding-left: 2rem;
+          }
+        }
     </style>
 <!-- Favicon -->
 <link rel="icon" href="images/favicon-zacharycortinovis.png" type="image/png" sizes="512x512">
@@ -772,16 +793,14 @@
             <h1 class="section-title">Professional Summary</h1>
             <div class="experience-columns">
                 <div class="experience-summary">
-                    <p>With three years in the industry and a lifelong passion for design, I have a sharp eye for what resonates.</p>
+                    <p>With three years working in the industry and a lifelong passion for design, I have a sharp eye for what resonates with viewers.</p>
                     <p>I combine strategy with design to deliver meaningful content that gets results.</p>
-                    <p>My designs convey the things people want: style and efficiency. By iterating upon the latest design trends and technology, my designs stay fresh. </p>
                 </div>
                 <div class="experience-content">
-                    <p>While living overseas as a kid, I grew up drawing and playing with computers, learning new software by completing online tutorials. Character design was my favorite artform.</p>
                     <p>I graduated from Texas State University with a Bachelors in Business Management. Unsure of what path to take, I began my career at a loan company. After dealing with poorly designed software and marketing materials, I decided I wanted to be the person doing the designing.</p>
                     <p><b>I believed I had what it takes to bring success to my teammates.</b></p>
-                    <p>I spent years studying UX and modern design principles with the purpose of solving problems. I accomplished my goals and successfully made a career change to a Product Manager at Vendidit.</p>
-                    <p>Now I'm in charge of our official website, brand design, UI design, grooming product features, creating marketing material, and bridging the gaps between our marketing and product development departments.</p>
+                    <p>So I spent years studying UX and modern design principles with the purpose of solving problems. I accomplished my goals and successfully made a career change to a Product Manager at Vendidit.</p>
+                    <p>Now I'm in charge of our official website, brand design, UI Design, refining new product features, and creating marketing material. My role bridges the gaps between the needs of our marketing department and product development teams.</p>
                 </div>
             </div>
         </div>
