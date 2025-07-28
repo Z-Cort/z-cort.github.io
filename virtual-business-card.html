@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zachary Cortinovis - Designer | Product Manager</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon-vulpine.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kanit:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary-color: #ED2000;
+            --secondary-color: #342C2B;
+            --tertiary-color: #FF6E4A;
+            --text-dark: #1A0300;
+            --text-medium: #5C4F4D;
+            --text-light: #718096;
+            --background-light: #F7FAFC;
+            --white: #FFFFFF;
+            --gray-100: #F7FAFC;
+            --gray-200: #EDF2F7;
+            --gray-300: #E2E8F0;
+            --gray-400: #CBD5E0;
+            --max-width: 1200px;
+            --padding-mobile: 20px;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
+            background-color: var(--background-light);
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-family: 'Kanit', sans-serif;
+            line-height: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-medium);
+            margin-bottom: 0.5rem;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        p {
+            color: var(--text-medium);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        label {
+            font-size:1rem;
+        }
+
+        /* ===== LAYOUT CONTAINER ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--padding-mobile);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background-color: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            height: 30px;
+        }
+
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            padding: 4rem 0;
+            background: url('images/pattern-herobg.svg');
+            background-repeat: repeat;
+            background-size: 80px 80px;
+            animation: bgMoveUpDiagonal 4s linear infinite;
+            height:100vh;
+        }
+
+        @keyframes bgMoveUpDiagonal {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -160px -160px;
+            }
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+            border-radius: inherit;
+            /* Four-sided inner shadow vignette using multiple linear gradients */
+            background:
+                
+                linear-gradient(to bottom,rgba(0,0,0,0.14) 0%, rgba(0,0,0,0) 10%),
+                linear-gradient(to top,   rgba(0,0,0,0.14) 0%, rgba(0,0,0,0) 10%);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-card {
+            position: relative;
+            z-index: 2;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            display: block;
+            align-items: center;
+            gap: 2rem;
+            overflow: hidden; /* Ensure nothing spills out */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideIn 1s ease-out forwards;
+            width: fit-content;
+            max-width: 100%;
+            margin: auto;
+            padding: 2rem;
+        }
+        @keyframes fadeSlideIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .hero-image img {
+            display:block;
+            max-width: 200px;
+            object-fit:contain;
+            align-items:center;
+            background-color: var(--gray-00);
+            margin: auto;
+            padding-top:50px;
+            border: none;
+        }
+
+        .hero-image-wrapper {
+            margin: 0;
+        }
+
+        
+        .hero-content {
+            min-width:40px;
+            margin-top: 1rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            font-weight:600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-description {
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .view-portfolio-btn {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .download-contact-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+
+
+        .view-portfolio-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ===== CONTACT BUTTONS ===== */
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .contact-btn {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            background-color: var(--white);
+            color: var(--text-medium);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .contact-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .contact-btn.email {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .contact-btn.email:hover {
+            background-color: #C53030;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        /* Reduce space under section headings by targeting .section-title headings */
+        h1.section-title, h2.section-title {
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== GALLERY ITEM FADE-IN ANIMATION ===== */
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .gallery-item {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
+        }
+
+        .gallery-item.visible {
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item-image {
+            width: 100%;
+            height: 250px;
+            background-color: var(--gray-300);
+            flex-shrink: 0;
+        }
+
+        .gallery-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-item-title {
+            margin-bottom: 0.5rem;
+            min-height: 2.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .gallery-item-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        /* ===== HIGHLIGHT PROJECTS ===== */
+        .highlight-projects {
+            background-color: var(--background-light);
+        }
+
+        /* ===== PROJECTS GALLERY ===== */
+        .projects-gallery {
+            background-color: var(--white);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            background-color: var(--background-light);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .cta-btn {
+            padding: 1rem 2rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            background-color: var(--white);
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .cta-btn.primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .cta-btn.primary:hover {
+            background-color: #C53030;
+        }
+
+        
+
+        /* ===== SMOOTH SCROLLING ===== */
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--padding-mobile);
+            }
+
+            .nav {
+                gap: 1rem;
+            }
+
+            .hero {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .hero-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .hero-image-wrapper {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                margin-top: -1rem;
+                width: calc(100% + 2rem);
+            }
+
+            .hero-image img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: var(--border-radius) var(--border-radius) 0 0;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                margin-top: -1rem;
+                margin-bottom: 0rem;
+            }
+            
+            .contact-buttons {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-item {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+    
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            /* --- Responsive Contact Form and Hero Card --- */
+            label {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .modal-content {
+                margin: 0;
+                border-radius: 0;
+                height: 100vh;
+            }
+        }
+
+        /* ===== TABLET RESPONSIVE ===== */
+        @media (min-width: 769px) and (max-width: 1199px) {
+            .container {
+                padding: 0 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-card {
+                padding: 2.5rem;
+                width:80%
+            }
+        }
+
+        /* ===== CUSTOM CHECKBOX COLOR ===== */
+        input[type="checkbox"]:checked {
+            accent-color: var(--primary-color);
+        }
+
+        /* ===== NAME INPUTS FLEX GROUP ===== */
+        .name-inputs {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .name-inputs input {
+            flex: 1 1 100%;
+        }
+
+        @media (min-width: 481px) {
+            .name-inputs input {
+                flex: 1 1 45%;
+            }
+        }
+    </style>
+    <!-- Favicon -->
+<link rel="icon" href="images/favicon-zacharycortinovis.png" type="image/png" sizes="512x512">
+
+<!-- Open Graph for social sharing -->
+<meta property="og:title" content="Zachary Cortinovis Portfolio">
+<meta property="og:description" content="Creative design and web development services by Zachary Cortinovis.">
+<meta property="og:image" content="https://zacharycortinovis.com/images/favicon-zacharycortinovis.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zachary Cortinovis Portfolio">
+<meta name="twitter:description" content="Creative design and web development services by Zachary Cortinovis.">
+<meta name="twitter:image" content="https://zacharycortinovis.com/images/favicon-zacharycortinovis.png">
+</head>
+<body>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-card">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image">
+                        <img src="websites/images/hero-zac-crop.png">
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Hi there,</h1>
+                    <p class="hero-subtitle">You must have just scanned my NFC card!</p>
+                </div>
+                <div class="hero-actions">
+                <a href="#highlight-projects" class="download-contact-btn">Save Contact</a>
+                <a href="#highlight-projects" class="view-portfolio-btn">Services</a>
+                <a href="#highlight-projects" class="view-portfolio-btn">Portfolio</a>
+                </div>
+        </div>
+        </div>
+    </section>
+
+  
+    
+</body>
+</html>
