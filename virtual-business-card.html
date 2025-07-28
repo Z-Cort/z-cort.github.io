@@ -29,10 +29,16 @@
         }
 
         /* ===== RESET & BASE STYLES ===== */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         a {
@@ -44,6 +50,7 @@
             background-color: var(--background-light);
             color: var(--text-medium);
             line-height: 1.6;
+            overflow-y: auto;
         }
 
         /* ===== TYPOGRAPHY ===== */
@@ -123,7 +130,9 @@
             background-repeat: repeat;
             background-size: 80px 80px;
             animation: bgMoveUpDiagonal 4s linear infinite;
-            height:100vh;
+            height: 100vh;
+            min-height: 100vh;
+            overflow: hidden;
         }
 
         @keyframes bgMoveUpDiagonal {
