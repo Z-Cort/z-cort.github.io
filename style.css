@@ -739,6 +739,33 @@ html {
     color: var(--primary-color);
 }
 
+a.contact-btn:has(img[src*="icon-contact.svg"]) {
+    border-color: #717171;
+}
+
+a.contact-btn:has(img[src*="icon-contact.svg"]):hover {
+    border-color: #5a5a5a;
+}
+
+a.contact-btn[href*="linkedin"] {
+    border-color: #0072B1;
+}
+
+a.contact-btn[href*="linkedin"]:hover {
+    border-color: #005a8f;
+}
+
+a.contact-btn[href*="instagram"] {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+                linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) border-box;
+}
+
+a.contact-btn[href*="instagram"]:hover {
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+                linear-gradient(45deg, #e0852a, #d45a30, #c9223a, #b91f5c, #a8157a) border-box;
+}
+
 .contact-btn.email {
     background-color: var(--primary-color);
     color: var(--white);
@@ -1413,7 +1440,8 @@ input[type="checkbox"]:checked {
 
     .ai-section-image {
         flex: none;
-        width: 100%;
+        width: 50%;
+        margin: 0 auto;
         order: 1;
     }
 
@@ -1514,6 +1542,7 @@ input[type="checkbox"]:checked {
 
     .hero-card-services .hero-title {
         font-size: 2.5rem;
+        line-height: 1.4;
         margin-bottom: 1rem;
         padding-top: 1rem;
     }
@@ -1550,7 +1579,7 @@ input[type="checkbox"]:checked {
     }
 
     .section {
-        padding: 2rem 0;
+        padding: 5rem 0;
     }
 
     .modal-content {
