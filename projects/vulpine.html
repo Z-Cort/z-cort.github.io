@@ -30,21 +30,7 @@
 <meta name="twitter:image" content="https://zacharycortinovis.com/images/favicon-zacharycortinovis.png">
 </head>
 <body>
-<!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                  <a href="../index.html">
-                    <img src="../images/logo-zacharycortinovis.svg" class="logo" alt="Zac's Logo">
-                  </a>
-                </div>
-                <nav class="nav">
-                    <a href="../contact.html">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+<div id="header-placeholder"></div>
 
   <!-- Hero -->
   <section class="hero-project" style="background-image: url('./images/vulpine-bg.jpg')">
@@ -279,18 +265,7 @@
     </div>
   </section>
 
-  <footer class="footer">
-        <div class="container-body">
-            <div class="footer-content">
-                <div class="footer-logo"><img src="../images/logo-vulpine-white.svg" class="logo"></div>
-                <nav class="footer-nav">
-                    <a href="../index.html">Home</a>
-                    <a href="../contact.html">Contact</a>
-                    <a href="../services/websites.html">Services</a>
-                </nav>
-            </div>
-        </div>
-    </footer>
+  <div id="footer-placeholder"></div>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
@@ -305,5 +280,6 @@
     observer.observe(el);
   });
 </script>
+<script src="../components/load-header-footer.js"></script>
 </body>
 </html>

@@ -5,865 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zachary Cortinovis - Designer | Product Manager</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon-vulpine.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kanit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <style>
-        .divider-line {
-            margin-top:0px;
-            margin-bottom:1rem;
-            border: none;
-            border-top: 1px solid var(--gray-300);
-        }
-        /* ===== CSS VARIABLES ===== */
-        :root {
-            --primary-color: #ED2000;
-            --secondary-color: #342C2B;
-            --tertiary-color: #FF6E4A;
-            --text-dark: #1A0300;
-            --text-medium: #5C4F4D;
-            --text-light: #718096;
-            --background-light: #F7FAFC;
-            --white: #FFFFFF;
-            --gray-100: #F7FAFC;
-            --gray-200: #EDF2F7;
-            --gray-300: #E2E8F0;
-            --gray-400: #CBD5E0;
-            --max-width: 1200px;
-            --padding-mobile: 20px;
-            --border-radius: 12px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        /* ===== RESET & BASE STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
-            background-color: var(--background-light);
-            color: var(--text-medium);
-            line-height: 1.6;
-        }
-
-        /* ===== TYPOGRAPHY ===== */
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-family: 'Kanit', sans-serif;
-            line-height: 3rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-family: 'Kanit', sans-serif;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-medium);
-            margin-bottom: 0.5rem;
-            font-family: 'Kanit', sans-serif;
-        }
-
-        p {
-            color: var(--text-medium);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-        li {
-            color: var(--text-medium);
-            margin-bottom: 0.5rem;
-            font-size:14px;
-        }
-
-        /* Custom list-style for .package-card and .service-card lists */
-        .package-card li,
-        .service-card li {
-            list-style: none;
-            position: relative;
-            padding-left: 1.8rem;
-        }
-
-        .package-card li::before,
-        .service-card li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.25rem;
-            width: 1rem;
-            height: 1rem;
-            background-image: url('images/icon-list-check.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-
-        /* ===== LAYOUT CONTAINER ===== */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--padding-mobile);
-        }
-
-        /* ===== HEADER ===== */
-        .header {
-            background-color: var(--white);
-            padding: 1rem 0;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            height: 30px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav a {
-            color: var(--text-medium);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav a:hover {
-            color: var(--primary-color);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            position: relative;
-            padding: 4rem 0;
-            background: url('../images/pattern-herobg.svg');
-            background-repeat: repeat;
-            background-size: 80px 80px;
-            animation: bgMoveUpDiagonal 4s linear infinite;
-        }
-
-        @keyframes bgMoveUpDiagonal {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: -160px -160px;
-            }
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            pointer-events: none;
-            z-index: 1;
-            border-radius: inherit;
-            /* Four-sided inner shadow vignette using multiple linear gradients */
-            background:
-                
-                linear-gradient(to bottom,rgba(0,0,0,0.14) 0%, rgba(0,0,0,0) 10%),
-                linear-gradient(to top,   rgba(0,0,0,0.14) 0%, rgba(0,0,0,0) 10%);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero-card-services {
-            position: relative;
-            z-index: 2;
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
-            padding: 3rem 3rem 0 3rem;
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            overflow: hidden; /* Ensure nothing spills out */
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeSlideIn 1s ease-out forwards;
-            margin-left:auto;
-            margin-right:auto;
-            max-width:900px;
-        }
-        @keyframes fadeSlideIn {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .hero-image {
-            flex: 0 0 300px;
-            margin-bottom: 0px;
-        }
-
-        .hero-image img {
-            height: 400px;
-            object-fit: cover;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            background-color: transparent;
-            margin: 0;
-            padding: 0;
-            border: none;
-            display: block;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-content {
-            background-color:var(--white);
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            font-weight:600;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-description {
-            margin-bottom:1rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-direction: row;
-            justify-content: start;
-            gap: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        .view-portfolio-btn {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--primary-color);
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-            margin-bottom: 0;
-        }
-
-        .view-portfolio-btn:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* ===== CONTACT BUTTONS ===== */
-        .contact-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .contact-btn {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 0.6rem 1.5rem;
-            border: 2px solid var(--primary-color);
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-            margin-bottom: 0;
-        }
-
-        .contact-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .contact-btn.email {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-color: var(--primary-color);
-        }
-
-        .contact-btn.email:hover {
-            background-color: #C53030;
-        }
-
-        /* ===== SECTIONS ===== */
-        .section {
-            padding: 4rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-        /* Reduce space under section headings by targeting .section-title headings */
-        h1.section-title, h2.section-title {
-            margin-bottom: 0.25rem;
-        }
-
-        /* ===== PROFESSIONAL EXPERIENCE ===== */
-        .experience {
-            background-color: var(--white);
-        }
-
-        /* ===== OFFER SECTION ===== */
-        .offer {
-            background-color: var(--white);
-        }
-
-        .experience-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* ===== GALLERY STYLES ===== */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        /* ===== GALLERY ITEM FADE-IN ANIMATION ===== */
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .gallery-item {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            height: 400px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-            width: 100%;
-            min-width: 0;
-            box-sizing: border-box;
-        }
-
-        .gallery-item.visible {
-            animation: fadeInUp 0.6s forwards;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .gallery-item-image {
-            width: 100%;
-            height: 250px;
-            background-color: var(--gray-300);
-            flex-shrink: 0;
-        }
-
-        .gallery-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .gallery-item-content {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gallery-item-title {
-            margin-bottom: 0.5rem;
-            min-height: 2.5rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .gallery-item-description {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            flex: 1;
-        }
-
-        /* ===== HIGHLIGHT PROJECTS ===== */
-        .highlight-projects {
-            background-color: var(--background-light);
-        }
-
-        /* ===== PROJECTS GALLERY ===== */
-        .projects-gallery {
-            background-color: var(--white);
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta {
-            background-color: var(--white);
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .cta-btn {
-            padding: 1rem 2rem;
-            border: 2px solid var(--gray-300);
-            border-radius: var(--border-radius);
-            background-color: var(--white);
-            color: var(--text-medium);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cta-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .cta-btn.primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-color: var(--primary-color);
-        }
-
-        .cta-btn.primary:hover {
-            background-color: #C53030;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 3rem 0;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--white);
-            height: 30px;
-        }
-
-        .footer-nav {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-nav a {
-            color: var(--white);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .footer-nav a:hover {
-            color: var(--primary-color);
-        }
-
-        /* ===== MODAL STYLES ===== */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            overflow-y: auto;
-        }
-
-        .modal-content {
-            background-color: var(--white);
-            margin: 2rem auto;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            max-width: 800px;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--gray-200);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .modal-image {
-            width: 100%;
-            height: auto;
-            background-color: var(--gray-300);
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-        }
-
-        .modal-image img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: var(--border-radius);
-            display: block;
-        }
-
-        .modal-title {
-            margin-bottom: 1rem;
-        }
-
-        .modal-description {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* ===== SMOOTH SCROLLING ===== */
-        html {
-            scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 var(--padding-mobile);
-            }
-            .nav {
-                gap: 1rem;
-            }
-
-            .hero {
-                padding-top: 1.5rem;
-                padding-bottom: 1.5rem;
-            }
-
-            .hero-card-services {
-                flex-direction: column;
-                text-align: center;
-                padding: 1rem;
-                
-            }
-
-            .hero-image-wrapper {
-                margin-left: -1rem;
-                margin-right: -1rem;
-                width: calc(100% + 2rem);
-                max-height:300px;
-            }
-
-            .hero-image {
-                width: 80%;
-                margin: 0 auto;
-                max-height:400px;
-            }
-
-            .hero-image img {
-                width: 100%;
-                height: 60%;
-                display: block;
-                border-radius: var(--border-radius) var(--border-radius) 0 0;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-                
-                padding-top:1rem;
-            }
-
-            .contact-buttons {
-                flex-direction: row;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .gallery-item {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .footer-nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .modal-content {
-                margin: 1rem;
-                padding: 1.5rem;
-                border-radius: 0;
-                max-height: 100vh;
-            }
-
-            .modal-close {
-                position: fixed;
-                top: 1rem;
-                right: 1rem;
-                background: var(--white);
-                box-shadow: var(--shadow);
-                z-index: 1001;
-            }
-
-            h1 {
-                font-size: 2rem;
-                line-height:2.25rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-                line-height: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .section {
-                padding: 2rem 0;
-            }
-
-            .modal-content {
-                margin: 0;
-                border-radius: 0;
-                height: 100vh;
-            }
-        }
-
-        /* ===== PACKAGE & SERVICE CARD STYLES ===== */
-        .price-text {
-            font-family: 'Bebas Neue', sans-serif;
-            color: var(--text-medium);
-            margin-bottom:0;
-            font-size:2rem;
-            line-height:1.5rem;
-        }
-        .price-subtitle {
-            font-size: 14px;
-            margin-bottom: 1rem;
-            margin-top: 0.75rem;
-            line-height:1rem;
-        }
-        .package-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .service-card {
-            background: var(--background-light);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .offer-box {
-            flex: 1;
-            min-width: 250px;
-            background: var(--background-light);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-
-        .package-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .service-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .offer-container {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        /* ===== NUMBERED SECTION (How to get started) ===== */
-        .numbered-section {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 0 var(--padding-mobile);
-            background-color: (--white);
-        }
-
-        /* ===== SECTION FOOTER NOTE ===== */
-        .section-footer-note {
-            text-align: center;
-            font-size: 0.875rem;
-            color: var(--text-light);
-            margin-top: 2rem;
-        }
-
-        .numbered-step {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin-bottom: 1rem;
-            box-shadow: var(--shadow);
-        }
-
-        .step-content h3 {
-            margin: 0;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .step-content p {
-            margin-top: 0.5rem;
-            color: var(--text-medium);
-        }
-
-        .numbered-step a {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            
-
-            .numbered-step img {
-                margin-bottom: 1rem;
-            }
-        }
-
-        /* ===== ADDITIONAL SERVICES SECTION ===== */
-        .add-services {
-            background-color: var(--white);
-        }
-
-        /* ===== TABLET RESPONSIVE ===== */
-        @media (min-width: 769px) and (max-width: 1199px) {
-            .container {
-                padding: 0 2rem;
-            }
-
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero-card {
-                padding: 2.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css">
     <!-- Favicon -->
 <link rel="icon" href="images/favicon-zacharycortinovis.png" type="image/png" sizes="512x512">
 
@@ -881,22 +25,8 @@
 <meta name="twitter:description" content="Creative design and web development services by Zachary Cortinovis.">
 <meta name="twitter:image" content="https://zacharycortinovis.com/images/favicon-zacharycortinovis.png">
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                  <a href="../index.html">
-                    <img src="../images/logo-zacharycortinovis.svg" class="logo" alt="Zac's Logo">
-                  </a>
-                </div>
-                <nav class="nav">
-                    <a href="../contact.html">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+<body class="services-page">
+    <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -908,9 +38,9 @@
                     </div>
                 </div>
                 <div class="hero-content">
-                    <h1 class="hero-title">I build effective and affordable websites for small businesses.</h1>
+                    <h1 class="hero-title">"I build effective and affordable websites for small businesses."</h1>
                     <p class="hero-description">
-                        My designs educate your audience and build trust with potential customers. 
+                        My designs educate your audience, build trust with clients, and accelerate your brand. Let's make your business the next big thing.
                     </p>
                     <div class="hero-actions">
                         <a href="../contact.html" class="contact-btn email">Let's Chat</a>
@@ -962,7 +92,7 @@
     <section class="section site-packages">
       <div class="container">
         <h2 class="section-title">Let’s talk site packages.</h2>
-        <p style="text-align:center; margin-bottom: 2rem;">Find the right package for your business needs.</p>
+        <p class="section-subtitle">Find the right package for your business needs.</p>
         <div class="package-container">
           <div class="package-card">
             <h3 style="color: var(--primary-color);">Landing Page</h3>
@@ -1013,7 +143,7 @@
     <section class="section add-services">
       <div class="container">
         <h2 class="section-title">Additional Design Services</h2>
-        <p style="text-align:center; margin-bottom: 2rem;">In case your needs extend beyond webpages.</p>
+        <p class="section-subtitle">In case your needs extend beyond webpages.</p>
         <div class="service-container">
           <div class="service-card">
             <h3 style="color: var(--primary-color);">Brand Package</h3>
@@ -1144,32 +274,55 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section cta" id="contact">
+    <!-- Contact Section -->
+    <section class="hero" id="contact">
         <div class="container">
-            <div class="cta-content">
-                <h3 style="margin-bottom:0px;">You've made it this far...</h3>
-                <h2 style="margin-bottom:0.25rem;">That means this landing page works!</h2>
-                <p>Now let's make one for <b>your</b> customers.</p>
-                <div class="contact-buttons">
-                        <a href="../contact.html" class="contact-btn email">Let's Chat</a>
+            <div class="hero-card contact-hero-card">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image">
+                        <img src="../images/header-zacpic-thin.png" alt="Zachary Cortinovis">
                     </div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Send me a message!</h1>
+                    <p class="hero-subtitle">Let's see what I can do for your business.</p>
+                    <div class="hero-actions">
+                        <form id="contact-form" class="contact-form">
+                            <div class="name-inputs">
+                                <input type="text" name="firstName" placeholder="First Name" required style="flex: 1; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
+                                <input type="text" name="lastName" placeholder="Last Name" required style="flex: 1; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
+                            </div>
+                            <input type="email" name="email" placeholder="Email" required style="width: 100%; margin-top: 1rem; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
+                            <input type="text" name="businessType" placeholder="Business Type" required style="width: 100%; margin-top: 1rem; height: 48px; border-radius: var(--border-radius); padding: 0.75rem; border: 1px solid var(--gray-300); font-family: 'Inter', sans-serif;">
+                            <fieldset style="margin-top: 1rem; border: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 1rem;">
+                                <legend><strong>Services I'm Interested In:</strong></legend>
+                                <ul style="list-style: none; padding-left: 0; margin: 0; text-align: left;">
+                                    <li><label><input type="checkbox" name="services" value="Website creation"> Website creation</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Brand design"> Brand design</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Logo design"> Logo design</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Marketing graphics"> Marketing graphics</label></li>
+                                </ul>
+                                <ul style="list-style: none; padding-left: 0; margin: 0; text-align: left;">
+                                    <li><label><input type="checkbox" name="services" value="Marketing campaign"> Marketing campaign</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Print graphics"> Print graphics</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Business cards"> Business cards</label></li>
+                                    <li><label><input type="checkbox" name="services" value="Landing page"> Landing page</label></li>
+                                </ul>
+                            </fieldset>
+                            <textarea name="message" placeholder="Additional Message (optional)" style="width: 100%; margin-top: 1rem; margin-bottom: 1rem; min-height: 100px; border: 1px solid var(--gray-300); border-radius: var(--border-radius); padding: 0.75rem; font-family: 'Inter', sans-serif;"></textarea>
+                            <button type="submit" class="view-portfolio-btn">Submit</button>
+                        </form>
+                        <div id="thank-you-message" style="display: none; margin-top: 1rem;">
+                            <h3>Thank you!</h3>
+                            <p>Your form has been submitted. I'll be in touch shortly.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo"><img src="../images/logo-vulpine-white.svg" class="logo"></div>
-                <nav class="footer-nav">
-                    <a href="../index.html">Home</a>
-                    <a href="../contact.html">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- Modal for Projects Gallery -->
     <div id="project-modal" class="modal">
@@ -1182,5 +335,23 @@
             <p id="modal-description" class="modal-description"></p>
         </div>
     </div>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('https://formsubmit.co/ajax/2b5df728d11f041ec58b4b1cdfab3c7b', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ _subject: 'New Client Form Submission', ...Object.fromEntries(formData.entries()) })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('contact-form').style.display = 'none';
+                document.getElementById('thank-you-message').style.display = 'block';
+            })
+            .catch(error => alert('Submission failed. Please try again later.'));
+        });
+    </script>
+    <script src="../components/load-header-footer.js"></script>
 </body>
 </html>
