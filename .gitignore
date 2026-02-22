@@ -1,0 +1,2 @@
+# Cursor/Claude worktrees - causes GitHub Pages build to fail
+.claude/
