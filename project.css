@@ -50,7 +50,7 @@
     --gray-300: #E2E8F0;
     --gray-400: #CBD5E0;
     --max-width: 1200px;
-    --padding-mobile: 20px;
+    --padding-mobile: 40px;
     --border-radius: 12px;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -756,6 +756,39 @@ img {
         .footer-nav a:hover {
             color: var(--primary-color);
         }
+/* ===== TOOLS USED (project summary) ===== */
+.tools-used {
+  background: var(--gray-100);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.tools-used h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+.tools-used .tool-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+.tools-used .tool-item:last-child {
+  border-bottom: none;
+}
+.tools-used .tool-name {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.tools-used .tool-desc {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  margin: 0;
+}
+
 /* ===== FADE-IN ANIMATION STYLES ===== */
 .fade-section {
     opacity: 0;

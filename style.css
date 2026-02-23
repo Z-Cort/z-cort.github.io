@@ -1428,6 +1428,12 @@ input[type="checkbox"]:checked {
         margin: 0 auto;
     }
 
+    .index-page .highlight-projects .gallery-item,
+    .index-page .projects-gallery .gallery-item {
+        max-width: none;
+        margin: 0;
+    }
+
     .cta-buttons {
         flex-direction: column;
         align-items: center;
