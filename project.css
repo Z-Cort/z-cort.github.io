@@ -506,10 +506,11 @@ body.menu-open .nav-mobile-overlay {
 .contact-buttons {
             display: flex;
             gap: 1rem;
+            justify-content: center;
         }
 
         .contact-btn {
-            flex: 1;
+            flex: 0 0 auto;
             padding: 0.6rem 1rem;
             border: 2px solid var(--gray-300);
             border-radius: var(--border-radius);
@@ -523,6 +524,11 @@ body.menu-open .nav-mobile-overlay {
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+        }
+
+        .contact-btn img {
+            height: 32px;
+            width: auto;
         }
 
 .contact-btn:hover {
