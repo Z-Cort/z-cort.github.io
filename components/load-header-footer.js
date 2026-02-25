@@ -8,6 +8,7 @@
     // Services link: from root = websites/services.html, from projects = ../websites/services.html, from websites = services.html
     const servicesHref = path.includes('/websites/') ? 'services.html' : basePath + 'websites/services.html';
     const contactHref = basePath + 'contact.html';
+    const projectsHref = basePath + 'projects.html';
 
     const headerHtml = `
 <header class="header">
@@ -25,6 +26,7 @@
             </button>
             <nav class="nav nav-desktop">
                 <a href="${basePath}index.html">Home</a>
+                <a href="${projectsHref}">Projects</a>
                 <a href="${servicesHref}">Services</a>
                 <a href="${contactHref}">Contact</a>
             </nav>
@@ -32,6 +34,7 @@
     </div>
     <nav class="nav-mobile" aria-hidden="true">
         <a href="${basePath}index.html">Home</a>
+        <a href="${projectsHref}">Projects</a>
         <a href="${servicesHref}">Services</a>
         <a href="${contactHref}">Contact</a>
     </nav>
@@ -45,6 +48,7 @@
             <div class="footer-logo"><img src="${imgPath}logo-vulpine-white.svg" class="logo" alt="Vulpine Logo"></div>
             <nav class="footer-nav">
                 <a href="${basePath}index.html">Home</a>
+                <a href="${projectsHref}">Projects</a>
                 <a href="${contactHref}">Contact</a>
                 <a href="${servicesHref}">Services</a>
             </nav>

@@ -943,7 +943,26 @@ a.contact-btn[href*="instagram"]:hover {
    ============================================================================ */
 
 .experience {
+    position: relative;
     background-color: var(--white);
+    overflow: hidden;
+}
+
+.experience::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    max-width: 400px;
+    height: 50%;
+    max-height: 250px;
+    background-image: url('images/vectorbg-line-corner.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+    pointer-events: none;
+    opacity: 0.15;
 }
 
 .experience-columns {

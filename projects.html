@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects - Zachary Cortinovis</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon-vulpine.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@clr/city@1.1.0/css/index.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-zacharycortinovis.png" type="image/png" sizes="512x512">
+
+    <meta property="og:title" content="Projects - Zachary Cortinovis Portfolio">
+    <meta property="og:description" content="Browse all design and web development projects by Zachary Cortinovis.">
+    <meta property="og:image" content="https://zacharycortinovis.com/images/favicon-zacharycortinovis.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projects - Zachary Cortinovis Portfolio">
+    <meta name="twitter:description" content="Browse all design and web development projects by Zachary Cortinovis.">
+    <meta name="twitter:image" content="https://zacharycortinovis.com/images/favicon-zacharycortinovis.png">
+
+    <style>
+        .projects-page-header {
+            position: relative;
+            padding: 4rem 0 2rem;
+            text-align: center;
+            background-image: url('images/pattern-herobg.svg');
+            background-repeat: repeat;
+            background-size: 80px 80px;
+            animation: bgMoveUpDiagonal 4s linear infinite;
+        }
+        .projects-page-header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(to bottom, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0) 10%),
+                linear-gradient(to top,    rgba(0,0,0,0.14) 0%, rgba(0,0,0,0) 10%);
+        }
+        .projects-page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        .projects-page-header .section-title {
+            margin-bottom: 0.5rem;
+        }
+        .projects-page-header .section-subtitle {
+            margin-bottom: 0;
+        }
+
+        .projects-filter-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding: 1.5rem 0 0;
+            background-color: var(--white);
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--text-medium);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .projects-gallery-page {
+            background-color: var(--white);
+            padding: 2rem 0 4rem;
+        }
+
+        .projects-gallery-page .gallery-item {
+            opacity: 1;
+            transform: none;
+        }
+
+        .projects-gallery-page .gallery-item[data-hidden="true"] {
+            display: none;
+        }
+    </style>
+</head>
+<body class="index-page">
+    <div id="header-placeholder"></div>
+
+    <section class="projects-page-header">
+        <div class="container">
+            <h1 class="section-title">All Projects</h1>
+            <p class="section-subtitle">Browse everything I've worked on.</p>
+        </div>
+    </section>
+
+    <section class="projects-filter-bar">
+        <div class="container" style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap;">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="brand">Brand & Logo</button>
+            <button class="filter-btn" data-filter="ui">UI / UX</button>
+            <button class="filter-btn" data-filter="graphics">Graphics</button>
+        </div>
+    </section>
+
+    <section class="section projects-gallery-page">
+        <div class="container">
+            <div class="gallery">
+                <!-- Main Projects (link to dedicated pages) -->
+                <a class="gallery-item" href="projects/globalsku-website.html" data-category="web">
+                    <div class="gallery-item-image">
+                        <img src="images/globalskuwebsite-thumbnail.png" alt="GlobalSKU website">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">GlobalSKU Website</h3>
+                        <p class="gallery-item-description">Designing and building the GlobalSKU product website.</p>
+                    </div>
+                </a>
+                <a class="gallery-item" href="projects/vendidit-website.html" data-category="web">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-vendidit-website.png" alt="Vendidit Website v2">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Vendidit Website v2</h3>
+                        <p class="gallery-item-description">Designing and building Vendidit's company website for discovery and conversion.</p>
+                    </div>
+                </a>
+                <a class="gallery-item" href="projects/upstream-globalsku-logo.html" data-category="brand">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-globalsku-upstream-logos.svg" alt="GlobalSKU and Upstream Logos">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Vendidit Product Logos</h3>
+                        <p class="gallery-item-description">With only one week to design two product logos, quick decisions had to be made.</p>
+                    </div>
+                </a>
+                <a class="gallery-item" href="projects/vulpine.html" data-category="brand">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-vulpine-logo.svg" alt="Vulpine Design">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Vulpine Design</h3>
+                        <p class="gallery-item-description">Creating a personal brand and logo with a theme based on something I love: Foxes.</p>
+                    </div>
+                </a>
+
+                <!-- Other Projects (open modals) -->
+                <div class="gallery-item" data-modal="dejoria-stephens" data-category="web">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-dejoriastephens.png" alt="Dejoria Stephens Website">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Dejoria Stephens Website</h3>
+                        <p class="gallery-item-description">Built for a client who lost the original files for their site.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-modal="vendidit-social-media-login" data-category="ui">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-socialmedialogin.png" alt="Vendidit Social Media Login">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Vendidit Social Media Login</h3>
+                        <p class="gallery-item-description">Adding social media options to the Vendidit buyer portal signup/login screen.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-modal="custom-properties" data-category="ui">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-custpomproperties.png" alt="Vendidit Custom Properties">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Vendidit Custom Properties</h3>
+                        <p class="gallery-item-description">Creating the custom properties feature on the Vendidit seller portal.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-modal="vendidit-assets" data-category="graphics">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-vendidit-assets.png" alt="Vendidit Original Assets">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Vendidit Original Assets</h3>
+                        <p class="gallery-item-description">A collection of all the original graphics I've created for Vendidit.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-modal="vendidit-business-card" data-category="graphics">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-vendidit-businesscards.png" alt="Vendidit Business Cards">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Vendidit Business Card Ads</h3>
+                        <p class="gallery-item-description">Business card styled handout ads to increase conversion.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-modal="vendidit-listing" data-category="ui">
+                    <div class="gallery-item-image">
+                        <img src="images/gallerythumbnail-vendiditlisting.png" alt="Vendidit Listing Redesign">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">Vendidit Listing Redesign</h3>
+                        <p class="gallery-item-description">I took a stab at redesigning Vendidit's dated listing page purchase area.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-image">
+                <img id="modal-image" src="" alt="">
+            </div>
+            <h3 id="modal-title" class="modal-title"></h3>
+            <p id="modal-description" class="modal-description"></p>
+        </div>
+    </div>
+
+    <script>
+        // Modal data (same as index.html)
+        const modalData = {
+            'vendidit-social-media-login': {
+                title: 'Vendidit Social Media Login',
+                description: `
+                <p>The original login/signup page fields created conversion friction. There were too many fields and no easy way to create an account. Adding social media options for account creation would ease the signup processes.</p>
+                <p>I took the opportunity to give the signup/login box a modern look with our logo. I also decided to split up the process into two steps so the user isn't bombarded with fields.</p>`,
+                image: 'images/gallerymodal-socialmedialogin.png'
+            },
+            'vendidit-business-card': {
+                title: 'Vendidit Handout Ads',
+                description: `
+                <p>These ads were designed fully in Figma with original graphics. The main three colors were derived from the 0%, 50%, and 100% stops of the Vendidit Checkmark Gradient.</p>
+                <p>The bottom two cards were designed to bring customers into our online auction platform. Emphasis was made on our unique auction features that separate us from other online auction houses. Our user testing revealed that "90% off retail" had the strongest conversion, so it was added as the first feature. I personally found the proxy bidding feature the most helpful.</p>
+                <p>The top two cards were later designed when we began selling pallets. We determined a segment of customers looking for pallets to begin their own individual resale business, so we needed an easy handout that got them to the website. The pallet graphic was the most important indicator, but I decided add a little artistic touch on the back side with the warehouse, road, and QR highway ad.</p>`,
+                image: 'images/gallerythumbnail-vendidit-businesscards.png'
+            },
+            'custom-properties': {
+                title: 'Vendidit Custom Properties',
+                description: `
+                <p>I designed the Custom Properties feature for Vendidit's Marketplace. This feature allows sellers to define their own custom properties, such as "Karate", "Voltage", "Metal Type" and so on.</p>
+                <p>First I designed the scope of the feature, then created a phase 1 which is currently released. I used Figma to design the UI and create the prototype. Edge cases were explored such as the hiearchy of global vs auction settings, what happens when you remove a custom property with a live auction, and other cases.</p>
+                <img src="images/gallerymodal-customproperties2.png" class="gallery-item-image">`,
+                image: 'images/gallerymodal-customproperties.png'
+            },
+            'vendidit-assets': {
+                title: 'Vendidit Assets',
+                description: `
+                <p>This collection includes all the original Vendidit assets I've created. I had to create these when the icon packs we use didn't contain what I needed to convey a message.</p>
+                <p>Most of these graphics were either created in Adobe Illustrator or Figma. The 3D checkmarks were created in Blender.</p>`,
+                image: 'images/gallerymodal-vendidit-assets.png'
+            },
+            'dejoria-stephens': {
+                title: 'Dejoria Stephens Website',
+                description: `
+                <p>My client needed their website remade since they lost access to the original files.</p>
+                <p>I designed the website in Figma and built it using HTML/CSS, retaining a similar appearance to the original version. I also fixed issues with the previous version, including missing links, style choices, and poor photos.</p>
+                <p>The website is currently live at <a href="https://www.dejoriastephens.com/">dejoriastephens.com</a> and am currently in charge of maintaining and providing updates for new content.</p>
+                <img src="images/gallerymodal-dejoriastephens2.png" style="max-width:400px">
+                <img src="images/gallerymodal-dejoriastephens3.png" style="max-width:400px">`,
+                image: 'images/gallerymodal-dejoriastephens1.png'
+            },
+            'vendidit-listing': {
+                title: 'Vendidit Listing Purchase Area Redesign',
+                description: `
+                <p>I wanted to streamline the look of the listing info and purchase area. I studied other marketplaces and took their information architecture principles and infused it with Vendidit's bidding area.</p>
+                <p>The design isn't live, but will be used after other more important features are complete and work on this can begin.</p>`,
+                image: 'images/gallerymodal-vendiditlisting.png'
+            }
+        };
+
+        // Modal logic
+        const modal = document.getElementById('project-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const closeBtn = document.querySelector('.modal-close');
+
+        document.querySelectorAll('.gallery-item[data-modal]').forEach(item => {
+            item.addEventListener('click', function () {
+                const id = this.getAttribute('data-modal');
+                const data = modalData[id];
+                if (data) {
+                    modalTitle.textContent = data.title;
+                    modalDescription.innerHTML = data.description;
+                    modalImage.src = data.image;
+                    modalImage.alt = data.title;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', () => { modal.style.display = 'none'; document.body.style.overflow = 'auto'; });
+        window.addEventListener('click', e => { if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; } });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.style.display === 'block') { modal.style.display = 'none'; document.body.style.overflow = 'auto'; } });
+
+        // Category filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+                document.querySelectorAll('.projects-gallery-page .gallery-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.setAttribute('data-hidden', 'false');
+                        item.style.display = '';
+                    } else {
+                        item.setAttribute('data-hidden', 'true');
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="components/load-header-footer.js"></script>
+</body>
+</html>
