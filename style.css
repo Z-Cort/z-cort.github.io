@@ -54,6 +54,7 @@
     --gray-200: #EDF2F7;
     --gray-300: #E2E8F0;
     --gray-400: #CBD5E0;
+    --peach: #F0F6FA;
     --max-width: 1200px;
     --padding-mobile: 20px;
     --hero-card-padding: 3rem;
@@ -151,6 +152,11 @@ h1.section-title, h2.section-title {
 }
 
 /* ===== HEADER ===== */
+#header-placeholder {
+    min-height: 62px;
+    background-color: var(--white);
+}
+
 .header {
     background-color: var(--white);
     padding: 1rem 0;
@@ -605,6 +611,7 @@ html {
 
 .hero-content {
     min-width: 40px;
+    text-align: left;
 }
 
 /* Contact page hero-content */
@@ -672,6 +679,29 @@ html {
     background-color: var(--primary-color);
     color: var(--white);
     transform: translateY(-2px);
+}
+
+.view-portfolio-btn.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.view-portfolio-btn.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.view-portfolio-btn.btn-subtle {
+    background-color: var(--gray-200);
+    color: var(--text-medium);
+    border-color: var(--gray-300);
+}
+
+.view-portfolio-btn.btn-subtle:hover {
+    background-color: var(--gray-300);
+    color: var(--text-dark);
+    border-color: var(--gray-400);
+    transform: none;
 }
 
 .download-contact-btn {
@@ -939,30 +969,62 @@ a.contact-btn[href*="instagram"]:hover {
 }
 
 /* ============================================================================
+   PAGE HEADER (projects, skills, etc.)
+   ============================================================================ */
+
+.projects-page-header {
+    position: relative;
+    padding: 4rem 0 2rem;
+    text-align: center;
+    background-image: url('images/pattern-herobg.svg');
+    background-repeat: repeat;
+    background-size: 80px 80px;
+    animation: bgMoveUpDiagonal 4s linear infinite;
+}
+
+.projects-page-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0) 10%),
+        linear-gradient(to top,    rgba(0,0,0,0.14) 0%, rgba(0,0,0,0) 10%);
+}
+
+.projects-page-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.projects-page-header .section-title {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.projects-page-header .section-subtitle {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* ============================================================================
    INDEX.HTML SPECIFIC STYLES
    ============================================================================ */
 
 .experience {
-    position: relative;
     background-color: var(--white);
-    overflow: hidden;
 }
 
-.experience::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-    max-width: 400px;
-    height: 50%;
-    max-height: 250px;
-    background-image: url('images/vectorbg-line-corner.svg');
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-size: contain;
+.experience-fox-wrap {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.experience-fox {
+    max-height: 6rem;
+    width: auto;
+    object-fit: contain;
     pointer-events: none;
-    opacity: 0.15;
 }
 
 .experience-columns {
@@ -982,6 +1044,10 @@ a.contact-btn[href*="instagram"]:hover {
     margin: 0 auto;
 }
 
+.experience-summary .section-title {
+    margin-top: 0;
+}
+
 .experience-summary-lead {
     font-size: 1.5rem;
     font-weight: 400;
@@ -996,6 +1062,147 @@ a.contact-btn[href*="instagram"]:hover {
 
 .experience-quote {
     color: var(--text-light);
+}
+
+/* ===== SKILL TAGS ===== */
+.skills-preview-heading {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.skills-preview-heading strong {
+    font-weight: 700;
+}
+
+.skills-preview {
+    margin-top: 1.5rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-200);
+}
+
+.skills-preview-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-tag {
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--gray-300);
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--text-medium);
+    font-family: 'Clarity City', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.service-chips .skill-tag {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.service-chips .skill-tag::before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    background-image: url('websites/images/icon-list-check.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.skills-preview .view-portfolio-btn {
+    margin-top: 0.5rem;
+}
+
+/* Skills page */
+.skills-page-section {
+    background-color: var(--peach);
+    padding: 2rem 0 4rem;
+}
+
+.skills-group {
+    margin-top: 2rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.skills-group:first-child {
+    margin-top: 0;
+}
+
+.skills-group-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-family: 'Clarity City', sans-serif;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills-group:not([open]) > .skills-group-heading {
+    margin-bottom: 0;
+}
+
+.skills-group-heading::-webkit-details-marker {
+    display: none;
+}
+
+.skills-group-heading::after {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border-right: 2.5px solid var(--text-dark);
+    border-bottom: 2.5px solid var(--text-dark);
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.skills-group[open] > .skills-group-heading::after {
+    transform: rotate(-135deg);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.skill-category-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.skill-category-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.skill-category-card .skills-preview-tags {
+    margin-bottom: 0;
 }
 
 /* ============================================================================
@@ -1062,9 +1269,10 @@ input[type="checkbox"]:checked {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeSlideIn 1s ease-out forwards;
+    width: 100%;
+    max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
-    max-width: 900px;
 }
 
 /* Services hero: same image treatment as index/contact */
@@ -1567,7 +1775,7 @@ input[type="checkbox"]:checked {
 
     .hero-card-services .hero-title {
         font-size: 2.5rem;
-        line-height: 1.4;
+        line-height: 1.2;
         margin-bottom: 1rem;
         padding-top: 1rem;
     }
@@ -1593,14 +1801,21 @@ input[type="checkbox"]:checked {
     }
 
     .index-page .experience-content {
-        border-top: 1px solid var(--gray-400);
+        border-top: none;
         padding-top: 2rem;
     }
+
+    .index-page .hero-title,
+    .index-page .hero-subtitle {
+        text-align: center;
+    }
+
 }
 
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
+        line-height: 1.2;
     }
 
     .section {
@@ -1670,7 +1885,7 @@ input[type="checkbox"]:checked {
 /* Services page: use mobile-optimized image on small viewports */
 @media (max-width: 768px) {
     .hero-card-services .hero-image img {
-        content: url('websites/images/hero-zac-crop.png');
+        content: url('images/header-zacpic-services2.png');
     }
 }
 

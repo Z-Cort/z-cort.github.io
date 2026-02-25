@@ -150,6 +150,11 @@ strong {
             -webkit-text-size-adjust: 100%;
         }
 /* ===== HEADER ===== */
+#header-placeholder {
+    min-height: 62px;
+    background-color: var(--white);
+}
+
 .header {
     background-color: var(--white);
     padding: 1rem 0;
