@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@clr/city@1.1.0/css/index.css">
     <link rel="stylesheet" href="style.css">
+    <script src="components/theme-init.js"></script>
     <link rel="icon" href="images/favicon-zacharycortinovis.png" type="image/png" sizes="512x512">
 
     <meta property="og:title" content="Skills - Zachary Cortinovis Portfolio">
@@ -35,7 +36,7 @@
     <section class="skills-page-section">
         <div class="container">
 
-            <details class="skills-group" open>
+            <details class="skills-group" id="skills-leadership">
                 <summary class="skills-group-heading">Leadership</summary>
                 <div class="skills-grid">
                     <div class="skill-category-card">
@@ -52,7 +53,7 @@
                 </div>
             </details>
 
-            <details class="skills-group" open>
+            <details class="skills-group" id="skills-capabilities">
                 <summary class="skills-group-heading">Capabilities</summary>
 
             <div class="skills-grid">
@@ -160,7 +161,7 @@
             </div>
             </details>
 
-            <details class="skills-group" open>
+            <details class="skills-group" id="skills-tools">
                 <summary class="skills-group-heading">Tools</summary>
                 <div class="skills-grid">
                     <div class="skill-category-card">
@@ -222,7 +223,7 @@
             </div>
             </details>
 
-            <details class="skills-group" open>
+            <details class="skills-group" id="skills-hobbies">
                 <summary class="skills-group-heading">Hobbies</summary>
                 <div class="skills-grid">
                     <div class="skill-category-card">
@@ -285,6 +286,28 @@
 
     <div id="footer-placeholder"></div>
 
+    <script>
+    (function() {
+        var key = 'skills-open-sections';
+        var saved = JSON.parse(localStorage.getItem(key) || '[]');
+        var groups = document.querySelectorAll('.skills-group[id]');
+
+        groups.forEach(function(details) {
+            if (saved.indexOf(details.id) !== -1) {
+                details.open = true;
+            }
+            details.addEventListener('toggle', function() {
+                var current = JSON.parse(localStorage.getItem(key) || '[]');
+                if (details.open) {
+                    if (current.indexOf(details.id) === -1) current.push(details.id);
+                } else {
+                    current = current.filter(function(id) { return id !== details.id; });
+                }
+                localStorage.setItem(key, JSON.stringify(current));
+            });
+        });
+    })();
+    </script>
     <script src="components/load-header-footer.js"></script>
 </body>
 </html>

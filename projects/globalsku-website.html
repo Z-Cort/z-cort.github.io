@@ -6,10 +6,96 @@
   <title>GlobalSKU Website</title>
   <link rel="icon" type="image/svg+xml" href="../images/favicon-vulpine.svg">
   <link rel="stylesheet" href="../project.css" />
+  <script src="../components/theme-init.js"></script>
   <style>
-    /* Align images to the top of the .result-image div in .final-result */
     .final-result .result-image {
         align-items: flex-start;
+    }
+
+    .final-result .result-text {
+        max-width: 900px;
+    }
+
+    .zpattern .container-body {
+        margin-bottom: 2rem;
+    }
+
+    .screenshot-gallery {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        overflow: hidden;
+    }
+
+    .screenshot-track {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 0.5rem 0;
+        scrollbar-width: none;
+    }
+
+    .screenshot-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .screenshot-track img {
+        flex: 0 0 auto;
+        width: min(100%, 500px);
+        height: auto;
+        object-fit: contain;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        scroll-snap-align: start;
+    }
+
+    .screenshot-nav {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--gray-300);
+        background: var(--white);
+        color: var(--text-medium);
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color 0.3s ease, color 0.3s ease;
+        z-index: 2;
+    }
+
+    .screenshot-nav:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .screenshot-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .screenshot-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--gray-300);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.3s ease;
+    }
+
+    .screenshot-dot.active {
+        background: var(--primary-color);
     }
   </style>
   <!-- Favicon -->
@@ -89,17 +175,16 @@
   <!-- Z-pattern sections -->
   <section class="zpattern">
     <div class="container-body">
-      <div class="zpattern-left">
+      <div class="zpattern-right">
+        <div class="z-image fade-up">
+          <div style="width:100%; background:#ffffff00; border-radius:12px;"><img src="images/gskuwebsite-uxplan.png" alt="GlobalSKU website UX process"></div>
+        </div>
         <div class="z-text fade-left">
           <h2>UX Plan</h2>
           <p>As GlobalSKU approached its release, there were many conversations over who our customers would be. Nobody built a plan and we didn't have enough time to experiment.</p>
           <p>I started by listing out all our possible customers and organizing them into a spectrum divided by categories.</p>
-          <div class="z-image fade-up">
-            <div style="width:100%; background:#ffffff00; border-radius:12px;"><img src="images/gskuwebsite-uxplan.png" alt="GlobalSKU website UX process"></div>
-          </div>
           <p>So I decided to build the website page by page, with a dedicated lander for each type of customer. I would then find the results of which page had the lowest bounce rate, highest time on page, and highest conversion rate.</p>
         </div>
-        
       </div>
     </div>
 
@@ -113,41 +198,47 @@
           <p>Upstream got the indigo, GlobalSKU got the cyan. </p>
           <div class="fade-up" style="margin-bottom: 1rem;"><img src="images/gskuwebsite-logo-evolution.png" alt="GlobalSKU logo evolution" style="width: 100%; border-radius: 12px;"></div>
         </div>
-        <div class="zpattern-right" style="margin-top: 2rem;">
-          <div class="z-text fade-left">
-            <h3>Color Upgrade</h3>
-            <p>When I was designing the product page, I wanted to try a dark theme. I decided to use the cyan mixed with a navy blue to create this spotlight glow effect.</p>
-            <p>This use of cyan as energy and technology was a great fit for the product. It had good reception from our product team as well. I decided to explore the right shade and saturation combinations and found a system that works well.</p>
+        <div style="margin-top: 2rem;">
+          <div class="zpattern-right">
+            <div class="z-image fade-up">
+              <video src="../images/gsku-logo-contrast-demo.mp4" autoplay loop muted playsinline style="pointer-events: none; width: 100%; max-width: 600px; border-radius: 12px;"></video>
+            </div>
+            <div class="z-text fade-left">
+              <h3>Color Upgrade</h3>
+              <p>When I was designing the product page, I wanted to try a dark theme. I decided to use the cyan mixed with a navy blue to create this spotlight glow effect.</p>
+              <p>This use of cyan as energy and technology was a great fit for the product. It had good reception from our product team as well. I decided to explore the right shade and saturation combinations and found a system that works well.</p>
+            </div>
           </div>
-          <div class="z-text fade-left">
-            <h3>Logo Revamp</h3>
-            <p>I'm still pretty proud of the logo, but while using it I noticed contrasting issues on various backgrounds. It's two color left to right gradient didn't seem to serve a realistic purpose.</p>
-            <div class="fade-up" style="margin: 1rem 0;"><img src="images/gskuwebsite-logo-transformation.png" alt="GlobalSKU logo transformation" style="width: 100%; border-radius: 12px;"></div>
-            <p>Given several FAANG+ design changes lately, some evidence supports the idea of us having a rennaissance of gradients (google logo), frutiger aero (liquid glass), skeumorphic kind of designs. I wanted to find something that stood out, so I selected a glassmorphic look that had a nice edge glow and look to it, while still retaining the ability to be one solid color.</p>
-          </div>
-          <div class="z-image fade-up">
-            <video src="../images/gsku-logo-contrast-demo.mp4" autoplay loop muted playsinline style="pointer-events: none; width: 100%; border-radius: 12px;"></video>
+          <div class="zpattern-left" style="margin-top: 2rem;">
+            <div class="z-text fade-left">
+              <h3>Logo Revamp</h3>
+              <p>I'm still pretty proud of the logo, but while using it I noticed contrasting issues on various backgrounds. It's two color left to right gradient didn't seem to serve a realistic purpose.</p>
+              <p>Given several FAANG+ design changes lately, some evidence supports the idea of us having a rennaissance of gradients (google logo), frutiger aero (liquid glass), skeumorphic kind of designs. I wanted to find something that stood out, so I selected a glassmorphic look that had a nice edge glow and look to it, while still retaining the ability to be one solid color.</p>
+            </div>
+            <div class="z-image fade-up">
+              <div><img src="images/gskuwebsite-logo-transformation.png" alt="GlobalSKU logo transformation" style="width: 100%; max-width: 400px; border-radius: 12px;"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="container-body">
-      <div class="zpattern-left">
+      <div class="zpattern-right">
+        <div class="z-image fade-up">
+          <img src="images/gskuwebsite-cursor.png" alt="Building GlobalSKU website with Cursor">
+        </div>
         <div class="z-text fade-left">
           <h2>Building with Cursor</h2>
           <p>The challenges I've found with vibe coding involve finding the best method the achieve a desired look, and building this website was a great vibe coding exercise. The challenges I've found</p>
           <p>It's pretty easy to have it build you a website, but not so easy to have it build your vision.</p>
           <p>The process that worked best for me, was to have Cursor build the foundation of the website, and once it's set up, I can go in an start prompting/editing code to convert it into my vision.</p>
         </div>
-        <div class="z-image fade-up">
-          <img src="images/gskuwebsite-cursor.png" alt="Building GlobalSKU website with Cursor">
-        </div>
       </div>
     </div>
 
     <div class="container-body">
-      <div class="zpattern-right section-alt">
+      <div class="zpattern-left section-alt">
         <div class="z-text fade-left">
           <h2>3D Graphics</h2>
           <p>When talking about similar products, our bizdev always pointed out the 3D content on their site. I analyzed them and knew I could do better. I was able to get a phone model onto Blender, edit the footag, and learn how to stage and animated it the way I want.</p>
@@ -158,13 +249,13 @@
       </div>
     </div>
     <div class="container-body">
-      <div class="zpattern-left">
-        <div class="z-text fade-left">
-          <h2>Video Content</h2>
-          <p>I recorded some of the video content myself. I shot this video of my girlfriend scanning her popmart collections when we stayed in one weekend, and edited it on Premiere. </p>
-        </div>
+      <div class="zpattern-right">
         <div class="z-image fade-up">
           <video src="../videos/gsku-naomi-scan-shelf.mp4" autoplay loop muted playsinline style="pointer-events: none; width: 100%; border-radius: 12px;"></video>
+        </div>
+        <div class="z-text fade-left">
+          <h2>Video Content</h2>
+          <p>I recorded some of the video content myself. I shot this video of my girlfriend scanning her popmart collections one weekend, and edited it on Premiere. </p>
         </div>
       </div>
     </div>
@@ -175,35 +266,21 @@
     <div class="container-body">
       <h2>Final Result</h2>
       <div class="result-text">
-        <p>The GlobalSKU website lives within the Vendidit ecosystem and can be accessed via the main site at <a href="https://vendidit.com/">vendidit.com</a> and the GlobalSKU product section.</p>
+        <p>The website is live and still being updated, check out the screenshots or see it live at <a href="https://globalsku.com/">globalsku.com</a></p>
       </div>
-      <h2>Homepage</h2>
-      <div class="result-text">
-      </div>
-      <div class="result-image">
-        <div>
-          <h3>(Old)</h3>
-          <img src="images/vendiditwebsite-old-homepage.png" alt="GlobalSKU website previous homepage">
+      <div class="screenshot-gallery">
+          <button class="screenshot-nav screenshot-prev" aria-label="Previous">&lsaquo;</button>
+          <div class="screenshot-track">
+            <img src="images/gskuwebsite-final1.png" alt="GlobalSKU final screen 1">
+            <img src="images/gskuwebsite-final2.png" alt="GlobalSKU final screen 2">
+            <img src="images/gskuwebsite-final3.png" alt="GlobalSKU final screen 3">
+            <img src="images/gskuwebsite-final4.png" alt="GlobalSKU final screen 4">
+            <img src="images/gskuwebsite-final5.png" alt="GlobalSKU final screen 5">
+            <img src="images/gskuwebsite-final6.png" alt="GlobalSKU final screen 6">
+          </div>
+          <button class="screenshot-nav screenshot-next" aria-label="Next">&rsaquo;</button>
         </div>
-        <div>
-          <h3>(New)</h3>
-        <img src="images/vendiditwebsite-new-homepage.png" alt="GlobalSKU website new homepage">
-        </div>
-      </div>
-      </div>
-      <div class="container-body">
-      <h2>Product Page</h2>
-      <div class="result-image">
-        <div>
-          <h3>(Old)</h3>
-        <img src="images/vendiditwebsite-old-productpage.png" alt="GlobalSKU product page previous">
-        </div>
-        <div>
-          <h3>(New)</h3>
-        <img src="images/vendiditwebsite-new-productpage.png" alt="GlobalSKU product page new">
-        </div>
-        </div>
-      </div>
+        <div class="screenshot-dots"></div>
     </div>
   </section>
 
@@ -272,6 +349,49 @@
   document.querySelectorAll('.fade-up, .fade-left').forEach(el => {
     observer.observe(el);
   });
+
+  (function() {
+    var track = document.querySelector('.screenshot-track');
+    var images = track ? track.querySelectorAll('img') : [];
+    var dotsContainer = document.querySelector('.screenshot-dots');
+    var prevBtn = document.querySelector('.screenshot-prev');
+    var nextBtn = document.querySelector('.screenshot-next');
+    if (!track || images.length === 0) return;
+
+    images.forEach(function(_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'screenshot-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+      dot.addEventListener('click', function() {
+        images[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    var dots = dotsContainer.querySelectorAll('.screenshot-dot');
+
+    function updateDots() {
+      var scrollLeft = track.scrollLeft;
+      var closest = 0;
+      var closestDist = Infinity;
+      images.forEach(function(img, i) {
+        var dist = Math.abs(img.offsetLeft - track.offsetLeft - scrollLeft);
+        if (dist < closestDist) { closestDist = dist; closest = i; }
+      });
+      dots.forEach(function(d, i) {
+        d.classList.toggle('active', i === closest);
+      });
+    }
+
+    track.addEventListener('scroll', updateDots);
+
+    prevBtn.addEventListener('click', function() {
+      track.scrollBy({ left: -track.clientWidth * 0.8, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', function() {
+      track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' });
+    });
+  })();
 </script>
 <script src="../components/load-header-footer.js"></script>
 </body>

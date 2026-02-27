@@ -56,6 +56,54 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+/* ===== DARK MODE OVERRIDES ===== */
+[data-theme="dark"] .hero-project h1,
+[data-theme="dark"] .hero-project .hero-title {
+    color: #FFFFFF;
+}
+
+[data-theme="dark"] .hero-project p,
+[data-theme="dark"] .hero-project .hero-subtitle {
+    color: #EDF2F7;
+}
+
+[data-theme="dark"] p a:not(.contact-btn),
+[data-theme="dark"] .result-text a,
+[data-theme="dark"] .z-text a,
+[data-theme="dark"] .summary-text a {
+    color: #7DD3FC;
+}
+
+[data-theme="dark"] p a:not(.contact-btn):hover,
+[data-theme="dark"] .result-text a:hover,
+[data-theme="dark"] .z-text a:hover,
+[data-theme="dark"] .summary-text a:hover {
+    color: #93C5FD;
+}
+
+[data-theme="dark"] .nav a,
+[data-theme="dark"] .nav-mobile a,
+[data-theme="dark"] .footer-nav a {
+    color: #FFFFFF;
+}
+
+[data-theme="dark"] {
+    --primary-color: #ED2000;
+    --secondary-color: #1A1C1E;
+    --tertiary-color: #FF6E4A;
+    --text-dark: #E8E6E3;
+    --text-medium: #B0ABAA;
+    --text-light: #8A8585;
+    --background-light: #1E2022;
+    --white: #292C2E;
+    --gray-100: #1E2022;
+    --gray-200: #2C2F31;
+    --gray-300: #3A3D40;
+    --gray-400: #4A4D50;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.35), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
 /* ===== BASE STYLES ===== */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -175,6 +223,49 @@ strong {
     font-weight: 700;
     color: var(--primary-color);
     height: 30px;
+}
+
+.logo-light {
+    display: block;
+}
+
+.logo-dark {
+    display: none;
+}
+
+[data-theme="dark"] .logo-light {
+    display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: block;
+}
+
+.theme-toggle {
+    background: none;
+    background-color: transparent;
+    border: 2px solid var(--gray-300);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-medium);
+    transition: border-color 0.3s ease, color 0.3s ease;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.nav-mobile .theme-toggle-mobile {
+    align-self: flex-start;
+    margin-top: 0;
 }
 
 .nav {
