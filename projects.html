@@ -31,7 +31,7 @@
             background-image: url('images/pattern-herobg.svg');
             background-repeat: repeat;
             background-size: 80px 80px;
-            animation: bgMoveUpDiagonal 4s linear infinite;
+            animation: bgMoveUpDiagonal 8s linear infinite;
         }
         .projects-page-header::before {
             content: "";
@@ -59,7 +59,7 @@
             align-items: center;
             gap: 0.75rem;
             flex-wrap: wrap;
-            padding: 1.5rem 0 0;
+            padding: 1.5rem 0;
             background-color: var(--background-light);
         }
 
@@ -117,6 +117,7 @@
             <button class="filter-btn" data-filter="brand">Brand & Logo</button>
             <button class="filter-btn" data-filter="ui">UI / UX</button>
             <button class="filter-btn" data-filter="graphics">Graphics</button>
+            <button class="filter-btn" data-filter="video">Video</button>
         </div>
     </section>
 
@@ -124,6 +125,15 @@
         <div class="container">
             <div class="gallery">
                 <!-- Main Projects (link to dedicated pages) -->
+                <a class="gallery-item" href="projects/globalsku-android.html" data-category="video">
+                    <div class="gallery-item-image">
+                        <img src="images/gskuandroid-thumbnail.png" alt="GlobalSKU Android Release">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3 class="gallery-item-title">GlobalSKU Android Release</h3>
+                        <p class="gallery-item-description">Creating a music video to announce GlobalSKU's Android launch.</p>
+                    </div>
+                </a>
                 <a class="gallery-item" href="projects/globalsku-website.html" data-category="web">
                     <div class="gallery-item-image">
                         <img src="images/globalskuwebsite-thumbnail.png" alt="GlobalSKU website">
