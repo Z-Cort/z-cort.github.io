@@ -49,7 +49,7 @@
     --gray-200: #EDF2F7;
     --gray-300: #E2E8F0;
     --gray-400: #CBD5E0;
-    --max-width: 1200px;
+    --max-width: 1400px;
     --padding-mobile: 40px;
     --border-radius: 12px;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -332,7 +332,7 @@ strong {
     background-color: var(--white);
     box-shadow: var(--shadow-lg);
     z-index: 99;
-    padding: 5rem 1.5rem 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem;
     flex-direction: column;
     gap: 1rem;
     transform: translateX(-100%);
@@ -355,6 +355,41 @@ strong {
 .nav-mobile a:hover {
     color: var(--primary-color);
 }
+
+.nav-mobile-social {
+    display: flex;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+.nav-mobile-social .footer-social-btn {
+    flex: 0 0 auto;
+    padding: 0.6rem;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.nav-mobile-social .footer-social-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+.nav-mobile-social a[href*="linkedin"] { border: 2px solid #0072B1; }
+.nav-mobile-social a[href*="linkedin"]:hover { border-color: #005a8f; }
+.nav-mobile-social a[href*="instagram"] {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+                linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) border-box;
+}
+.nav-mobile-social a[href*="instagram"]:hover {
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+                linear-gradient(45deg, #e0852a, #d45a30, #c9223a, #b91f5c, #a8157a) border-box;
+}
+.nav-mobile-social a[href*="youtube"] { border: 2px solid #FF0000; }
+.nav-mobile-social a[href*="youtube"]:hover { border-color: #cc0000; }
 
 body.menu-open {
     overflow: hidden;
@@ -433,7 +468,7 @@ body.menu-open .nav-mobile-overlay {
     background-color: var(--white);
     flex-direction: row;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: var(--max-width);
 }
 
 /* ===== SUMMARY IMAGE FLEX HANDLING ===== */
@@ -836,6 +871,8 @@ img {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
         .footer-logo {
@@ -860,34 +897,74 @@ img {
         .footer-nav a:hover {
             color: var(--primary-color);
         }
-/* ===== TOOLS USED (project summary) ===== */
-.tools-used {
+
+.footer-social {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+.footer-social .footer-social-btn {
+    flex: 0 0 auto;
+    padding: 0.6rem;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.footer-social .footer-social-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+.footer-social a[href*="linkedin"] { border: 2px solid #0072B1; }
+.footer-social a[href*="linkedin"]:hover { border-color: #005a8f; }
+.footer-social a[href*="instagram"] {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+                linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) border-box;
+}
+.footer-social a[href*="instagram"]:hover {
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+                linear-gradient(45deg, #e0852a, #d45a30, #c9223a, #b91f5c, #a8157a) border-box;
+}
+.footer-social a[href*="youtube"] { border: 2px solid #FF0000; }
+.footer-social a[href*="youtube"]:hover { border-color: #cc0000; }
+
+/* ===== TOOLS USED & GEAR USED (project summary) ===== */
+.tools-used,
+.gear-used {
   background: var(--gray-100);
   border-radius: var(--border-radius);
   padding: 1.25rem 1.5rem;
   margin-top: 1.5rem;
   box-shadow: var(--shadow);
 }
-.tools-used h3 {
+.tools-used h3,
+.gear-used h3 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.125rem;
 }
-.tools-used .tool-item {
+.tools-used .tool-item,
+.gear-used .tool-item {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--gray-200);
 }
-.tools-used .tool-item:last-child {
+.tools-used .tool-item:last-child,
+.gear-used .tool-item:last-child {
   border-bottom: none;
 }
-.tools-used .tool-name {
+.tools-used .tool-name,
+.gear-used .tool-name {
   font-weight: 600;
   color: var(--text-dark);
 }
-.tools-used .tool-desc {
+.tools-used .tool-desc,
+.gear-used .tool-desc {
   font-size: 0.9rem;
   color: var(--text-medium);
   margin: 0;

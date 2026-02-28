@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GlobalSKU Android Music Video</title>
+  <title>GlobalSKU Music Video</title>
   <link rel="icon" type="image/svg+xml" href="../images/favicon-vulpine.svg">
   <link rel="stylesheet" href="../project.css" />
   <script src="../components/theme-init.js"></script>
@@ -13,16 +13,67 @@
     }
 
     .final-result .result-text {
-        max-width: 900px;
+        max-width: 100%;
     }
 
     .zpattern .container-body {
         margin-bottom: 2rem;
     }
+
+    /* Stack video above columns */
+    .project-summary .project-summary-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* YouTube embed - responsive 16:9 */
+    .project-summary .youtube-embed {
+        width: 100%;
+        margin: 0 auto 2rem;
+        aspect-ratio: 16 / 9;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+    }
+    .project-summary .youtube-embed iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Project summary and tools side by side */
+    .project-summary .summary-columns {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .project-summary .summary-columns .summary-text {
+        flex: 1;
+    }
+    .project-summary .summary-columns .summary-sidebar {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .project-summary .summary-columns .tools-used,
+    .project-summary .summary-columns .gear-used {
+        margin-top: 0;
+    }
+    @media (max-width: 768px) {
+        .project-summary .project-summary-content {
+            flex-direction: column; /* Keep video on top (don't reverse) */
+        }
+        .project-summary .summary-columns {
+            flex-direction: column;
+        }
+    }
   </style>
   <link rel="icon" href="images/favicon-zacharycortinovis.png" type="image/png" sizes="512x512">
 
-  <meta property="og:title" content="GlobalSKU Android Music Video - Zachary Cortinovis Portfolio">
+  <meta property="og:title" content="GlobalSKU Music Video - Zachary Cortinovis Portfolio">
   <meta property="og:description" content="Creating a music video to announce GlobalSKU's Android launch.">
   <meta property="og:image" content="https://zacharycortinovis.com/images/favicon-zacharycortinovis.png">
   <meta property="og:image:type" content="image/png">
@@ -30,7 +81,7 @@
   <meta property="og:image:height" content="512">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GlobalSKU Android Music Video - Zachary Cortinovis Portfolio">
+  <meta name="twitter:title" content="GlobalSKU Music Video - Zachary Cortinovis Portfolio">
   <meta name="twitter:description" content="Creating a music video to announce GlobalSKU's Android launch.">
   <meta name="twitter:image" content="https://zacharycortinovis.com/images/favicon-zacharycortinovis.png">
 </head>
@@ -40,7 +91,7 @@
   <!-- Hero -->
   <section class="hero-project" style="background-image: url('./images/gsku-android-bg.jpg')">
   <div class="container">
-    <h1 class="hero-title fade-up">GlobalSKU Android Music Video</h1>
+    <h1 class="hero-title fade-up">GlobalSKU Music Video</h1>
     <p class="hero-subtitle wipe-left-right">Creating a music video to announce GlobalSKU's Android launch.</p>
   </div>
 </section>
@@ -48,35 +99,49 @@
   <!-- Project Summary -->
   <section class="project-summary">
     <div class="project-summary-content">
-    <div class="summary-image fade-up">
-        <img src="images/gsku-android-summary.png" alt="GlobalSKU Android release video summary">
+      <div class="youtube-embed fade-up">
+        <iframe src="https://www.youtube.com/embed/7sRxGB6I_Xk" title="GlobalSKU Android release music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <div class="summary-text fade-left">
-        <h2>Project Summary</h2>
-        <p><strong>"As an Android user myself, I've been wanting this release. How do you announce it in a way that gets people excited?"</strong></p>
-        <p>We needed to make a video for the Android release. I'm an Android user, and have been annoyed with having to not use my phone for Android. We've been experimenting with marketing methods with videos, and I wanted to make a music video.</p>
-        <p>I had recently watched the Men in Black music video and was inspired, but needed to get something out by Monday.</p>
-        <h3>Main Goals</h3>
-        <ul>
-          <li>Announce the Android release with an engaging video</li>
-          <li>Experiment with video marketing methods</li>
-          <li>Learn and apply new video editing and 3D animation techniques</li>
-        </ul>
-        <div class="tools-used fade-left">
-          <h3>Tools Used</h3>
-          <div class="tool-item">
-            <span class="tool-name">Premiere Pro</span>
-            <p class="tool-desc">For editing the footage, keyframe animation, and effects.</p>
+      <div class="summary-columns">
+        <div class="summary-text fade-left">
+          <h2>Project Summary</h2>
+          <p><strong>"As an Android user myself, I've been wanting this release. How do you announce it in a way that gets people excited?"</strong></p>
+          <p>We needed to make a video for the Android release. I'm an Android user, and have been annoyed with having to not use my phone for Android. We've been experimenting with marketing methods with videos, and I wanted to make a music video.</p>
+          <p>I had recently watched the Men in Black music video and was inspired, but needed to get something out by Monday.</p>
+          <h3>Main Goals</h3>
+          <ul>
+            <li>Announce the Android release with an engaging video</li>
+            <li>Experiment with video marketing methods</li>
+            <li>Learn and apply new video editing and 3D animation techniques</li>
+          </ul>
+        </div>
+        <div class="summary-sidebar">
+          <div class="tools-used fade-left">
+            <h3>Tools Used</h3>
+            <div class="tool-item">
+              <span class="tool-name">Premiere Pro</span>
+              <p class="tool-desc">For editing the footage, keyframe animation, and effects.</p>
+            </div>
+            <div class="tool-item">
+              <span class="tool-name">Blender</span>
+              <p class="tool-desc">For creating 3D text animations and lighting setups.</p>
+            </div>
           </div>
-          <div class="tool-item">
-            <span class="tool-name">Blender</span>
-            <p class="tool-desc">For creating 3D text animations and lighting setups.</p>
+          <div class="gear-used fade-left">
+            <h3>Gear Used</h3>
+            <div class="tool-item">
+              <span class="tool-name">Insta360 Go Ultra</span>
+              <p class="tool-desc">For some of the wide angle shots and shoes scenes.</p>
+            </div>
+            <div class="tool-item">
+              <span class="tool-name">Fujifilm X-S10</span>
+              <p class="tool-desc">Used for the high-quality footage jump.</p>
+            </div>
           </div>
         </div>
-      
-      </div> 
-    </section>
+      </div>
     </div>
+  </section>
   
 
   <!-- Z-pattern sections -->
@@ -88,8 +153,8 @@
         </div>
         <div class="z-text fade-left">
           <h2>The Inspiration</h2>
-          <p>I had recently watched the Men in Black music video and was inspired by it. I wanted to make a music video for the Android release, but needed to get something out by Monday.</p>
-          <p>I recorded the footage pretty roughly in my room, and after cutting in the right parts and adding some effects, I actually couldn't believe how it was turning out.</p>
+          <p>I had recently watched the Men in Black movies, and it reminded me of how I enjoyed the music video during my childhood. I had a moment of creative freedom where we needed a release video, and I decided to just up and make a music video.</p>
+          <p>I figured maybe we could try something different with our socila media marketing, and I wanted to put my videomaking skills to the test.</p>
         </div>
       </div>
     </div>
@@ -97,9 +162,9 @@
     <div class="container-body">
       <div class="zpattern-left section-alt">
         <div class="z-text fade-left">
-          <h2>Video Editing</h2>
-          <p>I learned a lot about video editing during the process, specifically keyframe animation and how all the effects are based off of values that are affected in the effects and property panel, and how the keyframe affects their status.</p>
-          <p>Along with using the curves to change the ease settings. Understanding these fundamentals opened up a lot of creative possibilities for timing and pacing the visuals.</p>
+          <h2>Filming</h2>
+          <p>I created the original footage for a coworker since they didn't have an Android. I recorded some extra stuff and tried to make something out of it, but it wasn't hitting. I stood up from my desk, grabbed my Fuji, arranged some lights, slapped it on my tripod, and started filming myself doing music video style movement.</p>
+          <p>My thought process was that I was unsure about the shoes, but after using GlobalSKU, not only did I become confident, but I started reselling and became cool like in the music video.</p>
         </div>
         <div class="z-image fade-up">
           <img src="images/gsku-android-editing.png" alt="Premiere Pro editing timeline">
@@ -114,7 +179,7 @@
         </div>
         <div class="z-text fade-left">
           <h2>3D Animations in Blender</h2>
-          <p>I used Blender to create the 3D animations. I had a lot of room to get creative and learn some new tricks.</p>
+          <p>With me dancing for most of the footage, I needed something eye catching for the marketing. So I updated Blender and got started with learning how to animate. Having just done it on Premiere, figuring out Blender's system was pretty easy.</p>
           <p>The movement and pacing of the words was the most interesting part. If I just stopped the movement of the words, it would be jarring, so I had to add this slow flowing effect after they stop to keep it smooth. So it'd keep flowing nice and slowly after it stops.</p>
           <h3>Lighting</h3>
           <p>Getting the lighting right was also interesting. I had to add so many lights to get it to look the way I wanted.</p>
