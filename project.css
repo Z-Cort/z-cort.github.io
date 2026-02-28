@@ -275,7 +275,8 @@ strong {
 
 .nav a {
     color: var(--text-medium);
-    font-weight: 500;
+    font-weight: 200;
+    letter-spacing: 0.04em;
     transition: color 0.3s ease;
     text-decoration: none;
 }
@@ -344,7 +345,8 @@ strong {
 
 .nav-mobile a {
     color: var(--text-medium);
-    font-weight: 500;
+    font-weight: 200;
+    letter-spacing: 0.04em;
     font-size: 1.125rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--gray-200);

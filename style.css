@@ -264,6 +264,23 @@ h1.section-title, h2.section-title {
     margin-bottom: 2rem;
 }
 
+.section-header-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-header-row .section-subtitle {
+    margin-bottom: 0;
+}
+
+.section-header-row .view-portfolio-btn {
+    flex-shrink: 0;
+}
+
 /* Reusable caption for images - use throughout the site */
 .caption {
     text-align: center;
@@ -1394,7 +1411,7 @@ a.contact-btn[href*="youtube"]:hover {
     flex: 0 0 min(480px, 55%);
 }
 
-/* Future line divider - horizontal graphic, above Main Projects header */
+/* Future line divider - animated background masked by SVG shape */
 .future-line-divider {
     overflow: hidden;
     text-align: center;
@@ -1406,13 +1423,29 @@ a.contact-btn[href*="youtube"]:hover {
     padding-bottom: 0;
     padding-top: 1.5rem;
 }
-.future-line-divider--flip img {
+.future-line-masked {
+    width: 100%;
+    max-width: var(--max-width);
+    aspect-ratio: 2682 / 96;
+    margin: 0 auto;
+    background-image: url('images/pattern-herobg-3.svg');
+    background-repeat: repeat;
+    background-size: 120px 120px;
+    animation: bgMoveUpDiagonal 8s linear infinite;
+    -webkit-mask-image: url('images/graphics-future-line-dark.svg');
+    mask-image: url('images/graphics-future-line-dark.svg');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    mask-position: left center;
+}
+.future-line-divider--flip .future-line-masked {
     transform: scaleY(-1);
 }
-.future-line-divider img {
-    max-width: var(--max-width);
-    width: 100%;
-    height: auto;
+[data-theme="dark"] .future-line-masked {
+    background-image: url('images/pattern-herobg-3-dark.svg');
 }
 
 /* ============================================================================
@@ -1848,11 +1881,17 @@ input[type="checkbox"]:checked {
     padding: 0;
 }
 
+.section-cta-btn {
+    display: block;
+    text-align: center;
+    margin: 2rem auto 0;
+}
+
 .section-footer-note {
     text-align: center;
     font-size: 0.875rem;
     color: var(--text-light);
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .numbered-step {
