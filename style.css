@@ -2153,6 +2153,10 @@ input[type="checkbox"]:checked {
         text-align: left;
     }
 
+    .footer-logo {
+        height: 22px;
+    }
+
     .footer-nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
