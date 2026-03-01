@@ -35,7 +35,7 @@
             <div class="hero-card">
                 <div class="hero-image-wrapper">
                     <div class="hero-image">
-                        <img src="images/zac-hero.png" alt="Zachary Cortinovis">
+                        <img src="images/zac-hero.png" alt="Zachary Cortinovis" id="hero-card-image" class="hero-card-image">
                     </div>
                 </div>
                 <div class="hero-content">
@@ -342,7 +342,7 @@
                 </div>
                 <div class="hero-content">
                     <h1 class="hero-title">Send me a message!</h1>
-                    <p class="hero-subtitle">Let's see what I can do for your business.</p>
+                    <p class="hero-subtitle">Let's see what I can do together.</p>
                     <div class="hero-actions">
                         <form id="contact-form" class="contact-form">
                             <div class="name-inputs">
@@ -543,6 +543,27 @@
             })
             .catch(error => alert('Submission failed. Please try again later.'));
         });
+    </script>
+    <script>
+        (function() {
+            var img = document.getElementById('hero-card-image');
+            var defaultSrc = 'images/zac-hero.png';
+            var altSrc = 'images/graphic-fox-moon.png';
+            if (img) {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function() {
+                    if (img.classList.contains('hero-image-swapped')) {
+                        img.src = defaultSrc;
+                        img.alt = 'Zachary Cortinovis';
+                        img.classList.remove('hero-image-swapped');
+                    } else {
+                        img.src = altSrc;
+                        img.alt = 'Fox and moon';
+                        img.classList.add('hero-image-swapped');
+                    }
+                });
+            }
+        })();
     </script>
     <script src="components/load-header-footer.js"></script>
 </body>

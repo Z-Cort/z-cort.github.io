@@ -87,6 +87,10 @@
     color: #FFFFFF;
 }
 
+[data-theme="dark"] .gallery-item-title {
+    color: #FFFFFF;
+}
+
 [data-theme="dark"] {
     --primary-color: #ED2000;
     --secondary-color: #1A1C1E;

@@ -132,6 +132,14 @@
     color: #7DD3FC;
 }
 
+[data-theme="dark"] .gallery-item-title {
+    color: #FFFFFF;
+}
+
+[data-theme="dark"] .experience-content p strong {
+    color: #8A6A50;
+}
+
 [data-theme="dark"] .skill-tag {
     background: var(--gray-200);
     color: var(--text-medium);
@@ -158,6 +166,20 @@
 [data-theme="dark"] a.contact-btn[href*="instagram"]:hover {
     background: linear-gradient(var(--white), var(--white)) padding-box,
                 linear-gradient(45deg, #e0852a, #d45a30, #c9223a, #b91f5c, #a8157a) border-box;
+}
+
+/* Solid buttons: white text in dark mode */
+[data-theme="dark"] .view-portfolio-btn:not(.btn-outline):not(.btn-subtle),
+[data-theme="dark"] .view-portfolio-btn:not(.btn-outline):not(.btn-subtle):hover,
+[data-theme="dark"] .view-portfolio-btn.btn-outline:hover,
+[data-theme="dark"] .download-contact-btn,
+[data-theme="dark"] .download-contact-btn:hover,
+[data-theme="dark"] .contact-btn.email,
+[data-theme="dark"] .contact-btn.email:hover,
+[data-theme="dark"] .cta-btn.primary,
+[data-theme="dark"] .cta-btn.primary:hover,
+[data-theme="dark"] .modal-close:hover {
+    color: #FFFFFF;
 }
 
 [data-theme="dark"] .hero,
@@ -871,6 +893,9 @@ html {
     display: flex;
 }
 
+.index-page .hero-card:not(.contact-hero-card) .hero-image img {
+    cursor: pointer;
+}
 .index-page .hero-image img {
     width: 100%;
     height: 100%;
@@ -1462,6 +1487,66 @@ a.contact-btn[href*="youtube"]:hover {
     max-width: 900px;
 }
 
+/* ===== AI EXAMPLES SECTION ===== */
+.ai-examples-section {
+    background-color: var(--white);
+}
+.ai-examples-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.ai-example-card {
+    background: var(--gray-100);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+.ai-example-task {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 1rem;
+    font-family: 'Clarity City', sans-serif;
+}
+.ai-example-line {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+.ai-example-icon {
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.ai-example-wrong {
+    color: var(--text-light);
+}
+.ai-example-wrong .ai-example-icon {
+    color: #C05050;
+}
+.ai-example-right {
+    color: var(--text-dark);
+}
+.ai-example-right .ai-example-icon {
+    color: #2E7D32;
+}
+[data-theme="dark"] .ai-example-wrong .ai-example-icon {
+    color: #E57373;
+}
+[data-theme="dark"] .ai-example-right .ai-example-icon {
+    color: #66BB6A;
+}
+@media (max-width: 768px) {
+    .ai-examples-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* About page section backgrounds */
 .about-section-1 {
     background-color: var(--gray-200);
@@ -1489,6 +1574,47 @@ a.contact-btn[href*="youtube"]:hover {
     height: auto;
     display: block;
     border-radius: var(--border-radius);
+}
+
+/* Section 0: chili pepper as decorative accent, minimal space */
+.about-section-0 .about-working-image {
+    flex: 0 0 min(120px, 15%);
+}
+.about-section-0 .about-working-image img {
+    max-height: 120px;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* Things I Love: grid of category cards */
+.things-i-love-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+.things-i-love-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+.things-i-love-card h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+.things-i-love-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.things-i-love-card li {
+    color: var(--text-medium);
+    font-size: 0.95rem;
 }
 
 /* Growing Up in Many Places: image on left, bigger */
@@ -1651,6 +1777,16 @@ a.contact-btn[href*="youtube"]:hover {
 
 .skills-preview .view-portfolio-btn {
     margin-top: 0.5rem;
+}
+
+/* Skills page: mural intro image */
+.skills-mural {
+    padding: 2rem 0 0;
+}
+.skills-mural-img {
+    width: 100%;
+    display: block;
+    border-radius: var(--border-radius);
 }
 
 /* Skills page */
@@ -1827,6 +1963,7 @@ input[type="checkbox"]:checked {
     max-width: none;
     object-fit: cover;
     object-position: center top;
+    cursor: pointer;
     border-radius: var(--border-radius) 0 0 var(--border-radius);
     background-color: var(--gray-300);
     margin: 0;
@@ -2215,6 +2352,10 @@ input[type="checkbox"]:checked {
         max-width: 320px;
         margin: 0 auto;
     }
+    .things-i-love-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .about-places-image {
         max-width: 400px;
     }
@@ -2441,7 +2582,7 @@ input[type="checkbox"]:checked {
 
 /* Services page: use mobile-optimized image on small viewports */
 @media (max-width: 768px) {
-    .hero-card-services .hero-image img {
+    .hero-card-services .hero-image img:not(.hero-image-swapped) {
         content: url('images/header-zacpic-services2.png');
     }
 }
