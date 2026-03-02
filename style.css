@@ -611,7 +611,13 @@ body.menu-open .nav-mobile-overlay {
 
 .footer-nav {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
+}
+
+.footer-nav-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .footer-nav a {
@@ -1617,6 +1623,25 @@ a.contact-btn[href*="youtube"]:hover {
     font-size: 0.95rem;
 }
 
+.things-i-love-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.things-i-love-chili {
+    max-height: 120px;
+    width: auto;
+    object-fit: contain;
+}
+
+.things-i-love-footer .view-portfolio-btn {
+    width: auto;
+    display: inline-block;
+}
+
 /* Growing Up in Many Places: image on left, bigger */
 .about-places-image {
     flex: 0 0 min(480px, 55%);
@@ -1867,6 +1892,90 @@ a.contact-btn[href*="youtube"]:hover {
 
 .skill-category-card .skills-preview-tags {
     margin-bottom: 0;
+}
+
+/* ============================================================================
+   INTERESTS PAGE
+   ============================================================================ */
+
+.interests-nav-section {
+    padding: 1.5rem 0 0;
+}
+
+.interests-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.interests-nav-btn {
+    padding: 0.6rem 1.25rem;
+    border: 2px solid var(--tertiary-color);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.interests-nav-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.interests-group {
+    margin-top: 2rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.interests-group:first-child {
+    margin-top: 0;
+}
+
+.interests-group-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-family: 'Clarity City', sans-serif;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.interests-grid:empty {
+    min-height: 100px;
+}
+
+.interests-album-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.interests-games-grid .interests-image-item {
+    aspect-ratio: 3/4;
+}
+
+.interests-image-item {
+    aspect-ratio: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--gray-200);
+}
+
+.interests-image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* ============================================================================
@@ -2389,10 +2498,8 @@ input[type="checkbox"]:checked {
     }
 
     .footer-nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem 2rem;
-        text-align: left;
+        display: flex;
+        gap: 2rem;
     }
 
     .modal-content {
@@ -2560,16 +2667,16 @@ input[type="checkbox"]:checked {
     }
 }
 
-/* Index page: use mobile-optimized image on small viewports */
+/* Contact page & Send me a message: use mobile-optimized image on small viewports */
 @media (max-width: 768px) {
     .contact-page .hero-image img {
-        content: url('images/zac-contact-mobile.png');
+        content: url('images/zac-contact-mobile-2.png');
     }
 }
 
 @media (max-width: 768px) {
     .index-page .contact-hero-card .hero-image img {
-        content: url('images/zac-contact-mobile.png');
+        content: url('images/zac-contact-mobile-2.png');
     }
 }
 

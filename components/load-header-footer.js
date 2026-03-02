@@ -11,6 +11,7 @@
     const projectsHref = basePath + 'projects.html';
     const aboutHref = basePath + 'about.html';
     const skillsHref = basePath + 'skills.html';
+    const interestsHref = basePath + 'interests.html';
 
 
     const sunIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
@@ -66,12 +67,17 @@
         <div class="footer-content">
             <div class="footer-logo"><img src="${imgPath}logo-vulpine-white.svg" class="logo" alt="Vulpine Logo"></div>
             <nav class="footer-nav">
-                <a href="${basePath}index.html">Home</a>
-                <a href="${servicesHref}">Services</a>
-                <a href="${projectsHref}">Projects</a>
-                <a href="${aboutHref}">About</a>
-                <a href="${skillsHref}">Skills</a>
-                <a href="${contactHref}">Contact</a>
+                <div class="footer-nav-col">
+                    <a href="${basePath}index.html">Home</a>
+                    <a href="${servicesHref}">Services</a>
+                    <a href="${projectsHref}">Projects</a>
+                </div>
+                <div class="footer-nav-col">
+                    <a href="${aboutHref}">About</a>
+                    <a href="${skillsHref}">Skills</a>
+                    <a href="${interestsHref}">Interests</a>
+                    <a href="${contactHref}">Contact</a>
+                </div>
             </nav>
             <div class="footer-social">
                 <a href="https://www.linkedin.com/in/zacharycortinovis/" class="contact-btn footer-social-btn" aria-label="LinkedIn">${linkedInSvg}</a>
