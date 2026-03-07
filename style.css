@@ -147,9 +147,9 @@
 }
 
 [data-theme="dark"] .skill-tool-chip {
-    background: #292122;
+    background: rgba(237, 32, 0, 0.2);
     color: #fff;
-    border: none;
+    border: 1px solid rgba(237, 32, 0, 0.35);
 }
 
 [data-theme="dark"] .skill-category-card {
@@ -158,6 +158,16 @@
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .skills-summary-accomplishments,
+[data-theme="dark"] .skills-summary-capabilities,
+[data-theme="dark"] .skills-summary-programs {
+    background-color: #181b1d;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 [data-theme="dark"] .skills-page-section {
@@ -1780,16 +1790,22 @@ a.contact-btn[href*="youtube"]:hover {
 
 .things-i-love-footer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
     margin-top: 2rem;
+}
+
+.things-i-love-footer .about-working-image {
+    flex: 0 0 auto;
 }
 
 .things-i-love-chili {
     max-height: 120px;
     width: auto;
     object-fit: contain;
+    transform: rotate(-30deg);
 }
 
 .things-i-love-footer .view-portfolio-btn {
@@ -1927,21 +1943,22 @@ a.contact-btn[href*="youtube"]:hover {
 
 .skills-preview-tags {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0.35rem;
     margin-bottom: 1rem;
 }
 
 .skill-tag {
-    padding: 0.4rem 1rem;
-    border: 2px solid var(--gray-300);
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--gray-300);
     border-radius: 999px;
     background: var(--white);
     color: var(--text-medium);
     font-family: 'Clarity City', sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 500;
     white-space: nowrap;
+    width: fit-content;
 }
 
 .service-chips .skill-tag {
@@ -1962,6 +1979,18 @@ a.contact-btn[href*="youtube"]:hover {
     background-repeat: no-repeat;
 }
 
+.skills-preview .skills-preview-tags {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skills-preview .skill-tag {
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--gray-300);
+    font-size: 0.875rem;
+}
+
 .skills-preview .view-portfolio-btn {
     margin-top: 0.5rem;
 }
@@ -1980,6 +2009,58 @@ a.contact-btn[href*="youtube"]:hover {
 .skills-page-section {
     background-color: var(--peach);
     padding: 2rem 0 4rem;
+}
+
+.skills-summary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.skills-summary-accomplishments,
+.skills-summary-capabilities,
+.skills-summary-programs {
+    background-color: var(--gray-400);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+}
+
+.skills-summary-heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 1rem;
+    font-family: 'Clarity City', sans-serif;
+}
+
+.skills-summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-height: 2rem;
+}
+
+.skills-summary-capabilities .skills-summary-content,
+.skills-summary-programs .skills-summary-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.skills-summary-prose p {
+    margin: 0 0 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-medium);
+}
+
+.skills-summary-prose p:last-child {
+    margin-bottom: 0;
 }
 
 .skills-group {
@@ -2033,7 +2114,7 @@ a.contact-btn[href*="youtube"]:hover {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-bottom: 2.5rem;
 }
@@ -2050,10 +2131,7 @@ a.contact-btn[href*="youtube"]:hover {
 }
 
 .skill-category-card-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
+    position: relative;
     margin-bottom: 1rem;
 }
 
@@ -2063,21 +2141,25 @@ a.contact-btn[href*="youtube"]:hover {
     font-weight: 600;
     color: var(--text-dark);
     margin: 0;
+    padding-right: 6rem;
 }
 
 .skill-tool-chips {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 0.35rem;
-    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .skill-tool-chip {
     padding: 0.25rem 0.6rem;
     border-radius: 6px;
-    background: rgba(237, 32, 0, 0.04);
+    background: rgba(237, 32, 0, 0.1);
     color: var(--text-dark);
-    border: 1px solid rgba(237, 32, 0, 0.08);
+    border: 1px solid rgba(237, 32, 0, 0.2);
     font-family: 'Clarity City', sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
@@ -2804,6 +2886,15 @@ input[type="checkbox"]:checked {
 
     .numbered-step img {
         margin-bottom: 1rem;
+    }
+
+    /* Skills page specific responsive */
+    .skills-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
     /* Index page specific responsive */
