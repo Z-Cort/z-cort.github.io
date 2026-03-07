@@ -1,0 +1,3 @@
+# Redirect /index.html to / for clean URLs
+RewriteEngine On
+RewriteRule ^index\.html$ / [R=301,L]

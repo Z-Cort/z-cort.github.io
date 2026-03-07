@@ -25,7 +25,7 @@
     <div class="container">
         <div class="header-content">
             <div class="logo">
-                <a href="${basePath}index.html">
+                <a href="/">
                     <img src="${imgPath}logo-zacharycortinovis.svg" class="logo logo-light" alt="Zac's Logo">
                     <img src="${imgPath}logo-zacharycortinovis-white.svg" class="logo logo-dark" alt="Zac's Logo">
                 </a>
@@ -36,7 +36,7 @@
                 <span class="hamburger-bar"></span>
             </button>
             <nav class="nav nav-desktop">
-                <a href="${basePath}index.html">Home</a>
+                <a href="/">Home</a>
                 <a href="${servicesHref}">Services</a>
                 <a href="${projectsHref}">Projects</a>
                 <a href="${aboutHref}">About</a>
@@ -51,7 +51,7 @@
             <a href="https://www.instagram.com/zacharycortinovis.design/" class="contact-btn footer-social-btn" aria-label="Instagram">${instagramSvg}</a>
             <a href="https://www.youtube.com/@zacharycortinovis" class="contact-btn footer-social-btn" aria-label="YouTube">${youtubeSvg}</a>
         </div>
-        <a href="${basePath}index.html">Home</a>
+        <a href="/">Home</a>
         <a href="${servicesHref}">Services</a>
         <a href="${projectsHref}">Projects</a>
         <a href="${aboutHref}">About</a>
@@ -68,7 +68,7 @@
             <div class="footer-logo"><img src="${imgPath}logo-vulpine-white.svg" class="logo" alt="Vulpine Logo"></div>
             <nav class="footer-nav">
                 <div class="footer-nav-col">
-                    <a href="${basePath}index.html">Home</a>
+                    <a href="/">Home</a>
                     <a href="${servicesHref}">Services</a>
                     <a href="${projectsHref}">Projects</a>
                 </div>
