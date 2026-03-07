@@ -146,8 +146,18 @@
     border-color: var(--gray-400);
 }
 
+[data-theme="dark"] .skill-tool-chip {
+    background: #292122;
+    color: #fff;
+    border: none;
+}
+
 [data-theme="dark"] .skill-category-card {
+    background-color: var(--background-light);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
 [data-theme="dark"] .skills-page-section {
@@ -182,7 +192,17 @@
     color: #FFFFFF;
 }
 
-[data-theme="dark"] .hero,
+[data-theme="dark"] .hero {
+    background-image: url('images/pattern-herobg-3-dark.svg');
+}
+
+/* About and AI pages: use same moving bg as All Projects in light mode */
+html:not([data-theme="dark"]) .about-page .projects-page-header,
+html:not([data-theme="dark"]) .ai-page .projects-page-header {
+    background-image: url('images/pattern-herobg.svg');
+    background-size: 80px 80px;
+}
+
 [data-theme="dark"] .projects-page-header {
     background-image: url('images/pattern-herobg-3-dark.svg');
 }
@@ -326,7 +346,7 @@ h1.section-title, h2.section-title {
     position: sticky;
     top: 0;
     z-index: 100;
-    transition: max-width 0.35s ease, border-radius 0.35s ease, box-shadow 0.35s ease, top 0.35s ease, opacity 0.3s ease;
+    transition: border-radius 0.35s ease, box-shadow 0.35s ease, opacity 0.3s ease;
     border-radius: 0;
     max-width: 100%;
     width: 100%;
@@ -667,6 +687,10 @@ body.menu-open .nav-mobile-overlay {
 .contact-page .container {
     max-width: 1400px;
 }
+/* Header container: use standard max-width like other pages (contact-page .container would otherwise make it 1400px) */
+.contact-page .header .container {
+    max-width: var(--max-width);
+}
 .contact-page .hero-card {
     width: 100%;
 }
@@ -991,14 +1015,14 @@ html {
 
 .hero-title {
     font-size: 3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
 }
 
 .hero-subtitle {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 300;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
 }
 
 .hero-description {
@@ -1094,6 +1118,43 @@ html {
 /* Index page contact-buttons has height: 100% */
 .index-page .contact-buttons {
     height: 100%;
+}
+
+.resume-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.resume-download-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    color: var(--text-medium);
+    font-family: 'Clarity City', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.resume-download-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.resume-download-btn .resume-btn-icon,
+.resume-download-btn svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
 }
 
 .contact-btn {
@@ -1493,6 +1554,26 @@ a.contact-btn[href*="youtube"]:hover {
     max-width: 900px;
 }
 
+/* AI page section 1: first red block matches weight of block below it (experience-summary-lead--neutral) */
+.ai-body-section .experience-summary .experience-summary-lead {
+    font-weight: 400;
+}
+
+/* AI page: statement accuracy graphic - constrain width at mid breakpoints */
+.ai-body-section .experience-content .ai-statement-graphic {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+    border-radius: var(--border-radius);
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    .ai-body-section .experience-content .ai-statement-graphic {
+        max-width: 320px;
+    }
+}
+
 /* ===== AI EXAMPLES SECTION ===== */
 .ai-examples-section {
     background-color: var(--white);
@@ -1556,6 +1637,23 @@ a.contact-btn[href*="youtube"]:hover {
 /* About page section backgrounds */
 .about-section-1 {
     background-color: var(--gray-200);
+    position: relative;
+    overflow: hidden;
+}
+.about-section-1 .container {
+    position: relative;
+    z-index: 2;
+}
+#globe-canvas {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 250%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.18;
 }
 .about-section-2 {
     background-color: var(--gray-300);
@@ -1580,6 +1678,42 @@ a.contact-btn[href*="youtube"]:hover {
     height: auto;
     display: block;
     border-radius: var(--border-radius);
+}
+
+/* Working With Me: Teams + Google Meet images side by side, equal height, natural widths */
+.about-section-2 .about-working-images-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    flex-wrap: wrap;
+}
+.about-section-2 .about-working-images-row img {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    border-radius: var(--border-radius);
+}
+.about-section-2 .about-working-image .caption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+/* Working With Me: equal column widths on desktop */
+@media (min-width: 769px) {
+    .about-section-2 .about-working-content,
+    .about-section-2 .about-working-image {
+        flex: 1 1 50%;
+        min-width: 0;
+    }
+}
+
+.about-working-below {
+    margin-top: 2.5rem;
+}
+.about-working-below h3 {
+    margin-top: 0;
 }
 
 /* Section 0: chili pepper as decorative accent, minimal space */
@@ -1621,6 +1755,27 @@ a.contact-btn[href*="youtube"]:hover {
 .things-i-love-card li {
     color: var(--text-medium);
     font-size: 0.95rem;
+}
+
+.things-i-love-covers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.things-i-love-cover-mini {
+    width: 80px;
+    aspect-ratio: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--gray-200);
+}
+
+.things-i-love-cover-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .things-i-love-footer {
@@ -1733,6 +1888,13 @@ a.contact-btn[href*="youtube"]:hover {
     font-family: 'Clarity City', sans-serif;
 }
 
+.experience-summary-lead--neutral {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    font-family: 'Clarity City', sans-serif;
+}
+
 .experience-summary-body {
     font-size: 1rem;
     color: var(--text-medium);
@@ -1822,7 +1984,7 @@ a.contact-btn[href*="youtube"]:hover {
 
 .skills-group {
     margin-top: 2rem;
-    background: var(--background-light);
+    background: var(--gray-200);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     padding: 1.5rem;
@@ -1877,17 +2039,49 @@ a.contact-btn[href*="youtube"]:hover {
 }
 
 .skill-category-card {
-    background: var(--white);
+    background-color: var(--gray-300);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
     padding: 1.5rem;
     border-radius: var(--border-radius);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
-.skill-category-card h3 {
+.skill-category-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skill-category-card-header h3,
+.skill-category-card-header .skill-category-label {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--text-dark);
-    margin-bottom: 1rem;
+    margin: 0;
+}
+
+.skill-tool-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    justify-content: flex-end;
+}
+
+.skill-tool-chip {
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    background: rgba(237, 32, 0, 0.04);
+    color: var(--text-dark);
+    border: 1px solid rgba(237, 32, 0, 0.08);
+    font-family: 'Clarity City', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .skill-category-card .skills-preview-tags {
@@ -2451,6 +2645,10 @@ input[type="checkbox"]:checked {
         gap: 2rem;
     }
 
+    #globe-canvas {
+        opacity: 0.12;
+    }
+
     .about-working-columns {
         flex-direction: column;
         gap: 1.5rem;
@@ -2460,6 +2658,15 @@ input[type="checkbox"]:checked {
         width: 100%;
         max-width: 320px;
         margin: 0 auto;
+    }
+    .about-section-2 .about-working-image {
+        max-width: 100%;
+    }
+    .about-section-2 .about-working-images-row {
+        flex-direction: column;
+    }
+    .about-section-2 .about-working-images-row img {
+        height: 180px;
     }
     .things-i-love-grid {
         grid-template-columns: repeat(2, 1fr);
