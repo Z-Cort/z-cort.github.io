@@ -2028,6 +2028,16 @@ html:not([data-theme="dark"]) .experience {
     margin-top: 0.5rem;
 }
 
+html:not([data-theme="dark"]) .skills-preview .view-portfolio-btn.btn-subtle {
+    background-color: var(--white);
+    border-color: var(--gray-300);
+}
+
+html:not([data-theme="dark"]) .skills-preview .view-portfolio-btn.btn-subtle:hover {
+    background-color: var(--gray-100);
+    border-color: var(--gray-400);
+}
+
 /* Skills page: mural intro image */
 .skills-mural {
     padding: 2rem 0 0;
