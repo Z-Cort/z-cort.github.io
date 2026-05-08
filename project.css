@@ -46,7 +46,7 @@
     --background-light: #F7FAFC;
     --white: #FFFFFF;
     --gray-100: #F7FAFC;
-    --gray-200: #EDF2F7;
+    --gray-200: #F5F2F0;
     --gray-300: #E2E8F0;
     --gray-400: #CBD5E0;
     --max-width: 1400px;
@@ -64,7 +64,7 @@
 
 [data-theme="dark"] .hero-project p,
 [data-theme="dark"] .hero-project .hero-subtitle {
-    color: #EDF2F7;
+    color: #F5F2F0;
 }
 
 [data-theme="dark"] p a:not(.contact-btn),

@@ -51,7 +51,7 @@
     --background-light: #F7FAFC;
     --white: #FFFFFF;
     --gray-100: #F7FAFC;
-    --gray-200: #EDF2F7;
+    --gray-200: #F5F2F0;
     --gray-300: #E2E8F0;
     --gray-400: #CBD5E0;
     --peach: #F0F6FA;
@@ -252,7 +252,7 @@ a {
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, 'Clarity City', 'Inter', Arial, sans-serif;
+    font-family: 'Clarity City', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--background-light);
     overflow-x: hidden;
     color: var(--text-medium);
@@ -897,6 +897,11 @@ html {
     gap: 0;
 }
 
+/* Contact hero card: image is on the right, so flip padding (0 on right, full on left) */
+.contact-hero-card {
+    padding: var(--hero-card-padding) 0 var(--hero-card-padding) var(--hero-card-padding);
+}
+
 /* Virtual-business-card page hero-card variations */
 .virtual-business-card-page .hero-card {
     display: block;
@@ -970,9 +975,18 @@ html {
 }
 
 /* Contact page and contact-hero-card: same image treatment as index page */
-.contact-page .hero-image-wrapper,
-.contact-hero-card .hero-image-wrapper {
+.contact-page .hero-image-wrapper {
     flex: 0 1 auto;
+    min-width: 0;
+    max-width: min(500px, 45%);
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.contact-hero-card .hero-image-wrapper {
+    flex: 1;
     min-width: 0;
     max-width: min(500px, 45%);
     align-self: stretch;
@@ -988,13 +1002,18 @@ html {
     display: flex;
 }
 
+.contact-hero-card .hero-image {
+    margin: calc(var(--hero-card-padding) * -1) calc(var(--hero-card-padding) * -1) calc(var(--hero-card-padding) * -1) var(--hero-card-padding);
+    align-items: flex-start;
+}
+
 .contact-page .hero-image img,
 .contact-hero-card .hero-image img {
     width: 100%;
     height: 100%;
     max-width: none;
     object-fit: cover;
-    object-position: center;
+    object-position: top center;
 }
 
 /* Virtual-business-card page hero-image variations */
@@ -1039,6 +1058,7 @@ html {
     font-weight: 300;
     color: var(--primary-color);
     margin-bottom: 0rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .hero-description {
