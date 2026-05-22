@@ -26,9 +26,10 @@
         align-items: stretch;
     }
 
-    /* YouTube embed - responsive 16:9 */
+    /* YouTube embed - responsive 16:9, constrained width */
     .project-summary .youtube-embed {
-        width: 100%;
+        width: 65%;
+        max-width: 800px;
         margin: 0 auto 2rem;
         aspect-ratio: 16 / 9;
         border-radius: var(--border-radius);
@@ -69,6 +70,9 @@
         .project-summary .summary-columns {
             flex-direction: column;
         }
+        .project-summary .youtube-embed {
+            width: 100%;
+        }
     }
   </style>
   <link rel="icon" href="images/favicon-zacharycortinovis.png" type="image/png" sizes="512x512">
@@ -100,7 +104,7 @@
   <section class="project-summary">
     <div class="project-summary-content">
       <div class="youtube-embed fade-up">
-        <iframe src="https://www.youtube.com/embed/7sRxGB6I_Xk" title="GlobalSKU Android release music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/wbl9MCv9vgA" title="GlobalSKU Android release music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="summary-columns">
         <div class="summary-text fade-left">

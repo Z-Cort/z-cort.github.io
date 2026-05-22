@@ -79,11 +79,31 @@
             border-color: var(--primary-color);
             color: var(--primary-color);
         }
-        .filter-btn.active {
+        .filter-btn[data-filter="all"].active {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
             color: var(--white);
         }
+
+        .filter-btn[data-filter="video"] { border-color: #7F1D1D; color: #7F1D1D; }
+        .filter-btn[data-filter="video"]:hover { background-color: #FEF2F2; border-color: #7F1D1D; color: #7F1D1D; }
+        .filter-btn[data-filter="video"].active { background-color: #FEE2E2; border-color: #7F1D1D; color: #7F1D1D; }
+
+        .filter-btn[data-filter="web"] { border-color: #1E40AF; color: #1E40AF; }
+        .filter-btn[data-filter="web"]:hover { background-color: #EFF6FF; border-color: #1E40AF; color: #1E40AF; }
+        .filter-btn[data-filter="web"].active { background-color: #DBEAFE; border-color: #1E40AF; color: #1E40AF; }
+
+        .filter-btn[data-filter="brand"] { border-color: #92400E; color: #92400E; }
+        .filter-btn[data-filter="brand"]:hover { background-color: #FFFBEB; border-color: #92400E; color: #92400E; }
+        .filter-btn[data-filter="brand"].active { background-color: #FEF3C7; border-color: #92400E; color: #92400E; }
+
+        .filter-btn[data-filter="graphics"] { border-color: #9A3412; color: #9A3412; }
+        .filter-btn[data-filter="graphics"]:hover { background-color: #FFF7ED; border-color: #9A3412; color: #9A3412; }
+        .filter-btn[data-filter="graphics"].active { background-color: #FFEDD5; border-color: #9A3412; color: #9A3412; }
+
+        .filter-btn[data-filter="ui"] { border-color: #5B21B6; color: #5B21B6; }
+        .filter-btn[data-filter="ui"]:hover { background-color: #F5F3FF; border-color: #5B21B6; color: #5B21B6; }
+        .filter-btn[data-filter="ui"].active { background-color: #EDE9FE; border-color: #5B21B6; color: #5B21B6; }
 
         .projects-gallery-page {
             background-color: var(--white);
@@ -113,11 +133,11 @@
     <section class="projects-filter-bar">
         <div class="container" style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap;">
             <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="brand">Brand & Logo</button>
-            <button class="filter-btn" data-filter="ui">UI / UX</button>
+            <button class="filter-btn" data-filter="video">Videos</button>
+            <button class="filter-btn" data-filter="web">Websites</button>
+            <button class="filter-btn" data-filter="brand">Logos</button>
             <button class="filter-btn" data-filter="graphics">Graphics</button>
-            <button class="filter-btn" data-filter="video">Video</button>
+            <button class="filter-btn" data-filter="ui">UX/UI</button>
         </div>
     </section>
 
@@ -125,11 +145,38 @@
         <div class="container">
             <div class="gallery">
                 <!-- Main Projects (link to dedicated pages) -->
+                <a class="gallery-item" href="projects/claimleo-piracy-insurance.html" data-category="video">
+                    <div class="gallery-item-image">
+                        <img src="images/claimleo-thumbnail-piracy.png" alt="ClaimLeo Piracy Insurance">
+                    </div>
+                    <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--videography">Video</span>
+                        </div>
+                        <h3 class="gallery-item-title">ClaimLeo - Piracy Insurance</h3>
+                        <p class="gallery-item-description">Creating an AI-generated marketing video for a piracy insurance product.</p>
+                    </div>
+                </a>
+                <a class="gallery-item" href="projects/freefillment-shopify.html" data-category="video brand">
+                    <div class="gallery-item-image">
+                        <img src="projects/images/freefillment-thumbnail.png" alt="FreeFillment Shopify App">
+                    </div>
+                    <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--videography">Video</span>
+                        </div>
+                        <h3 class="gallery-item-title">FreeFillment Shopify App</h3>
+                        <p class="gallery-item-description">Creating a brand logo, color guide, and promotional video in three days.</p>
+                    </div>
+                </a>
                 <a class="gallery-item" href="projects/globalsku-android-video.html" data-category="video">
                     <div class="gallery-item-image">
                         <img src="images/gskuandroid-thumbnail.png" alt="GlobalSKU Music Video">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--videography">Video</span>
+                        </div>
                         <h3 class="gallery-item-title">GlobalSKU Music Video</h3>
                         <p class="gallery-item-description">Creating a music video to announce GlobalSKU's Android launch.</p>
                     </div>
@@ -139,6 +186,9 @@
                         <img src="images/globalskuwebsite-thumbnail.png" alt="GlobalSKU website">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--web-design">Website</span>
+                        </div>
                         <h3 class="gallery-item-title">GlobalSKU Website</h3>
                         <p class="gallery-item-description">Designing and building the GlobalSKU product website.</p>
                     </div>
@@ -148,6 +198,9 @@
                         <img src="images/gallerythumbnail-vendidit-website.png" alt="Vendidit Website v2">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--web-design">Website</span>
+                        </div>
                         <h3 class="gallery-item-title">Vendidit Website v2</h3>
                         <p class="gallery-item-description">Designing and building Vendidit's company website for discovery and conversion.</p>
                     </div>
@@ -157,6 +210,9 @@
                         <img src="images/gallerythumbnail-globalsku-upstream-logos.svg" alt="GlobalSKU and Upstream Logos">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--logo-design">Logo</span>
+                        </div>
                         <h3 class="gallery-item-title">Vendidit Product Logos</h3>
                         <p class="gallery-item-description">With only one week to design two product logos, quick decisions had to be made.</p>
                     </div>
@@ -166,6 +222,9 @@
                         <img src="images/gallerythumbnail-vulpine-logo.svg" alt="Vulpine Design">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--logo-design">Logo</span>
+                        </div>
                         <h3 class="gallery-item-title">Vulpine Design</h3>
                         <p class="gallery-item-description">Creating a personal brand and logo with a theme based on something I love: Foxes.</p>
                     </div>
@@ -177,6 +236,9 @@
                         <img src="images/gallerythumbnail-dejoriastephens.png" alt="Dejoria Stephens Website">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--web-design">Website</span>
+                        </div>
                         <h3 class="gallery-item-title">Dejoria Stephens Website</h3>
                         <p class="gallery-item-description">Built for a client who lost the original files for their site.</p>
                     </div>
@@ -186,6 +248,9 @@
                         <img src="images/gallerythumbnail-socialmedialogin.png" alt="Vendidit Social Media Login">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--ux-design">UX/UI</span>
+                        </div>
                         <h3 class="gallery-item-title">Vendidit Social Media Login</h3>
                         <p class="gallery-item-description">Adding social media options to the Vendidit buyer portal signup/login screen.</p>
                     </div>
@@ -195,6 +260,9 @@
                         <img src="images/gallerythumbnail-custpomproperties.png" alt="Vendidit Custom Properties">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--ux-design">UX/UI</span>
+                        </div>
                         <h3 class="gallery-item-title">Vendidit Custom Properties</h3>
                         <p class="gallery-item-description">Creating the custom properties feature on the Vendidit seller portal.</p>
                     </div>
@@ -204,6 +272,9 @@
                         <img src="images/gallerythumbnail-vendidit-assets.png" alt="Vendidit Original Assets">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--graphic-design">Graphic</span>
+                        </div>
                         <h3 class="gallery-item-title">Vendidit Original Assets</h3>
                         <p class="gallery-item-description">A collection of all the original graphics I've created for Vendidit.</p>
                     </div>
@@ -213,6 +284,9 @@
                         <img src="images/gallerythumbnail-vendidit-businesscards.png" alt="Vendidit Business Cards">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--graphic-design">Graphic</span>
+                        </div>
                         <h3 class="gallery-item-title">Vendidit Business Card Ads</h3>
                         <p class="gallery-item-description">Business card styled handout ads to increase conversion.</p>
                     </div>
@@ -222,6 +296,9 @@
                         <img src="images/gallerythumbnail-vendiditlisting.png" alt="Vendidit Listing Redesign">
                     </div>
                     <div class="gallery-item-content">
+                        <div class="gallery-item-chips">
+                            <span class="gallery-chip gallery-chip--ux-design">UX/UI</span>
+                        </div>
                         <h3 class="gallery-item-title">Vendidit Listing Redesign</h3>
                         <p class="gallery-item-description">I took a stab at redesigning Vendidit's dated listing page purchase area.</p>
                     </div>
@@ -330,7 +407,8 @@
 
                 const filter = this.getAttribute('data-filter');
                 document.querySelectorAll('.projects-gallery-page .gallery-item').forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    const categories = (item.getAttribute('data-category') || '').split(' ');
+                    if (filter === 'all' || categories.includes(filter)) {
                         item.setAttribute('data-hidden', 'false');
                         item.style.display = '';
                     } else {

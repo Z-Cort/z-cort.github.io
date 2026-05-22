@@ -374,12 +374,12 @@ h1.section-title, h2.section-title {
 
 .header-floating {
     position: fixed;
-    top: 0.75rem;
+    top: 0;
     left: 0;
     right: 0;
     max-width: var(--max-width);
     margin: 0 auto;
-    border-radius: var(--border-radius);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
     box-shadow: var(--shadow-lg);
 }
 
@@ -709,6 +709,7 @@ body.menu-open .nav-mobile-overlay {
 }
 .contact-page .hero-card {
     width: 100%;
+    gap: var(--hero-card-padding);
 }
 .contact-page .experience-content {
     max-width: 100%;
@@ -899,7 +900,13 @@ html {
 
 /* Contact hero card: image is on the right, so flip padding (0 on right, full on left) */
 .contact-hero-card {
+    width: 100%;
     padding: var(--hero-card-padding) 0 var(--hero-card-padding) var(--hero-card-padding);
+}
+
+/* Gap between form and image — needs 2-class specificity to beat .index-page .hero-card { gap: 0 } */
+.index-page .contact-hero-card {
+    gap: var(--hero-card-padding);
 }
 
 /* Virtual-business-card page hero-card variations */
@@ -944,9 +951,6 @@ html {
     display: flex;
 }
 
-.index-page .hero-card:not(.contact-hero-card) .hero-image img {
-    cursor: pointer;
-}
 .index-page .hero-image img {
     width: 100%;
     height: 100%;
@@ -976,9 +980,9 @@ html {
 
 /* Contact page and contact-hero-card: same image treatment as index page */
 .contact-page .hero-image-wrapper {
-    flex: 0 1 auto;
+    flex: 1;
     min-width: 0;
-    max-width: min(500px, 45%);
+    max-width: none;
     align-self: stretch;
     display: flex;
     flex-direction: column;
@@ -988,7 +992,7 @@ html {
 .contact-hero-card .hero-image-wrapper {
     flex: 1;
     min-width: 0;
-    max-width: min(500px, 45%);
+    max-width: none;
     align-self: stretch;
     display: flex;
     flex-direction: column;
@@ -1003,17 +1007,25 @@ html {
 }
 
 .contact-hero-card .hero-image {
-    margin: calc(var(--hero-card-padding) * -1) calc(var(--hero-card-padding) * -1) calc(var(--hero-card-padding) * -1) var(--hero-card-padding);
+    margin: calc(var(--hero-card-padding) * -1) 0 calc(var(--hero-card-padding) * -1) 0;
     align-items: flex-start;
 }
 
-.contact-page .hero-image img,
+.contact-page .hero-image img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: top center;
+}
+
 .contact-hero-card .hero-image img {
     width: 100%;
     height: 100%;
     max-width: none;
     object-fit: cover;
     object-position: top center;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
 /* Virtual-business-card page hero-image variations */
@@ -1874,8 +1886,9 @@ html:not([data-theme="dark"]) .ai-nothing-as-large-section {
     margin-left: calc(50% - 50vw);
 }
 .future-line-divider--flip {
-    padding-bottom: 0;
-    padding-top: 2.5rem;
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    transform: scaleY(-1);
 }
 .future-line-masked {
     width: 100%;
@@ -1894,7 +1907,7 @@ html:not([data-theme="dark"]) .ai-nothing-as-large-section {
     mask-position: left center;
 }
 .future-line-divider--flip .future-line-masked {
-    /* Same as top - no transform, same animation */
+    /* flip handled by parent */
 }
 [data-theme="dark"] .future-line-masked {
     background-image: url('images/pattern-herobg-3-dark.svg');
@@ -2735,11 +2748,21 @@ input[type="checkbox"]:checked {
         height: auto;
     }
 
+    /* Contact hero card: image stacks on top on mobile */
+    .contact-hero-card .hero-image-wrapper {
+        order: -1;
+    }
+
     .contact-page .hero-image,
     .contact-hero-card .hero-image {
         flex: none;
         min-height: 0;
         height: auto;
+    }
+
+    /* Reset desktop margins so image fills edge-to-edge without gap or clipping */
+    .contact-hero-card .hero-image {
+        margin: 0;
     }
 
     .contact-page .hero-image img,
