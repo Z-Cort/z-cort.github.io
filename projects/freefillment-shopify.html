@@ -8,22 +8,18 @@
   <link rel="stylesheet" href="../project.css" />
   <script src="../components/theme-init.js"></script>
   <style>
-    .final-result .result-image {
-        align-items: flex-start;
-    }
-
-    .final-result .result-text {
-        max-width: 100%;
-    }
-
-    .zpattern .container-body {
-        margin-bottom: 2rem;
-    }
 
     /* Stack video above columns */
     .project-summary .project-summary-content {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .project-summary .youtube-embed--inline {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     /* YouTube embed - responsive 16:9, constrained width */
@@ -116,6 +112,11 @@
             <li>Create a video that catches attention and stands out on the Shopify App Store</li>
             <li>Create a logo that fits the nature of the app</li>
           </ul>
+          <h3>Behind the Scenes</h3>
+          <p>A look at how the video came together — from footage setup to final edit.</p>
+          <div class="youtube-embed youtube-embed--inline fade-up" style="margin-top: 1rem;">
+            <iframe src="https://www.youtube.com/embed/92wR1d5bUjg" title="FreeFillment Behind the Scenes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
         </div>
         <div class="summary-sidebar">
           <div class="tools-used fade-left">
@@ -158,63 +159,13 @@
   </section>
 
 
-  <!-- Z-pattern sections -->
-  <section class="zpattern">
-    <div class="container-body">
-      <div class="zpattern-left">
-        <div class="z-text fade-left">
-          <h2>Designing the Branding</h2>
-          <p>Content coming soon.</p>
-        </div>
-        <div class="z-image fade-up">
-          <img src="images/freefillment-branding.png" alt="FreeFillment branding and logo design process">
-        </div>
-      </div>
-    </div>
 
-    <div class="container-body">
-      <div class="zpattern-right section-alt">
-        <div class="z-image fade-up">
-          <img src="images/freefillment-filming.png" alt="FreeFillment video filming setup">
-        </div>
-        <div class="z-text fade-left">
-          <h2>Filming the Video</h2>
-          <p>Content coming soon.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-body">
-      <div class="zpattern-left section-alt">
-        <div class="z-text fade-left">
-          <h2>Editing the Video</h2>
-          <p>Content coming soon.</p>
-        </div>
-        <div class="z-image fade-up">
-          <img src="images/freefillment-editing.png" alt="FreeFillment video editing in Premiere Pro">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final Result -->
-  <section class="final-result">
-    <div class="container-body">
-      <h2>Final Result</h2>
-      <div class="result-text">
-        <p>Content coming soon.</p>
-      </div>
-      <div class="result-image fade-up">
-        <img src="images/freefillment-final.png" alt="FreeFillment final result">
-      </div>
-    </div>
-  </section>
 
   <!-- Contact / CTA -->
   <section class="section cta" id="contact">
     <div class="container">
       <div class="cta-content">
-        <h2>Want to see what I can create for you?</h2>
+        <h2>Let's build something together.</h2>
         <p>I'm always looking for new projects, able to learn quickly, and can adapt to any challenge thrown my way. Feel free to reach out and chat with me about any projects you're trying to complete.</p>
         <div class="contact-buttons">
           <a href="../contact.html" class="contact-btn"><img src="../images/icon-contact.svg"></a>

@@ -64,46 +64,51 @@
         }
 
         .filter-btn {
-            padding: 0.5rem 1.25rem;
-            border: 2px solid var(--gray-300);
+            display: inline-block;
+            padding: 0.4em 1.1em;
             border-radius: 999px;
-            background: var(--white);
-            color: var(--text-medium);
+            border: 2px solid transparent;
+            background: transparent;
             font-family: 'Inter', sans-serif;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             font-weight: 500;
+            line-height: 1.5;
+            white-space: nowrap;
             cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .filter-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-        .filter-btn[data-filter="all"].active {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: var(--white);
+            transition: background 0.15s ease, color 0.15s ease;
         }
 
-        .filter-btn[data-filter="video"] { border-color: #7F1D1D; color: #7F1D1D; }
-        .filter-btn[data-filter="video"]:hover { background-color: #FEF2F2; border-color: #7F1D1D; color: #7F1D1D; }
-        .filter-btn[data-filter="video"].active { background-color: #FEE2E2; border-color: #7F1D1D; color: #7F1D1D; }
+        /* Light mode */
+        .filter-btn[data-filter="all"]      { border-color: #B91C1C; color: #B91C1C; }
+        .filter-btn[data-filter="video"]    { border-color: #B91C1C; color: #B91C1C; }
+        .filter-btn[data-filter="web"]      { border-color: #1D4ED8; color: #1D4ED8; }
+        .filter-btn[data-filter="brand"]    { border-color: #B45309; color: #B45309; }
+        .filter-btn[data-filter="graphics"] { border-color: #C2410C; color: #C2410C; }
+        .filter-btn[data-filter="ui"]       { border-color: #6D28D9; color: #6D28D9; }
 
-        .filter-btn[data-filter="web"] { border-color: #1E40AF; color: #1E40AF; }
-        .filter-btn[data-filter="web"]:hover { background-color: #EFF6FF; border-color: #1E40AF; color: #1E40AF; }
-        .filter-btn[data-filter="web"].active { background-color: #DBEAFE; border-color: #1E40AF; color: #1E40AF; }
+        .filter-btn[data-filter="all"].active,
+        .filter-btn[data-filter="video"].active    { background: #B91C1C; color: #fff; border-color: #B91C1C; }
+        .filter-btn[data-filter="web"].active      { background: #1D4ED8; color: #fff; border-color: #1D4ED8; }
+        .filter-btn[data-filter="brand"].active    { background: #B45309; color: #fff; border-color: #B45309; }
+        .filter-btn[data-filter="graphics"].active { background: #C2410C; color: #fff; border-color: #C2410C; }
+        .filter-btn[data-filter="ui"].active       { background: #6D28D9; color: #fff; border-color: #6D28D9; }
 
-        .filter-btn[data-filter="brand"] { border-color: #92400E; color: #92400E; }
-        .filter-btn[data-filter="brand"]:hover { background-color: #FFFBEB; border-color: #92400E; color: #92400E; }
-        .filter-btn[data-filter="brand"].active { background-color: #FEF3C7; border-color: #92400E; color: #92400E; }
+        .filter-btn:hover:not(.active) { opacity: 0.75; }
 
-        .filter-btn[data-filter="graphics"] { border-color: #9A3412; color: #9A3412; }
-        .filter-btn[data-filter="graphics"]:hover { background-color: #FFF7ED; border-color: #9A3412; color: #9A3412; }
-        .filter-btn[data-filter="graphics"].active { background-color: #FFEDD5; border-color: #9A3412; color: #9A3412; }
+        /* Dark mode */
+        [data-theme="dark"] .filter-btn[data-filter="all"],
+        [data-theme="dark"] .filter-btn[data-filter="video"]    { border-color: #FCA5A5; color: #FCA5A5; }
+        [data-theme="dark"] .filter-btn[data-filter="web"]      { border-color: #93C5FD; color: #93C5FD; }
+        [data-theme="dark"] .filter-btn[data-filter="brand"]    { border-color: #FCD34D; color: #FCD34D; }
+        [data-theme="dark"] .filter-btn[data-filter="graphics"] { border-color: #FDBA74; color: #FDBA74; }
+        [data-theme="dark"] .filter-btn[data-filter="ui"]       { border-color: #C4B5FD; color: #C4B5FD; }
 
-        .filter-btn[data-filter="ui"] { border-color: #5B21B6; color: #5B21B6; }
-        .filter-btn[data-filter="ui"]:hover { background-color: #F5F3FF; border-color: #5B21B6; color: #5B21B6; }
-        .filter-btn[data-filter="ui"].active { background-color: #EDE9FE; border-color: #5B21B6; color: #5B21B6; }
+        [data-theme="dark"] .filter-btn[data-filter="all"].active,
+        [data-theme="dark"] .filter-btn[data-filter="video"].active    { background: rgba(185,28,28,0.3); color: #FCA5A5; border-color: #FCA5A5; }
+        [data-theme="dark"] .filter-btn[data-filter="web"].active      { background: rgba(29,78,216,0.3); color: #93C5FD; border-color: #93C5FD; }
+        [data-theme="dark"] .filter-btn[data-filter="brand"].active    { background: rgba(180,83,9,0.3); color: #FCD34D; border-color: #FCD34D; }
+        [data-theme="dark"] .filter-btn[data-filter="graphics"].active { background: rgba(194,65,12,0.3); color: #FDBA74; border-color: #FDBA74; }
+        [data-theme="dark"] .filter-btn[data-filter="ui"].active       { background: rgba(109,40,217,0.3); color: #C4B5FD; border-color: #C4B5FD; }
 
         .projects-gallery-page {
             background-color: var(--white);
@@ -153,7 +158,7 @@
                         <div class="gallery-item-chips">
                             <span class="gallery-chip gallery-chip--videography">Video</span>
                         </div>
-                        <h3 class="gallery-item-title">ClaimLeo - Piracy Insurance</h3>
+                        <h3 class="gallery-item-title">ClaimLeo - Pirate Ad</h3>
                         <p class="gallery-item-description">Creating an AI-generated marketing video for a piracy insurance product.</p>
                     </div>
                 </a>
@@ -165,7 +170,7 @@
                         <div class="gallery-item-chips">
                             <span class="gallery-chip gallery-chip--videography">Video</span>
                         </div>
-                        <h3 class="gallery-item-title">FreeFillment Shopify App</h3>
+                        <h3 class="gallery-item-title">Freefillment Video + Logo</h3>
                         <p class="gallery-item-description">Creating a brand logo, color guide, and promotional video in three days.</p>
                     </div>
                 </a>

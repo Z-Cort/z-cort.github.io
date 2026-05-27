@@ -39,6 +39,7 @@
                 <a href="/">Home</a>
                 <a href="${servicesHref}">Services</a>
                 <a href="${projectsHref}">Projects</a>
+                <a href="${skillsHref}">Skills</a>
                 <a href="${aboutHref}">About</a>
                 <a href="${contactHref}">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode" type="button"></button>
@@ -54,6 +55,7 @@
         <a href="/">Home</a>
         <a href="${servicesHref}">Services</a>
         <a href="${projectsHref}">Projects</a>
+        <a href="${skillsHref}">Skills</a>
         <a href="${aboutHref}">About</a>
         <a href="${contactHref}">Contact</a>
         <button class="theme-toggle theme-toggle-mobile" aria-label="Toggle dark mode" type="button"></button>
@@ -101,6 +103,36 @@
         if (footerPlaceholder) {
             footerPlaceholder.innerHTML = footerHtml;
         }
+        initCtaArrows();
+    }
+
+    function initCtaArrows() {
+        var cta = document.querySelector('.section.cta');
+        if (!cta) return;
+
+        function makeArrow(w, h) {
+            return '<div class="cta-arrow"><svg width="' + w + '" height="' + h + '" viewBox="0 0 1006 744" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M64 372H941.5M633.5 680L941.5 372L633.5 64" stroke="currentColor" stroke-width="128" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
+        }
+
+        // Three sizes per side — varying for visual interest
+        var leftSizes  = [[90, 67], [58, 43], [74, 55]];
+        var rightSizes = [[68, 50], [92, 68], [52, 39]];
+
+        var leftHtml  = '<div class="cta-arrows-left">'  + leftSizes.map(function(s)  { return makeArrow(s[0], s[1]); }).join('') + '</div>';
+        var rightHtml = '<div class="cta-arrows-right">' + rightSizes.map(function(s) { return makeArrow(s[0], s[1]); }).join('') + '</div>';
+
+        cta.insertAdjacentHTML('afterbegin', leftHtml + rightHtml);
+
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    cta.classList.add('cta-arrows-visible');
+                    obs.disconnect();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        obs.observe(cta);
     }
 
     function getActiveTheme() {

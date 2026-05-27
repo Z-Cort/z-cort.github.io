@@ -782,11 +782,57 @@ a.gallery-item:hover {
         .cta {
             background-color: var(--background-light);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .cta-content {
             max-width: 600px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== CTA ARROW DECORATION ===== */
+        .cta-arrows-left,
+        .cta-arrows-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 1.5rem 0;
+            z-index: 0;
+        }
+        .cta-arrows-left { left: 0; }
+        .cta-arrows-right { right: 0; }
+
+        .cta-arrow {
+            opacity: 0;
+            transition: transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease;
+            color: var(--primary-color);
+        }
+        .cta-arrow svg { display: block; }
+
+        .cta-arrows-left .cta-arrow  { transform: translateX(-220%); }
+        .cta-arrows-right .cta-arrow { transform: translateX(220%); }
+        .cta-arrows-right .cta-arrow svg { transform: scaleX(-1); }
+
+        .cta-arrows-visible .cta-arrows-left .cta-arrow,
+        .cta-arrows-visible .cta-arrows-right .cta-arrow {
+            opacity: 0.28;
+            transform: translateX(0);
+        }
+
+        .cta-arrow:nth-child(1) { transition-delay: 0s; }
+        .cta-arrow:nth-child(2) { transition-delay: 0.15s; }
+        .cta-arrow:nth-child(3) { transition-delay: 0.3s; }
+
+        @media (max-width: 900px) {
+            .cta-arrows-left,
+            .cta-arrows-right { display: none; }
         }
 
         .cta-buttons {

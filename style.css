@@ -83,54 +83,18 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.35), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
-[data-theme="dark"] .gallery-chip--web-design {
-    background-color: #1E3A5F;
-    color: #93C5FD;
-}
-[data-theme="dark"] .gallery-chip--web-dev {
-    background-color: #064E3B;
-    color: #6EE7B7;
-}
-[data-theme="dark"] .gallery-chip--logo-design {
-    background-color: #78350F;
-    color: #FCD34D;
-}
-[data-theme="dark"] .gallery-chip--branding {
-    background-color: #831843;
-    color: #F9A8D4;
-}
-[data-theme="dark"] .gallery-chip--ux-design {
-    background-color: #4C1D95;
-    color: #C4B5FD;
-}
-[data-theme="dark"] .gallery-chip--ui-design {
-    background-color: #312E81;
-    color: #A5B4FC;
-}
-[data-theme="dark"] .gallery-chip--graphic-design {
-    background-color: #7C2D12;
-    color: #FDBA74;
-}
-[data-theme="dark"] .gallery-chip--print-design {
-    background-color: #3A3D40;
-    color: #D6D3D1;
-}
-[data-theme="dark"] .gallery-chip--marketing {
-    background-color: #7F1D1D;
-    color: #FCA5A5;
-}
-[data-theme="dark"] .gallery-chip--product-design {
-    background-color: #134E4A;
-    color: #5EEAD4;
-}
-[data-theme="dark"] .gallery-chip--videography {
-    background-color: #7F1D1D;
-    color: #FCA5A5;
-}
-[data-theme="dark"] .gallery-chip--3d-animation {
-    background-color: #0C4A6E;
-    color: #7DD3FC;
-}
+[data-theme="dark"] .gallery-chip--web-design    { background: rgba(29,78,216,0.35);   color: #93C5FD; }
+[data-theme="dark"] .gallery-chip--web-dev       { background: rgba(5,150,105,0.35);   color: #6EE7B7; }
+[data-theme="dark"] .gallery-chip--logo-design   { background: rgba(180,83,9,0.35);    color: #FCD34D; }
+[data-theme="dark"] .gallery-chip--branding      { background: rgba(190,24,93,0.35);   color: #F9A8D4; }
+[data-theme="dark"] .gallery-chip--ux-design     { background: rgba(109,40,217,0.35);  color: #C4B5FD; }
+[data-theme="dark"] .gallery-chip--ui-design     { background: rgba(67,56,202,0.35);   color: #A5B4FC; }
+[data-theme="dark"] .gallery-chip--graphic-design { background: rgba(194,65,12,0.35);  color: #FDBA74; }
+[data-theme="dark"] .gallery-chip--print-design  { background: rgba(87,83,78,0.35);    color: #D6D3D1; }
+[data-theme="dark"] .gallery-chip--marketing     { background: rgba(185,28,28,0.35);   color: #FCA5A5; }
+[data-theme="dark"] .gallery-chip--product-design { background: rgba(15,118,110,0.35); color: #5EEAD4; }
+[data-theme="dark"] .gallery-chip--videography   { background: rgba(185,28,28,0.35);   color: #FCA5A5; }
+[data-theme="dark"] .gallery-chip--3d-animation  { background: rgba(3,105,161,0.35);   color: #7DD3FC; }
 
 [data-theme="dark"] .gallery-item-title {
     color: #FFFFFF;
@@ -719,11 +683,57 @@ body.menu-open .nav-mobile-overlay {
 .cta {
     background-color: var(--background-light);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .cta-content {
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== CTA ARROW DECORATION ===== */
+.cta-arrows-left,
+.cta-arrows-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1.5rem 0;
+    z-index: 0;
+}
+.cta-arrows-left { left: 0; }
+.cta-arrows-right { right: 0; }
+
+.cta-arrow {
+    opacity: 0;
+    transition: transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease;
+    color: var(--primary-color);
+}
+.cta-arrow svg { display: block; }
+
+.cta-arrows-left .cta-arrow  { transform: translateX(-220%); }
+.cta-arrows-right .cta-arrow { transform: translateX(220%); }
+.cta-arrows-right .cta-arrow svg { transform: scaleX(-1); }
+
+.cta-arrows-visible .cta-arrows-left .cta-arrow,
+.cta-arrows-visible .cta-arrows-right .cta-arrow {
+    opacity: 0.28;
+    transform: translateX(0);
+}
+
+.cta-arrow:nth-child(1) { transition-delay: 0s; }
+.cta-arrow:nth-child(2) { transition-delay: 0.15s; }
+.cta-arrow:nth-child(3) { transition-delay: 0.3s; }
+
+@media (max-width: 900px) {
+    .cta-arrows-left,
+    .cta-arrows-right { display: none; }
 }
 
 /* AI Section - two-column layout, similar look to CTA */
@@ -905,7 +915,8 @@ html {
 }
 
 /* Gap between form and image — needs 2-class specificity to beat .index-page .hero-card { gap: 0 } */
-.index-page .contact-hero-card {
+.index-page .contact-hero-card,
+.services-page .contact-hero-card {
     gap: var(--hero-card-padding);
 }
 
@@ -1392,75 +1403,31 @@ html:not([data-theme="dark"]) .gallery-item-content {
 }
 
 .gallery-chip {
-    padding: 0.2rem 0.6rem;
+    display: inline-block;
+    padding: 0.25em 0.7em;
     border-radius: 999px;
-    font-family: 'Clarity City', sans-serif;
-    font-size: 0.7rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
     font-weight: 600;
-    white-space: nowrap;
-    letter-spacing: 0.02em;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    white-space: nowrap;
+    border: 2px solid transparent;
 }
 
-.gallery-chip--web-design {
-    background-color: #DBEAFE;
-    color: #1E40AF;
-}
-
-.gallery-chip--web-dev {
-    background-color: #D1FAE5;
-    color: #065F46;
-}
-
-.gallery-chip--logo-design {
-    background-color: #FEF3C7;
-    color: #92400E;
-}
-
-.gallery-chip--branding {
-    background-color: #FCE7F3;
-    color: #9D174D;
-}
-
-.gallery-chip--ux-design {
-    background-color: #EDE9FE;
-    color: #5B21B6;
-}
-
-.gallery-chip--ui-design {
-    background-color: #E0E7FF;
-    color: #3730A3;
-}
-
-.gallery-chip--graphic-design {
-    background-color: #FFEDD5;
-    color: #9A3412;
-}
-
-.gallery-chip--print-design {
-    background-color: #F5F5F4;
-    color: #44403C;
-}
-
-.gallery-chip--marketing {
-    background-color: #FEE2E2;
-    color: #991B1B;
-}
-
-.gallery-chip--product-design {
-    background-color: #CCFBF1;
-    color: #134E4A;
-}
-
-.gallery-chip--videography {
-    background-color: #FEE2E2;
-    color: #7F1D1D;
-}
-
-.gallery-chip--3d-animation {
-    background-color: #E0F2FE;
-    color: #0C4A6E;
-}
+.gallery-chip--web-design    { background: #1D4ED8; color: #fff; }
+.gallery-chip--web-dev       { background: #059669; color: #fff; }
+.gallery-chip--logo-design   { background: #B45309; color: #fff; }
+.gallery-chip--branding      { background: #BE185D; color: #fff; }
+.gallery-chip--ux-design     { background: #6D28D9; color: #fff; }
+.gallery-chip--ui-design     { background: #4338CA; color: #fff; }
+.gallery-chip--graphic-design { background: #C2410C; color: #fff; }
+.gallery-chip--print-design  { background: #57534E; color: #fff; }
+.gallery-chip--marketing     { background: #B91C1C; color: #fff; }
+.gallery-chip--product-design { background: #0F766E; color: #fff; }
+.gallery-chip--videography   { background: #B91C1C; color: #fff; }
+.gallery-chip--3d-animation  { background: #0369A1; color: #fff; }
 
 .gallery-item-title {
     margin: 0;
@@ -1617,6 +1584,24 @@ html:not([data-theme="dark"]) .highlight-projects {
 /* AI page section 1: first red block matches weight of block below it (experience-summary-lead--neutral) */
 .ai-body-section .experience-summary .experience-summary-lead {
     font-weight: 400;
+}
+
+/* AI page: statement containers */
+.ai-statement-card {
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+.ai-statement-card p {
+    margin: 0;
+}
+.ai-statement-card--primary {
+    background-color: rgba(237, 32, 0, 0.06);
+    border: 1px solid rgba(237, 32, 0, 0.18);
+}
+.ai-statement-card--neutral {
+    background-color: var(--gray-100);
+    border: 1px solid var(--gray-300);
 }
 
 /* AI page: statement accuracy graphic - constrain width at mid breakpoints */
@@ -1880,10 +1865,8 @@ html:not([data-theme="dark"]) .ai-nothing-as-large-section {
     line-height: 0;
     padding-bottom: 2.5rem;
     margin-bottom: 0;
-    /* Break out of container padding to align with hero's full-width background */
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: 100%;
+    max-width: 100%;
 }
 .future-line-divider--flip {
     padding-top: 0;
@@ -2230,6 +2213,18 @@ html:not([data-theme="dark"]) .skills-preview .view-portfolio-btn.btn-subtle:hov
     align-items: flex-end;
 }
 
+.skill-tool-chips:not(:empty)::before {
+    content: "Software";
+    font-size: 0.625rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-medium);
+    opacity: 0.5;
+    text-align: right;
+    margin-bottom: 0.1rem;
+}
+
 .skill-tool-chip {
     padding: 0.25rem 0.6rem;
     border-radius: 6px;
@@ -2244,6 +2239,12 @@ html:not([data-theme="dark"]) .skills-preview .view-portfolio-btn.btn-subtle:hov
 
 .skill-category-card .skills-preview-tags {
     margin-bottom: 0;
+}
+
+#skills-tools .skills-preview-tags {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35rem;
 }
 
 /* ============================================================================
