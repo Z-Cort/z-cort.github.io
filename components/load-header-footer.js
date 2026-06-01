@@ -68,6 +68,11 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-logo"><img src="${imgPath}logo-vulpine-white.svg" class="logo" alt="Vulpine Logo"></div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/zacharycortinovis/" class="contact-btn footer-social-btn" aria-label="LinkedIn">${linkedInSvg}</a>
+                <a href="https://www.instagram.com/zacharycortinovis.design/" class="contact-btn footer-social-btn" aria-label="Instagram">${instagramSvg}</a>
+                <a href="https://www.youtube.com/@zacharycortinovis" class="contact-btn footer-social-btn" aria-label="YouTube">${youtubeSvg}</a>
+            </div>
             <nav class="footer-nav">
                 <div class="footer-nav-col">
                     <a href="/">Home</a>
@@ -81,11 +86,6 @@
                     <a href="${contactHref}">Contact</a>
                 </div>
             </nav>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/zacharycortinovis/" class="contact-btn footer-social-btn" aria-label="LinkedIn">${linkedInSvg}</a>
-                <a href="https://www.instagram.com/zacharycortinovis.design/" class="contact-btn footer-social-btn" aria-label="Instagram">${instagramSvg}</a>
-                <a href="https://www.youtube.com/@zacharycortinovis" class="contact-btn footer-social-btn" aria-label="YouTube">${youtubeSvg}</a>
-            </div>
         </div>
     </div>
 </footer>`;

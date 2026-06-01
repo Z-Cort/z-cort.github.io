@@ -2561,16 +2561,12 @@ input[type="checkbox"]:checked {
 }
 
 .numbered-section {
-    max-width: 800px;
-    margin: 4rem auto;
-    padding: 2rem;
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    padding: 4rem 0;
 }
 
 .numbered-section .container {
-    padding: 0;
+    border-left: 2px solid var(--gray-300);
+    border-right: 2px solid var(--gray-300);
 }
 
 .section-cta-btn {
