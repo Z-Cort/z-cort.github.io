@@ -3060,7 +3060,7 @@ input[type="checkbox"]:checked {
 /* Contact page & Send me a message: use mobile-optimized image on small viewports */
 @media (max-width: 768px) {
     .contact-page .hero-image img {
-        content: url('images/zac-contact-mobile-2.png');
+        content: url('images/zac-point-mobile.png');
     }
 }
 
