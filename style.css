@@ -1040,14 +1040,18 @@ html {
 }
 
 /* Virtual-business-card page hero-image variations */
+.virtual-business-card-page .hero-image-wrapper {
+    margin: -2rem -2rem 1.5rem -2rem;
+    width: calc(100% + 4rem);
+}
+
 .virtual-business-card-page .hero-image img {
     display: block;
-    max-width: 200px;
-    object-fit: contain;
-    align-items: center;
-    background-color: var(--gray-300);
-    margin: auto;
-    padding-top: 1rem;
+    width: 100%;
+    max-width: none;
+    max-height: 45vh;
+    object-fit: cover;
+    object-position: center top;
     border: none;
 }
 
@@ -3069,7 +3073,7 @@ input[type="checkbox"]:checked {
 /* Virtual business card specific responsive */
 @media (max-width: 768px) {
     .virtual-business-card-page .hero-image img {
-        content: url('images/header-zacpic.png');
+        content: url('images/header-zacpic-services2-tall.png');
     }
 }
 
