@@ -1967,6 +1967,27 @@ html:not([data-theme="dark"]) .experience {
     color: var(--text-light);
 }
 
+.bring-item {
+    background: var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-300);
+    margin-bottom: 1rem;
+}
+
+.bring-item:last-child {
+    margin-bottom: 0;
+}
+
+.bring-item p {
+    margin: 0 0 0.5rem;
+}
+
+.bring-item p:last-child {
+    margin-bottom: 0;
+}
+
 /* ===== SKILL TAGS ===== */
 .skills-preview-heading {
     margin-bottom: 0.75rem;

@@ -123,9 +123,74 @@
         .projects-gallery-page .gallery-item[data-hidden="true"] {
             display: none;
         }
+
+        /* ===== BACK BUTTON ===== */
+        .back-btn {
+            position: fixed;
+            top: 72px;
+            left: 1.25rem;
+            z-index: 90;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.45rem 0.9rem 0.45rem 0.65rem;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 999px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: var(--text-medium);
+            font-size: 0.82rem;
+            font-weight: 500;
+            font-family: 'Clarity City', 'Inter', sans-serif;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+            letter-spacing: 0.01em;
+        }
+
+        .back-btn svg {
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.14);
+            color: var(--primary-color);
+        }
+
+        .back-btn:hover svg {
+            transform: translateX(-2px);
+        }
+
+        [data-theme="dark"] .back-btn {
+            background: rgba(41, 44, 46, 0.88);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+            color: var(--text-medium);
+        }
+
+        [data-theme="dark"] .back-btn:hover {
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.45);
+        }
+
+        @media (max-width: 768px) {
+            .back-btn {
+                top: auto;
+                bottom: 1.5rem;
+                left: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="index-page">
+    <a href="index.html" class="back-btn" aria-label="Back to portfolio">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Back</span>
+    </a>
     <div id="header-placeholder"></div>
 
     <section class="projects-page-header">
