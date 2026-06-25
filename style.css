@@ -366,7 +366,7 @@ h1.section-title, h2.section-title {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
-    height: 30px;
+    height: 38px;
 }
 
 .logo-light {
@@ -1626,6 +1626,135 @@ html:not([data-theme="dark"]) .highlight-projects {
 /* AI page: "Nothing as large" section - slightly darker gray in light mode */
 html:not([data-theme="dark"]) .ai-nothing-as-large-section {
     background-color: var(--gray-200);
+}
+
+/* AI page: three-panel layout (Experience / View / Don't Use) */
+.ai-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+.ai-panel--experience {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+.ai-panel--view {
+    grid-column: 2;
+    grid-row: 1;
+}
+.ai-panel--dontuse {
+    grid-column: 2;
+    grid-row: 2;
+}
+.ai-panel {
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+}
+.ai-panel-title {
+    margin: 0 0 1.25rem;
+    font-family: 'Clarity City', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 1.35rem;
+}
+.ai-panel-title em {
+    font-style: italic;
+}
+.ai-panel-item {
+    border-radius: var(--border-radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.85rem;
+}
+.ai-panel-item:last-child {
+    margin-bottom: 0;
+}
+.ai-panel-item-title {
+    margin: 0 0 0.35rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.ai-panel-item-sub {
+    margin: 0;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+/* Experience panel (green) */
+.ai-panel--experience {
+    background-color: rgba(46, 125, 50, 0.12);
+}
+.ai-panel--experience .ai-panel-title {
+    color: #2E7D32;
+}
+.ai-panel--experience .ai-panel-item {
+    background-color: #2E5E33;
+}
+.ai-panel--experience .ai-panel-item-title {
+    color: #FFFFFF;
+}
+.ai-panel--experience .ai-panel-item-sub {
+    color: #C9DCC9;
+}
+
+/* View panel (neutral gray) */
+.ai-panel--view {
+    background-color: var(--gray-300);
+}
+.ai-panel--view .ai-panel-title {
+    color: var(--text-dark);
+}
+.ai-panel--view p {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+/* Don't Use panel (red) */
+.ai-panel--dontuse {
+    background-color: rgba(237, 32, 0, 0.10);
+}
+.ai-panel--dontuse .ai-panel-title {
+    color: var(--primary-color);
+}
+.ai-panel--dontuse .ai-panel-item {
+    background-color: #5E2422;
+}
+.ai-panel--dontuse .ai-panel-item-title {
+    color: #FFFFFF;
+}
+.ai-panel--dontuse .ai-panel-item-sub {
+    color: #E0BDBC;
+}
+
+/* Dark mode: stronger tints for outer panels */
+[data-theme="dark"] .ai-panel--experience {
+    background-color: rgba(46, 125, 50, 0.20);
+}
+[data-theme="dark"] .ai-panel--experience .ai-panel-title {
+    color: #6FBF73;
+}
+[data-theme="dark"] .ai-panel--view {
+    background-color: var(--gray-200);
+}
+[data-theme="dark"] .ai-panel--dontuse {
+    background-color: rgba(237, 32, 0, 0.18);
+}
+
+/* Responsive: stack panels into one column */
+@media (max-width: 768px) {
+    .ai-panels {
+        grid-template-columns: 1fr;
+    }
+    .ai-panel--experience,
+    .ai-panel--view,
+    .ai-panel--dontuse {
+        grid-column: 1;
+        grid-row: auto;
+    }
 }
 
 /* ===== AI EXAMPLES SECTION ===== */
