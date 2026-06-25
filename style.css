@@ -886,9 +886,6 @@ html {
     display: flex;
     align-items: center;
     overflow: hidden;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeSlideIn 1s ease-out forwards;
 }
 
 /* Index page: stretch children so image can fill height top-to-bottom, no gap on desktop */
@@ -2550,9 +2547,6 @@ input[type="checkbox"]:checked {
     align-items: stretch;
     gap: 0;
     overflow: hidden;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeSlideIn 1s ease-out forwards;
     width: 100%;
     max-width: var(--max-width);
     margin-left: auto;
