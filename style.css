@@ -105,8 +105,8 @@
 }
 
 [data-theme="dark"] .skill-tag {
-    background: var(--gray-200);
-    color: var(--text-medium);
+    background: var(--gray-400);
+    color: var(--text-dark);
     border-color: var(--gray-400);
 }
 
@@ -2114,7 +2114,8 @@ html:not([data-theme="dark"]) .experience {
     margin-bottom: 0;
 }
 
-.bring-item p strong {
+.bring-item p strong,
+[data-theme="dark"] .bring-item p strong {
     color: #FF9D00;
 }
 
