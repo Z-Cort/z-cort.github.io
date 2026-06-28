@@ -923,7 +923,7 @@ html {
     width: fit-content;
     max-width: 100%;
     margin: auto;
-    padding: 2rem;
+    padding: 2rem 0.75rem;
     gap: 2rem;
 }
 
@@ -1038,8 +1038,8 @@ html {
 
 /* Virtual-business-card page hero-image variations */
 .virtual-business-card-page .hero-image-wrapper {
-    margin: -2rem -2rem 1.5rem -2rem;
-    width: calc(100% + 4rem);
+    margin: -2rem -0.75rem 1.5rem -0.75rem;
+    width: calc(100% + 1.5rem);
 }
 
 .virtual-business-card-page .hero-image img {
