@@ -1079,10 +1079,10 @@ html {
 
 .hero-subtitle {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--primary-color);
     margin-bottom: 0rem;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Clarity City', sans-serif;
 }
 
 .hero-description {
