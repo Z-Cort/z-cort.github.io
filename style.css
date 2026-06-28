@@ -2931,7 +2931,7 @@ input[type="checkbox"]:checked {
     }
 
     .hero-subtitle {
-        font-size: 1.15rem;
+        font-size: 1rem;
         margin-top: var(--hero-content-gap);
         margin-bottom: var(--hero-content-gap);
     }
