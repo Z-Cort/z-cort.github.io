@@ -3222,7 +3222,7 @@ input[type="checkbox"]:checked {
 /* Virtual business card specific responsive */
 @media (max-width: 768px) {
     .virtual-business-card-page .hero-image img {
-        content: url('images/header-zacpic-services2-tall.png');
+        content: url('images/zac-dress-shirt.png');
     }
 }
 
