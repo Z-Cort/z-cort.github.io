@@ -2060,11 +2060,27 @@ html:not([data-theme="dark"]) .ai-nothing-as-large-section {
     flex: 0 0 auto;
 }
 
-.things-i-love-chili {
-    max-height: 120px;
-    width: auto;
-    object-fit: contain;
-    transform: rotate(-30deg);
+/* Things I Love: giant chili pepper as background accent */
+.about-section-0 {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section-0 .container {
+    position: relative;
+    z-index: 1;
+}
+
+.things-i-love-chili-bg {
+    position: absolute;
+    right: -8%;
+    top: 50%;
+    width: min(700px, 60vw);
+    height: auto;
+    transform: translateY(-50%) rotate(-30deg) scaleX(-1);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .things-i-love-footer .view-portfolio-btn {
