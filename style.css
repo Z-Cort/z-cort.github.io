@@ -2135,6 +2135,13 @@ html:not([data-theme="dark"]) .experience {
 
 .experience-summary .section-title {
     margin-top: 0;
+    font-size: 5rem;
+    line-height: 1.1;
+}
+
+.highlight-projects-title {
+    font-size: 5rem;
+    line-height: 1.1;
 }
 
 .experience-summary-lead {
@@ -2906,6 +2913,10 @@ input[type="checkbox"]:checked {
         padding-bottom: 4rem;
     }
 
+    .hero#home {
+        padding-top: 0;
+    }
+
     .hero-card {
         flex-direction: column;
         text-align: center;
@@ -3140,6 +3151,12 @@ input[type="checkbox"]:checked {
     h1 {
         font-size: 2rem;
         line-height: 2rem;
+    }
+
+    .experience-summary .section-title,
+    .highlight-projects-title {
+        font-size: 4rem;
+        line-height: 1.1;
     }
 
     h2 {

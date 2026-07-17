@@ -610,7 +610,7 @@ body.menu-open .nav-mobile-overlay {
 
 .final-result .result-image img {
     width: 100%;
-    max-width: 450px;
+    max-width: 650px;
     flex: 1 1 0;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
