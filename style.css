@@ -674,6 +674,21 @@ body.menu-open .nav-mobile-overlay {
     max-width: 100%;
 }
 
+/* Contact page sticky footer: the hero is the only content, so let it grow
+   to fill the viewport and keep the footer pinned to the bottom */
+body.contact-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-page .hero {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* ===== CTA SECTION ===== */
 .cta {
     background-color: var(--background-light);
@@ -869,7 +884,9 @@ html {
 .hero-card {
     position: relative;
     z-index: 2;
-    background-color: var(--white);
+    background-color: color-mix(in srgb, var(--white) 65%, transparent);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
     padding: var(--hero-card-padding) var(--hero-card-padding) var(--hero-card-padding) 0;
@@ -1066,6 +1083,12 @@ html {
     margin-bottom: 0rem;
 }
 
+/* Virtual-business-card: keep the name clear of the photo (mobile rule pulls
+   .hero-title up by 2rem, which clips the name into the image on this page) */
+.virtual-business-card-page .hero-title {
+    margin-top: 0.5rem;
+}
+
 .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 400;
@@ -1078,10 +1101,14 @@ html {
     margin-bottom: var(--hero-content-gap);
 }
 
-/* Contact and virtual-business-card pages use 2rem margin */
-.contact-page .hero-description,
-.virtual-business-card-page .hero-description {
+/* Contact page uses 2rem margin */
+.contact-page .hero-description {
     margin-bottom: 2rem;
+}
+
+/* Virtual-business-card: tighter gap between description and Save Contact button */
+.virtual-business-card-page .hero-description {
+    margin-bottom: 1rem;
 }
 
 .hero-actions {
