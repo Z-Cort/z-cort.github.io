@@ -57,7 +57,7 @@
     --peach: #F5F2F0;
     --max-width: 1200px;
     --padding-mobile: 20px;
-    --hero-card-padding: 3rem;
+    --hero-card-padding: 2rem;
     --hero-content-gap: 0.5rem;
     --border-radius: 12px;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -2755,7 +2755,9 @@ input[type="checkbox"]:checked {
 .hero-card-services {
     position: relative;
     z-index: 2;
-    background-color: var(--white);
+    background-color: color-mix(in srgb, var(--white) 65%, transparent);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
     padding: var(--hero-card-padding) var(--hero-card-padding) var(--hero-card-padding) 0;
@@ -2803,7 +2805,7 @@ input[type="checkbox"]:checked {
 }
 
 .hero-card-services .hero-content {
-    background-color: var(--white);
+    background-color: transparent;
 }
 
 .hero-card-services .hero-title {
@@ -3407,11 +3409,11 @@ input[type="checkbox"]:checked {
     }
 
     .hero-card {
-        padding: 2.5rem;
+        padding: 1.5rem;
     }
 
     .hero-card-services {
-        padding: 2.5rem;
+        padding: 1.5rem;
     }
 }
 
@@ -3427,7 +3429,7 @@ input[type="checkbox"]:checked {
     }
 
     .experience-content {
-        padding-left: 2rem;
+        padding-left: 2.6rem;
     }
 }
 
@@ -3466,6 +3468,6 @@ input[type="checkbox"]:checked {
 
 @media (min-width: 769px) and (max-width: 1199px) {
     .hero-card {
-        padding: 2.5rem;
+        padding: 1.5rem;
     }
 }
