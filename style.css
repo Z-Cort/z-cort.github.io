@@ -2869,6 +2869,15 @@ input[type="checkbox"]:checked {
     min-width: 250px;
 }
 
+.package-tier-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
 .service-card {
     background: var(--background-light);
     padding: 2rem;
