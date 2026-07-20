@@ -342,15 +342,6 @@ h1.section-title, h2.section-title {
     box-shadow: var(--shadow-lg);
 }
 
-@media (max-width: 768px) {
-    .header-floating {
-        top: 0.5rem;
-        left: 0.5rem;
-        right: 0.5rem;
-        max-width: calc(100% - 1rem);
-    }
-}
-
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -2234,6 +2225,11 @@ html:not([data-theme="dark"]) .experience {
         var(--container-outline) border-box;
 }
 
+/* Match the 1rem spacing between the .bring-item boxes in the right column */
+.capabilities-preview + .skills-preview {
+    margin-top: 1rem;
+}
+
 .skills-preview-tags {
     display: flex;
     flex-direction: column;
@@ -3438,16 +3434,16 @@ input[type="checkbox"]:checked {
 @media (min-width: 768px) {
     .experience-columns {
         display: flex;
-        gap: 2rem;
+        gap: 0;
     }
 
     .experience-summary {
         border-right: 1px solid var(--gray-400);
-        padding-right: 2.6rem;
+        padding-right: 1rem;
     }
 
     .experience-content {
-        padding-left: 2.6rem;
+        padding-left: 1rem;
     }
 }
 
@@ -3473,7 +3469,7 @@ input[type="checkbox"]:checked {
 
 /* Services page: use mobile-optimized image on small viewports */
 @media (max-width: 768px) {
-    .hero-card-services .hero-image img:not(.hero-image-swapped) {
+    .hero-card-services .hero-image img {
         content: url('images/header-zacpic-services2.png');
     }
 }
