@@ -2872,10 +2872,19 @@ input[type="checkbox"]:checked {
 .package-tier-image {
     display: block;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 180px;
     object-fit: contain;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.service-card-image {
+    display: block;
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
 }
 
 .service-card {
