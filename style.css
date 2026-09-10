@@ -2151,6 +2151,40 @@ html:not([data-theme="dark"]) .experience {
     line-height: 1.1;
 }
 
+/* Project category groups (index.html): reuses the .skills-preview container
+   shell so each category sits in the same card as the capabilities list. */
+.gallery-group {
+    margin-top: 2rem;
+    width: 100%;
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid transparent;
+    background:
+        linear-gradient(var(--gray-200), var(--gray-200)) padding-box,
+        var(--container-outline) border-box;
+}
+
+.gallery-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.gallery-category-title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+/* Match the container's own 1.25rem vertical padding, instead of the
+   2rem top margin .gallery carries on its own. */
+.gallery-group .gallery {
+    margin-top: 1.25rem;
+}
+
 .experience-summary-lead {
     font-size: 1.5rem;
     font-weight: 400;
