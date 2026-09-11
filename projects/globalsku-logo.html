@@ -23,6 +23,40 @@
     .final-result .result-image {
       align-items: flex-start;
     }
+
+    /* Masonry collage for the drag race photos — mixed portrait/landscape,
+       so columns let each image keep its natural aspect ratio (no cropping). */
+    .drag-collage {
+      column-count: 3;
+      column-gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .drag-collage img {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      break-inside: avoid;
+    }
+
+    /* The wide team shot reads as the establishing photo */
+    .drag-collage .collage-wide {
+      column-span: all;
+    }
+
+    @media (max-width: 900px) {
+      .drag-collage {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .drag-collage {
+        column-count: 1;
+      }
+    }
   </style>
 
   <meta property="og:title" content="GlobalSKU Logo v1 to v2 - Zachary Cortinovis Portfolio">
@@ -45,7 +79,7 @@
 
   <!-- Hero -->
   <section class="hero-project"
-    style="background-image: url('./images/globalsku-drag-car.jpg'); background-position: center 45%">
+    style="background-image: url('./images/globalsku-drag-car.JPG'); background-position: center 45%">
     <div class="container">
       <h1 class="hero-title fade-up">GlobalSKU Logo v1 to v2</h1>
       <p class="hero-subtitle wipe-left-right">From Figma sketches to being painted on drag race cars, this logo's gone
@@ -309,9 +343,15 @@
           the strip at over 300 mph &mdash; a good stress test for a design
           meant to stay readable at a glance.</p>
       </div>
-      <div class="result-image">
-        <img src="images/globalsku-drag-car.jpg" alt="GlobalSKU logo on the side of a Top Fuel dragster at zMAX Dragway"
-          style="width: 100%; border-radius: 12px;">
+      <div class="drag-collage">
+        <img class="collage-wide" src="images/gsku-drag-1.jpg"
+          alt="Ida Zetterstr&ouml;m's Top Fuel dragster with the GlobalSKU livery, crew lined up alongside on the starting line">
+        <img src="images/gsku-drag-2.jpg" alt="The GlobalSKU dragster doing a burnout at the starting line">
+        <img src="images/gsku-drag-3.jpg"
+          alt="Close-up of the GlobalSKU mark on the dragster bodywork beside the Lucky 13 lettering">
+        <img src="images/gsku-drag-4.jpg" alt="Ida Zetterstr&ouml;m in a GlobalSKU-branded firesuit on the track">
+        <img src="images/gsku-drag-5.jpg" alt="Ida Zetterstr&ouml;m holding her helmet in the GlobalSKU firesuit">
+        <img src="images/gsku-drag-6.jpg" alt="The GlobalSKU logo on a team polo shirt at a race event">
       </div>
     </div>
   </section>
