@@ -965,6 +965,34 @@ html {
     object-position: center;
 }
 
+/* Split hero card: only the text side gets the card fill, so the photo side has no bg behind it */
+.hero-card.hero-card--split {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    align-items: stretch;
+}
+
+.hero-card--split .hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--hero-card-padding);
+    background-color: color-mix(in srgb, var(--white) 65%, transparent);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.hero-card--split .hero-image {
+    margin: 0;
+}
+
+.hero-card--split .hero-image img {
+    background-color: transparent;
+}
+
 .hero-image {
     width: 100%;
     margin: calc(var(--hero-card-padding) * -1) 0 calc(var(--hero-card-padding) * -1) calc(var(--hero-card-padding) * -1);
@@ -3166,6 +3194,19 @@ input[type="checkbox"]:checked {
         aspect-ratio: auto;
         object-fit: contain;
         object-position: center;
+    }
+
+    .hero-card.hero-card--split {
+        gap: 0;
+    }
+
+    .index-page .hero-card--split .hero-image-wrapper {
+        margin: 0;
+        width: 100%;
+    }
+
+    .hero-card--split .hero-content {
+        padding: 1rem;
     }
 
     /* Contact page and contact-hero-card: same responsive treatment as index */
