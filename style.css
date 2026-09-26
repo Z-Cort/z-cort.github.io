@@ -2284,6 +2284,19 @@ html:not([data-theme="dark"]) .experience {
     border-radius: var(--border-radius);
     padding: 0.85rem 1.1rem;
     box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+/* Icons are monochrome SVGs used as masks so they take the theme color */
+.capability-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background-color: #FF9D00;
+    -webkit-mask: var(--icon) center / contain no-repeat;
+    mask: var(--icon) center / contain no-repeat;
 }
 
 .capability-item p {
