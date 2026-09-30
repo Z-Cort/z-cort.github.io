@@ -737,46 +737,27 @@ body.contact-page {
     .cta-arrows-right { display: none; }
 }
 
-/* AI Section - two-column layout, similar look to CTA */
-.ai-section {
-    text-align: left;
-    background-color: var(--gray-200);
-}
-
-.ai-section-inner {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.ai-section-image {
-    flex: 0 0 22.5%;
-    min-width: 0;
-}
-
-.ai-section-image img {
-    width: 100%;
+/* AI card (index.html): sits in the "What I bring to the table" column */
+.ai-card-image {
+    display: block;
+    width: 56px;
     height: auto;
     border-radius: var(--border-radius);
-    object-fit: cover;
-}
-
-.ai-section-content {
-    flex: 1;
-    min-width: 0;
-}
-
-.ai-section-content h2 {
     margin-bottom: 1rem;
 }
 
-.ai-section-content p {
-    margin-bottom: 1.5rem;
+.ai-card-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin: 0 0 0.5rem;
+    color: var(--primary-color);
 }
 
-.ai-section-content .view-portfolio-btn {
+.bring-item.ai-card p {
+    margin-bottom: 1rem;
+}
+
+.ai-card .view-portfolio-btn {
     width: auto;
     display: inline-block;
 }
@@ -2215,7 +2196,7 @@ html:not([data-theme="dark"]) .experience {
 
 .experience-summary-lead {
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 700;
     color: var(--primary-color);
     font-family: 'Clarity City', sans-serif;
 }
@@ -3286,11 +3267,6 @@ input[type="checkbox"]:checked {
         align-items: center;
     }
 
-    .ai-section-inner {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
     #globe-canvas {
         opacity: 0.12;
     }
@@ -3320,22 +3296,6 @@ input[type="checkbox"]:checked {
 
     .about-places-image {
         max-width: 400px;
-    }
-
-    .ai-section-image {
-        flex: none;
-        width: 50%;
-        margin: 0 auto;
-        order: 1;
-    }
-
-    .ai-section-content {
-        order: 2;
-        text-align: center;
-    }
-
-    .ai-section-content .view-portfolio-btn {
-        margin: 0 auto;
     }
 
     .footer-content {
